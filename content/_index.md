@@ -35,11 +35,23 @@ sections:
       title: "📚 About Me"
       subtitle: ""
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        Hi there! My name is Haihao, and here is an introduction about myself!
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        I was born in Nanjing, China. At 18, I went to San Diego, California, to complete my undergraduate degree in computer science and engineering. Afterwards, I relocated to New Haven to pursue a master's degree in computer science.
 
-        Please reach out to collaborate 😃
+        Computer Science gave me a solid foundation in both software and machine learning. Beyond my academic pursuits, I am passionate about and interested in various other fields that I hope to explore and delve deeper into, such as:
+
+        - Machine Learning/Deep Learning
+        - Quantitative Analysis
+
+        In my spare time, I enjoy participating in programming competitions. This allows me to write some code and express my ideas through coding. I am proud of being the first engineer in my family.
+
+        My non-technical hobbies tend to change over time. Currently, I enjoy playing the board game Dominion and go. In the past, I've enjoyed games like Splendor, Wingspan, and Fortnite!
+
+        Fun fact: On average, American people relocate _11.7_ times in their lifetime. Surprisingly, I have already moved _8_ times.
+
+        Places where I have been lived for more than 2 weeks: Nanjing, San Diego, New Haven, New York, Mountain View, San Jose.
+
     design:
       columns: "1"
   # - block: collection
