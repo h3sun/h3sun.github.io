@@ -125,11 +125,9 @@ skills:
 
 languages:
   - name: English
-    percent: 100
+    percent: 90
   - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+    percent: 100
 
 # Awards.
 #   Add/remove as many awards below as you like.
@@ -172,4 +170,15 @@ awards:
 
 ## About Me
 
-Haihao Sun.
+Hi there! My name is Haihao, and here is an introduction about myself!
+
+I was born in Nanjing, China. I went to San Diego, California, to complete my undergraduate degree in computer science and engineering at 18. Afterwards, I relocated to New Haven to pursue a master's degree in computer science at 21.
+
+Computer Science gave me a solid foundation in both software and machine learning. Beyond my academic pursuits, I am passionate about and interested in various other fields that I hope to explore and delve deeper into, such as:
+
+- Machine Learning/Deep Learning
+- Quantitative Analysis
+
+In my spare time, I enjoy participating in programming competitions. This allows me to write some code and express my ideas through coding. I am proud of being the first engineer in my family.
+
+My non-technical hobbies tend to change over time. Currently, I enjoy playing the board game Dominion and go. In the past, I've enjoyed games like Splendor, Wingspan, and Fortnite!
