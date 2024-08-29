@@ -10,11 +10,23 @@
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/tags/algorithm/</loc>
-    <lastmod>2024-08-14T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/post/2024-08-27/</loc>
+    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
+    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/tags/random-thoughts/</loc>
+    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/tags/algorithm/</loc>
     <lastmod>2024-08-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -23,10 +35,6 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/post/2024-08-14-init/</loc>
-    <lastmod>2024-08-14T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-08-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
