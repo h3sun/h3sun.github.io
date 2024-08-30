@@ -16,7 +16,6 @@ image:
 
 #### Machine Learning
 
-- Li Mu's
 - Deep Learning
 
 #### City Planning
