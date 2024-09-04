@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine-Learning | Hugo Academic CV Theme</title>
+    <link>http://localhost:1313/tags/machine-learning/</link>
+      <atom:link href="http://localhost:1313/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <description>Machine-Learning</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
+      <title>Machine-Learning</title>
+      <link>http://localhost:1313/tags/machine-learning/</link>
+    </image>
+    
+    <item>
+      <title>Deep Dive into Recommender Systems Techniques Algorithms and Applications</title>
+      <link>http://localhost:1313/post/2024-09-01-rec-sys/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-01-rec-sys/</guid>
+      <description>&lt;p&gt;This is a tests&lt;/p&gt;
+&lt;!-- ---
+
+title: Areas of Exploration and Growth
+summary: A concise list of things that I want to explore in the near future.
+date: 2024-08-27
+authors:
+
+- admin
+  tags:
+- random-thoughts
+  image:
+  caption: &#34;Image credit: [**Unsplash**](https://unsplash.com)&#34;
+
+--- --&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

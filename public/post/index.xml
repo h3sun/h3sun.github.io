@@ -5,12 +5,35 @@
     <link>http://localhost:1313/post/</link>
       <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Blog</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 27 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Sep 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>Blog</title>
       <link>http://localhost:1313/post/</link>
     </image>
+    
+    <item>
+      <title>Deep Dive into Recommender Systems Techniques Algorithms and Applications</title>
+      <link>http://localhost:1313/post/2024-09-01-rec-sys/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-01-rec-sys/</guid>
+      <description>&lt;p&gt;This is a tests&lt;/p&gt;
+&lt;!-- ---
+
+title: Areas of Exploration and Growth
+summary: A concise list of things that I want to explore in the near future.
+date: 2024-08-27
+authors:
+
+- admin
+  tags:
+- random-thoughts
+  image:
+  caption: &#34;Image credit: [**Unsplash**](https://unsplash.com)&#34;
+
+--- --&gt;
+</description>
+    </item>
     
     <item>
       <title>Areas of Exploration and Growth</title>
@@ -23,8 +46,8 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;machine-learning&#34;&gt;Machine Learning&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Li Mu&amp;rsquo;s&lt;/li&gt;
 &lt;li&gt;Deep Learning&lt;/li&gt;
+&lt;li&gt;Neural Networks: Zero to Hero&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;city-planning&#34;&gt;City Planning&lt;/h4&gt;
 &lt;ul&gt;
