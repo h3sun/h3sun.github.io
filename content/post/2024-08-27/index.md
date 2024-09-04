@@ -17,6 +17,7 @@ image:
 #### Machine Learning
 
 - Deep Learning
+- Neural Networks: Zero to Hero
 
 #### City Planning
 
