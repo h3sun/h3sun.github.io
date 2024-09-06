@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: September 4, 2024 --><html lang="en-us" dir="ltr"
+<!-- Last Published: September 5, 2024 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
@@ -41,7 +41,7 @@
   
     
   
-  <meta name="description" content="Study notes of recommender system" />
+  <meta name="description" content="Recommender System Basics" />
 
   
   <link rel="alternate" hreflang="en-us" href="http://localhost:1313/post/2024-09-01-rec-sys/" />
@@ -188,8 +188,8 @@
   
   <meta property="og:site_name" content="Hugo Academic CV Theme" />
   <meta property="og:url" content="http://localhost:1313/post/2024-09-01-rec-sys/" />
-  <meta property="og:title" content="Recommender System Study Notes | Hugo Academic CV Theme" />
-  <meta property="og:description" content="Study notes of recommender system" /><meta property="og:image" content="http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:title" content="Recommender System Study Notes Basics (1/1) | Hugo Academic CV Theme" />
+  <meta property="og:description" content="Recommender System Basics" /><meta property="og:image" content="http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
@@ -208,7 +208,7 @@
   
 
 
-  <title>Recommender System Study Notes | Hugo Academic CV Theme</title>
+  <title>Recommender System Study Notes Basics (1/1) | Hugo Academic CV Theme</title>
 
   
   
@@ -235,6 +235,7 @@
   
 
 
+  
   
   
   
@@ -511,8 +512,164 @@
 
 
 
+<style>
+  .markmap > svg {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<script>
+  window.markmap = {
+    autoLoader: {
+      manual: false,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+    },
+  };
+</script>
 
 
+<script defer src="/dist/lib/markmap/index.min.c9d7aae44c6040009be2304689eae39673e6614f1a92d8f4a69f581bed004b9b.js" integrity="sha256-ydeq5ExgQACb4jBGierjlnPmYU8aktj0pp9YG&#43;0AS5s="></script>
+
+
+
+
+  
+  
+  <link type="text/css" rel="stylesheet" href="/dist/lib/katex/katex.min.505d5f829022bb7b4f24dfee0aa1141cd7bba67afe411d1240335f820960b5c3.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr&#43;QR0SQDNfgglgtcM=" />
+  
+  
+  <script defer src="/dist/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw&#43;iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4="></script>
+  
+  
+  
+  
+  <script defer src="/js/katex-renderer.6579ec9683211cfb952064aedf3a3baea5eeb17a061775b32b70917474637c80.js" integrity="sha256-ZXnsloMhHPuVIGSu3zo7rqXusXoGF3WzK3CRdHRjfIA="></script>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
 
@@ -752,19 +909,27 @@
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg>
         </span>
     </a><div class="ltr:pr-0 overflow-hidden">
-        <ul class="hb-sidebar-list"><li class="flex flex-col open"><a
+        <ul class="hb-sidebar-list"><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/post/2024-09-02-rec-sys-nomination-1/"
+    
+  >Recommender System Study Notes - Nomination(1/)
+    </a>
+              
+            </li><li class="flex flex-col open"><a
     class="hb-sidebar-custom-link
       sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900"
     href="/post/2024-09-01-rec-sys/"
     
-  >Recommender System Study Notes
+  >Recommender System Study Notes Basics (1/1)
     </a>
   
     <ul class="hb-sidebar-mobile-toc"><li>
               <a
-                href="#"
+                href="#basics"
                 class="hb-docs-link"
-              ></a>
+              >Basics</a>
             </li>
           </ul>
   
@@ -923,7 +1088,22 @@
 
   <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4 rtl:-ml-4"><p class="mb-4 font-semibold tracking-tight">On this page</p><ul>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#nominationcandidate-generation">Nomination(candidate generation)</a>
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#basics">Basics</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e5%9f%ba%e7%a1%80%e6%8c%87%e6%a0%87">基础指标</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e5%8c%97%e6%9e%81%e6%98%9f%e6%8c%87%e6%a0%87">北极星指标</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e5%ae%9e%e9%aa%8c%e6%b5%81%e7%a8%8b">实验流程</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#chain-of-recommender-system">Chain of Recommender System</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#ab-test">A/B Test</a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
         <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#pre-ranking-rankingscoring">Pre-Ranking, Ranking(scoring)</a>
@@ -959,7 +1139,7 @@
 
       
 
-      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Recommender System Study Notes</h1>
+      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Recommender System Study Notes Basics (1/1)</h1>
 
       <div class="mt-4 mb-16">
       <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">Sep 1, 2024</span><span class="mx-1">·</span>
@@ -979,7 +1159,7 @@
         
         <span class="mx-1">·</span>
         <span class="mx-1">
-          1 min read
+          2 min read
         </span>
         
         </div>
@@ -1004,7 +1184,128 @@
       
 
       <div class="prose prose-slate lg:prose-xl dark:prose-invert">
-        <h3 id="nominationcandidate-generation">Nomination(candidate generation)</h3>
+        <h2 id="basics">Basics</h2>
+<div class="markmap" style="height: 200px;">
+
+<pre>- Impression
+  - Click
+    - ScrollToEnd
+      - Comment
+    - Like
+    - Collect
+    - Share</pre>
+</div>
+
+<h4 id="基础指标">基础指标</h4>
+<ul>
+<li>Click-through rate = Number of clicks / Number of impressions</li>
+<li>Like rate = Number of likes / Number of impressions</li>
+<li>Collection rate = Number of collections / Number of clicks</li>
+<li>Forwarding rate = Number of forwards / Number of clicks</li>
+<li>Completion rate = Number of times scrolled to the end / Number of clicks * f(Note length)</li>
+</ul>
+<h4 id="北极星指标">北极星指标</h4>
+<ul>
+<li>用户规模
+DAU daily active user
+MAU monthly active user</li>
+<li>消费
+人均使用时长，人均阅读笔记数量</li>
+<li>发布
+发布渗透率，人均发布量</li>
+</ul>
+<h4 id="实验流程">实验流程</h4>
+<div class="markmap" style="height: 200px;">
+
+<pre>- Offline Test
+  - A/B Test
+    - experiment rollout</pre>
+</div>
+
+<h4 id="chain-of-recommender-system">Chain of Recommender System</h4>
+<div class="markmap" style="height: 200px;">
+
+<pre>- Nomination
+  - Pre-Ranking
+    - Ranking
+      - Re-Ranking</pre>
+</div>
+
+<ul>
+<li>
+<p>Nomination O(billion) -&gt; O(k)</p>
+<ul>
+<li>CF</li>
+<li>Two Tower</li>
+<li>Subscribed Content Creator</li>
+</ul>
+</li>
+<li>
+<p>Pre-Ranking + Ranking O(k) -&gt; O(100)</p>
+<ul>
+<li>Use a neural network as follow:</li>
+<li>Input:
+<ul>
+<li>User Feature Embedding</li>
+<li>Item Feature Embedding</li>
+<li>Stats Embedding</li>
+</ul>
+</li>
+<li>Output:
+<ul>
+<li>Click-through rate</li>
+<li>Like Rate</li>
+<li>Collection Rate</li>
+<li>Forwarding Rate</li>
+<li>Completion Rate</li>
+</ul>
+</li>
+<li>Combine them and output a score</li>
+</ul>
+</li>
+<li>
+<p>Re-Ranking O(100) -&gt; O(80?) | for diversity</p>
+<ul>
+<li>Common methods:</li>
+<li>MMR</li>
+<li>DPP</li>
+<li>use pre-set rules to diversify notes</li>
+<li>insert ads, change sequence based on rules</li>
+</ul>
+</li>
+</ul>
+<h4 id="ab-test">A/B Test</h4>
+<ul>
+<li>Basic flow:
+<ul>
+<li>new GNN, Offline testing gives promising results</li>
+<li>online A/B test, vaildate</li>
+<li>tune hyper parameters</li>
+</ul>
+</li>
+<li>how to put user into buckets randomly
+<ul>
+<li>hash user id</li>
+<li>compute metrics for each bucket, DAU, etc</li>
+<li>experiment rollout</li>
+</ul>
+</li>
+<li>Overlapping experiment
+<ul>
+<li>overlapping: nomination, pre-ranking, ranking, re-ranking, user interface, ads</li>
+<li>each layer: mutually exclusive</li>
+<li>between layers: orthogonality</li>
+</ul>
+</li>
+<li>Holdout mechanism
+<ul>
+<li>10% as holdout bucket + 90% as overlapping experiment</li>
+<li>clean holdout and rollout experiment</li>
+</ul>
+</li>
+<li>Experiment Rollout</li>
+<li>Experiment Reverse</li>
+</ul>
 <h3 id="pre-ranking-rankingscoring">Pre-Ranking, Ranking(scoring)</h3>
 <h3 id="re-ranking">Re-Ranking</h3>
 
@@ -1043,7 +1344,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-01-rec-sys%2F&amp;text=Recommender&#43;System&#43;Study&#43;Notes"
+    href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-01-rec-sys%2F&amp;text=Recommender&#43;System&#43;Study&#43;Notes&#43;Basics&#43;%281%2F1%29"
     title="X"
     aria-label="X"
     id="share-link-x"
@@ -1061,7 +1362,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-01-rec-sys%2F&amp;t=Recommender&#43;System&#43;Study&#43;Notes"
+    href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-01-rec-sys%2F&amp;t=Recommender&#43;System&#43;Study&#43;Notes&#43;Basics&#43;%281%2F1%29"
     title="Facebook"
     aria-label="Facebook"
     id="share-link-facebook"
@@ -1081,7 +1382,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="mailto:?subject=Recommender%20System%20Study%20Notes&amp;body=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-01-rec-sys%2F"
+    href="mailto:?subject=Recommender%20System%20Study%20Notes%20Basics%20%281%2F1%29&amp;body=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-01-rec-sys%2F"
     title="Email"
     aria-label="Email"
     id="share-link-email"
@@ -1099,7 +1400,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-01-rec-sys%2F&amp;title=Recommender&#43;System&#43;Study&#43;Notes"
+    href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-01-rec-sys%2F&amp;title=Recommender&#43;System&#43;Study&#43;Notes&#43;Basics&#43;%281%2F1%29"
     title="LinkedIn"
     aria-label="LinkedIn"
     id="share-link-linkedin"
@@ -1117,7 +1418,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="whatsapp://send?text=Recommender&#43;System&#43;Study&#43;Notes%20http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-01-rec-sys%2F"
+    href="whatsapp://send?text=Recommender&#43;System&#43;Study&#43;Notes&#43;Basics&#43;%281%2F1%29%20http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-01-rec-sys%2F"
     title="WhatsApp"
     aria-label="WhatsApp"
     id="share-link-whatsapp"
@@ -1254,6 +1555,22 @@
   <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
   <div class="flex flex-col md:flex-row flex-nowrap justify-between gap-5 pt-2">
     <div class="">
+      
+        <a class="group flex no-underline" href="/post/2024-09-02-rec-sys-nomination-1/">
+          <span
+            class="mt-[-0.3rem] me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+          ><span class="ltr:inline rtl:hidden">&larr;</span></span>
+          <span class="flex flex-col">
+            <span
+              class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+            >Recommender System Study Notes - Nomination(1/)</span>
+            <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+              
+                Sep 1, 2024
+              
+            </span>
+          </span>
+        </a>
       
     </div>
     <div class="">

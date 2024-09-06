@@ -3,7 +3,7 @@
 title: Haihao Sun
 
 # Name pronunciation (optional)
-name_pronunciation: Haihao Sun
+name_pronunciation:
 
 # Full name (for SEO)
 first_name: Haihao

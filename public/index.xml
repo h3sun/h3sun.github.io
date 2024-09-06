@@ -34,11 +34,236 @@
     </item>
     
     <item>
-      <title>Recommender System Study Notes</title>
-      <link>http://localhost:1313/post/2024-09-01-rec-sys/</link>
+      <title>Recommender System Study Notes - Nomination(1/)</title>
+      <link>http://localhost:1313/post/2024-09-02-rec-sys-nomination-1/</link>
       <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-09-01-rec-sys/</guid>
-      <description>&lt;h3 id=&#34;nominationcandidate-generation&#34;&gt;Nomination(candidate generation)&lt;/h3&gt;
+      <guid>http://localhost:1313/post/2024-09-02-rec-sys-nomination-1/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Item CF&lt;/li&gt;
+&lt;li&gt;Swing&lt;/li&gt;
+&lt;li&gt;User CF&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;item-cf&#34;&gt;Item CF&lt;/h3&gt;
+&lt;h4 id=&#34;intuition&#34;&gt;Intuition&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;If user likes i1 and i1 is similar with i2 -&amp;gt; Then user is likely to like i2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;formula&#34;&gt;Formula&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;$score = \sum_j \text{like}(\text{user}, \text{item}\_j) \times \text{sim}(\text{item}\_j, \text{item})$, to compute Item CF score&lt;/li&gt;
+&lt;li&gt;$\text{sim}(i_1, i_2) = \frac{|\mathbf{v}|}{\sqrt{|\mathbf{w}_1| \cdot |\mathbf{w}_2|}}$, to compute similarity, w1 as the user who likes i1, w2 as the set, v as the intersection between i1 and i2.&lt;/li&gt;
+&lt;li&gt;$\text{sim}(i*1, i_2) = \frac{\sum*{v \in v} \text{like}(v, i*1) \cdot \text{like}(v, i_2)}{\sqrt{\sum*{u*1 \in w_1} \text{like}^2(u_1, i_1)} \cdot \sqrt{\sum*{u_2 \in w_2} \text{like}^2(u_2, i_2)}}$, to take like score into consideration).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;implementation&#34;&gt;Implementation&lt;/h4&gt;
+&lt;h5 id=&#34;offline&#34;&gt;Offline:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;User -&amp;gt; Item Indexing
+&lt;ul&gt;
+&lt;li&gt;return the last-n items with interaction that this user interacts with.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Item -&amp;gt; Item Indexing
+&lt;ul&gt;
+&lt;li&gt;compute sim (i, j) maybe maintaining User-&amp;gt;Item&lt;/li&gt;
+&lt;li&gt;for each item, find the cloest k items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;online-inference-user-id---100-items&#34;&gt;Online Inference: (user id -&amp;gt; 100 items)&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;user id -&amp;gt; last-n items&lt;/li&gt;
+&lt;li&gt;for each item in last-n, use item-item to find k items&lt;/li&gt;
+&lt;li&gt;Use score formula to compute n * k items&amp;rsquo; score&lt;/li&gt;
+&lt;li&gt;pick top 100, and output top 100 items as the nomination result in this Item CF Channel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;swing&#34;&gt;Swing&lt;/h3&gt;
+&lt;h4 id=&#34;intuition-1&#34;&gt;Intuition&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;If two items are not that relavant, but it got forwarded into a same small group, we want to lower the similarity score.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;formula-1&#34;&gt;Formula&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;u1 -&amp;gt; j1, u2 -&amp;gt; j2
+&lt;ul&gt;
+&lt;li&gt;$\text{overlap}(u_1, u_2) = |\mathcal{J}_1 \cap \mathcal{J}_2|$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;i1 -&amp;gt; w1, i2 -&amp;gt; w2, v = w1 ∩ w2
+&lt;ul&gt;
+&lt;li&gt;$\text{sim}(i_1, i_2) = \sum_{u_1 \in V} \sum_{u_2 \in V} \frac{1}{\alpha + \text{overlap}(u_1, u_2)}$, to compute similarity, a is a hyper-parameter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;if overlap is big, then the contribution to similarity becomes low&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;user-cf&#34;&gt;User CF&lt;/h3&gt;
+&lt;h4 id=&#34;intuition-2&#34;&gt;Intuition&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;I will like the notes which liked by someone who is similar to me.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;formula-2&#34;&gt;Formula&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Method1: like, collect, click notes are similar&lt;/li&gt;
+&lt;li&gt;Method2: Subscribed authors are similar&lt;/li&gt;
+&lt;li&gt;u1 -&amp;gt; j1, u2 -&amp;gt; j2, I = j1 ∩ j2, nl: the number of users who likes l
+&lt;ul&gt;
+&lt;li&gt;$sim = \text{sim}(u_1, u_2) = \frac{|I|}{\sqrt{|\mathcal{J}_1| \cdot |\mathcal{J}_2|}}$&lt;/li&gt;
+&lt;li&gt;$sim = \text{sim}(u_1, u_2) = \frac{\sum_{I \in I} \frac{1}{\log(1 + n_I)}}{\sqrt{|\mathcal{J}_1| \cdot |\mathcal{J}_2|}}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$score = \sum_j \text{sim(user, user}_j\text{)} \times \text{like(user}_j, \text{item)}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;implementation-1&#34;&gt;Implementation&lt;/h4&gt;
+&lt;h5 id=&#34;offline-1&#34;&gt;Offline:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;User -&amp;gt; Item Indexing
+&lt;ul&gt;
+&lt;li&gt;return the last-n items with interaction that this user interacts with.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;User -&amp;gt; User Indexing
+&lt;ul&gt;
+&lt;li&gt;compute sim (i, j)&lt;/li&gt;
+&lt;li&gt;for each user, find the cloest k users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;online&#34;&gt;Online:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;user-user indexing: id -&amp;gt; k cloest users&lt;/li&gt;
+&lt;li&gt;user-item indexing: for each user, find his/her last-n, use user-item to find n items&lt;/li&gt;
+&lt;li&gt;compute score: Use the formula to compute n * k items&amp;rsquo; score&lt;/li&gt;
+&lt;li&gt;rank: pick top 100, and output top 100 items as the nomination result in this User CF Channel&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recommender System Study Notes Basics (1/1)</title>
+      <link>http://localhost:1313/post/2024-09-01-rec-sys-basics-1/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-01-rec-sys-basics-1/</guid>
+      <description>&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
+&lt;div class=&#34;markmap&#34; style=&#34;height: 200px;&#34;&gt;
+
+&lt;pre&gt;- Impression
+  - Click
+    - ScrollToEnd
+      - Comment
+    - Like
+    - Collect
+    - Share&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;基础指标&#34;&gt;基础指标&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Click-through rate = Number of clicks / Number of impressions&lt;/li&gt;
+&lt;li&gt;Like rate = Number of likes / Number of impressions&lt;/li&gt;
+&lt;li&gt;Collection rate = Number of collections / Number of clicks&lt;/li&gt;
+&lt;li&gt;Forwarding rate = Number of forwards / Number of clicks&lt;/li&gt;
+&lt;li&gt;Completion rate = Number of times scrolled to the end / Number of clicks * f(Note length)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;北极星指标&#34;&gt;北极星指标&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;用户规模
+DAU daily active user
+MAU monthly active user&lt;/li&gt;
+&lt;li&gt;消费
+人均使用时长，人均阅读笔记数量&lt;/li&gt;
+&lt;li&gt;发布
+发布渗透率，人均发布量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;实验流程&#34;&gt;实验流程&lt;/h4&gt;
+&lt;div class=&#34;markmap&#34; style=&#34;height: 200px;&#34;&gt;
+
+&lt;pre&gt;- Offline Test
+  - A/B Test
+    - experiment rollout&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;chain-of-recommender-system&#34;&gt;Chain of Recommender System&lt;/h4&gt;
+&lt;div class=&#34;markmap&#34; style=&#34;height: 200px;&#34;&gt;
+
+&lt;pre&gt;- Nomination
+  - Pre-Ranking
+    - Ranking
+      - Re-Ranking&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Nomination O(billion) -&amp;gt; O(k)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CF&lt;/li&gt;
+&lt;li&gt;Two Tower&lt;/li&gt;
+&lt;li&gt;Subscribed Content Creator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pre-Ranking + Ranking O(k) -&amp;gt; O(100)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use a neural network as follow:&lt;/li&gt;
+&lt;li&gt;Input:
+&lt;ul&gt;
+&lt;li&gt;User Feature Embedding&lt;/li&gt;
+&lt;li&gt;Item Feature Embedding&lt;/li&gt;
+&lt;li&gt;Stats Embedding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Output:
+&lt;ul&gt;
+&lt;li&gt;Click-through rate&lt;/li&gt;
+&lt;li&gt;Like Rate&lt;/li&gt;
+&lt;li&gt;Collection Rate&lt;/li&gt;
+&lt;li&gt;Forwarding Rate&lt;/li&gt;
+&lt;li&gt;Completion Rate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Combine them and output a score&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Re-Ranking O(100) -&amp;gt; O(80?) | for diversity&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Common methods:&lt;/li&gt;
+&lt;li&gt;MMR&lt;/li&gt;
+&lt;li&gt;DPP&lt;/li&gt;
+&lt;li&gt;use pre-set rules to diversify notes&lt;/li&gt;
+&lt;li&gt;insert ads, change sequence based on rules&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ab-test&#34;&gt;A/B Test&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic flow:
+&lt;ul&gt;
+&lt;li&gt;new GNN, Offline testing gives promising results&lt;/li&gt;
+&lt;li&gt;online A/B test, vaildate&lt;/li&gt;
+&lt;li&gt;tune hyper parameters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;how to put user into buckets randomly
+&lt;ul&gt;
+&lt;li&gt;hash user id&lt;/li&gt;
+&lt;li&gt;compute metrics for each bucket, DAU, etc&lt;/li&gt;
+&lt;li&gt;experiment rollout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Overlapping experiment
+&lt;ul&gt;
+&lt;li&gt;overlapping: nomination, pre-ranking, ranking, re-ranking, user interface, ads&lt;/li&gt;
+&lt;li&gt;each layer: mutually exclusive&lt;/li&gt;
+&lt;li&gt;between layers: orthogonality&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Holdout mechanism
+&lt;ul&gt;
+&lt;li&gt;10% as holdout bucket + 90% as overlapping experiment&lt;/li&gt;
+&lt;li&gt;clean holdout and rollout experiment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Experiment Rollout&lt;/li&gt;
+&lt;li&gt;Experiment Reverse&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;pre-ranking-rankingscoring&#34;&gt;Pre-Ranking, Ranking(scoring)&lt;/h3&gt;
 &lt;h3 id=&#34;re-ranking&#34;&gt;Re-Ranking&lt;/h3&gt;
 </description>
