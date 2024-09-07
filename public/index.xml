@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Academic CV Theme</title>
+    <title>Haihao Sun&#39;s Homepage</title>
     <link>http://localhost:1313/</link>
       <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <description>Hugo Academic CV Theme</description>
+    <description>Haihao Sun&#39;s Homepage</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
-      <title>Hugo Academic CV Theme</title>
+      <title>Haihao Sun&#39;s Homepage</title>
       <link>http://localhost:1313/</link>
     </image>
     
@@ -30,6 +30,104 @@
 &lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://docs.hugoblox.com/reference/markdown/&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Further event details, including &lt;a href=&#34;https://docs.hugoblox.com/reference/markdown/&#34;&gt;page elements&lt;/a&gt; such as image galleries, can be added to the body of this page.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recommender System Study Notes - Nomination(3/)</title>
+      <link>http://localhost:1313/post/2024-09-03-rec-sys-nomination-3/</link>
+      <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-03-rec-sys-nomination-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recommender System Study Notes - Nomination(2/)</title>
+      <link>http://localhost:1313/post/2024-09-03-rec-sys-nomination-2/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-03-rec-sys-nomination-2/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Discrete Feature&lt;/li&gt;
+&lt;li&gt;Matrix Completion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;discrete-feature&#34;&gt;Discrete Feature&lt;/h3&gt;
+&lt;h4 id=&#34;example&#34;&gt;Example&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;sex&lt;/li&gt;
+&lt;li&gt;nationality&lt;/li&gt;
+&lt;li&gt;english words&lt;/li&gt;
+&lt;li&gt;item id&lt;/li&gt;
+&lt;li&gt;user id&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;how-to-encode-discrete-feature---vectorization&#34;&gt;How to encode discrete feature -&amp;gt; vectorization&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;one-hot encoding&lt;/li&gt;
+&lt;li&gt;embedding (*)
+&lt;ul&gt;
+&lt;li&gt;size: vector dimension * number of items&lt;/li&gt;
+&lt;li&gt;How to implement: TensorFlow, PyTorch -&amp;gt; embedding&lt;/li&gt;
+&lt;li&gt;embedding = Parameter matrix * one-hot encoding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;matrix-completion&#34;&gt;Matrix Completion&lt;/h3&gt;
+&lt;h4 id=&#34;intuition&#34;&gt;Intuition&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;item id -&amp;gt; embedding
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                     - cos(a, b)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    /
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;item id -&amp;gt; embedding
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;formula&#34;&gt;Formula&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;dataset = {u, i, y}&lt;/li&gt;
+&lt;li&gt;training, u -&amp;gt; au, i -&amp;gt; bi&lt;/li&gt;
+&lt;li&gt;optimization: $\min_{A, B} \sum_{\substack{(u, i, y) \in \Omega}} \left( y - \langle a_u, b_i \rangle \right)^2$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;proscons&#34;&gt;Pros/Cons&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Cons
+&lt;ul&gt;
+&lt;li&gt;It only uses ID embedding without item, user characteristics
+&lt;ul&gt;
+&lt;li&gt;item characteristics: label, key words&lt;/li&gt;
+&lt;li&gt;user characteristics: gender, age, geo, liked label&lt;/li&gt;
+&lt;li&gt;Two tower Model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Negative sample is wrong
+&lt;ul&gt;
+&lt;li&gt;Positive: User interacted, which is good&lt;/li&gt;
+&lt;li&gt;Negative: User did not interact, which is not correct&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Training
+&lt;ul&gt;
+&lt;li&gt;dot product is worse than cosine similarity&lt;/li&gt;
+&lt;li&gt;Loss(regression) is worse than cross entropy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;implementation&#34;&gt;Implementation&lt;/h4&gt;
+&lt;h5 id=&#34;offline&#34;&gt;Offline:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Learning A: user&lt;/li&gt;
+&lt;li&gt;Learning B: item&lt;/li&gt;
+&lt;li&gt;storing A into {user id: embedding} key-value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;online&#34;&gt;Online:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;user Id -&amp;gt; find a&amp;rsquo;s vector&lt;/li&gt;
+&lt;li&gt;nearest neighbour search, return the top 100 b whose &amp;lt;a, b&amp;gt; is max&lt;/li&gt;
+&lt;li&gt;Approximate Nearest Neighbor (ANN)
+&lt;ul&gt;
+&lt;li&gt;pre process the circile into sectors&lt;/li&gt;
+&lt;li&gt;pick a representative vector(indexing) represents the sector&lt;/li&gt;
+&lt;li&gt;find representative vector, then find vector in that sector instead of the whole circle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

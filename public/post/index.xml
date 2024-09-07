@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog | Hugo Academic CV Theme</title>
+    <title>Blog | Haihao Sun&#39;s Homepage</title>
     <link>http://localhost:1313/post/</link>
       <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Blog</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 03 Sep 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>Blog</title>
@@ -13,10 +13,212 @@
     </image>
     
     <item>
-      <title>Recommender System Study Notes</title>
-      <link>http://localhost:1313/post/2024-09-01-rec-sys/</link>
+      <title>Recommender System Study Notes - Nomination(3/)</title>
+      <link>http://localhost:1313/post/2024-09-03-rec-sys-nomination-3/</link>
+      <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-03-rec-sys-nomination-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recommender System Study Notes - Nomination(2/)</title>
+      <link>http://localhost:1313/post/2024-09-03-rec-sys-nomination-2/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-03-rec-sys-nomination-2/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Discrete Feature&lt;/li&gt;
+&lt;li&gt;Matrix Completion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;discrete-feature&#34;&gt;Discrete Feature&lt;/h3&gt;
+&lt;h4 id=&#34;example&#34;&gt;Example&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;sex&lt;/li&gt;
+&lt;li&gt;nationality&lt;/li&gt;
+&lt;li&gt;english words&lt;/li&gt;
+&lt;li&gt;item id&lt;/li&gt;
+&lt;li&gt;user id&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;how-to-encode-discrete-feature---vectorization&#34;&gt;How to encode discrete feature -&amp;gt; vectorization&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;one-hot encoding&lt;/li&gt;
+&lt;li&gt;embedding (*)
+&lt;ul&gt;
+&lt;li&gt;size: vector dimension * number of items&lt;/li&gt;
+&lt;li&gt;How to implement: TensorFlow, PyTorch -&amp;gt; embedding&lt;/li&gt;
+&lt;li&gt;embedding = Parameter matrix * one-hot encoding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;matrix-completion&#34;&gt;Matrix Completion&lt;/h3&gt;
+&lt;h4 id=&#34;intuition&#34;&gt;Intuition&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;item id -&amp;gt; embedding
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                     - cos(a, b)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    /
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;item id -&amp;gt; embedding
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;formula&#34;&gt;Formula&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;dataset = {u, i, y}&lt;/li&gt;
+&lt;li&gt;training, u -&amp;gt; au, i -&amp;gt; bi&lt;/li&gt;
+&lt;li&gt;optimization: $\min_{A, B} \sum_{\substack{(u, i, y) \in \Omega}} \left( y - \langle a_u, b_i \rangle \right)^2$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;proscons&#34;&gt;Pros/Cons&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Cons
+&lt;ul&gt;
+&lt;li&gt;It only uses ID embedding without item, user characteristics
+&lt;ul&gt;
+&lt;li&gt;item characteristics: label, key words&lt;/li&gt;
+&lt;li&gt;user characteristics: gender, age, geo, liked label&lt;/li&gt;
+&lt;li&gt;Two tower Model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Negative sample is wrong
+&lt;ul&gt;
+&lt;li&gt;Positive: User interacted, which is good&lt;/li&gt;
+&lt;li&gt;Negative: User did not interact, which is not correct&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Training
+&lt;ul&gt;
+&lt;li&gt;dot product is worse than cosine similarity&lt;/li&gt;
+&lt;li&gt;Loss(regression) is worse than cross entropy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;implementation&#34;&gt;Implementation&lt;/h4&gt;
+&lt;h5 id=&#34;offline&#34;&gt;Offline:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Learning A: user&lt;/li&gt;
+&lt;li&gt;Learning B: item&lt;/li&gt;
+&lt;li&gt;storing A into {user id: embedding} key-value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;online&#34;&gt;Online:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;user Id -&amp;gt; find a&amp;rsquo;s vector&lt;/li&gt;
+&lt;li&gt;nearest neighbour search, return the top 100 b whose &amp;lt;a, b&amp;gt; is max&lt;/li&gt;
+&lt;li&gt;Approximate Nearest Neighbor (ANN)
+&lt;ul&gt;
+&lt;li&gt;pre process the circile into sectors&lt;/li&gt;
+&lt;li&gt;pick a representative vector(indexing) represents the sector&lt;/li&gt;
+&lt;li&gt;find representative vector, then find vector in that sector instead of the whole circle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recommender System Study Notes - Nomination(1/)</title>
+      <link>http://localhost:1313/post/2024-09-02-rec-sys-nomination-1/</link>
       <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-09-01-rec-sys/</guid>
+      <guid>http://localhost:1313/post/2024-09-02-rec-sys-nomination-1/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Item CF&lt;/li&gt;
+&lt;li&gt;Swing&lt;/li&gt;
+&lt;li&gt;User CF&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;item-cf&#34;&gt;Item CF&lt;/h3&gt;
+&lt;h4 id=&#34;intuition&#34;&gt;Intuition&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;If user likes i1 and i1 is similar with i2 -&amp;gt; Then user is likely to like i2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;formula&#34;&gt;Formula&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;$score = \sum_j \text{like}(\text{user}, \text{item}\_j) \times \text{sim}(\text{item}\_j, \text{item})$, to compute Item CF score&lt;/li&gt;
+&lt;li&gt;$\text{sim}(i_1, i_2) = \frac{|\mathbf{v}|}{\sqrt{|\mathbf{w}_1| \cdot |\mathbf{w}_2|}}$, to compute similarity, w1 as the user who likes i1, w2 as the set, v as the intersection between i1 and i2.&lt;/li&gt;
+&lt;li&gt;$\text{sim}(i*1, i_2) = \frac{\sum*{v \in v} \text{like}(v, i*1) \cdot \text{like}(v, i_2)}{\sqrt{\sum*{u*1 \in w_1} \text{like}^2(u_1, i_1)} \cdot \sqrt{\sum*{u_2 \in w_2} \text{like}^2(u_2, i_2)}}$, to take like score into consideration).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;implementation&#34;&gt;Implementation&lt;/h4&gt;
+&lt;h5 id=&#34;offline&#34;&gt;Offline:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;User -&amp;gt; Item Indexing
+&lt;ul&gt;
+&lt;li&gt;return the last-n items with interaction that this user interacts with.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Item -&amp;gt; Item Indexing
+&lt;ul&gt;
+&lt;li&gt;compute sim (i, j) maybe maintaining User-&amp;gt;Item&lt;/li&gt;
+&lt;li&gt;for each item, find the cloest k items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;online-inference-user-id---100-items&#34;&gt;Online Inference: (user id -&amp;gt; 100 items)&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;user id -&amp;gt; last-n items&lt;/li&gt;
+&lt;li&gt;for each item in last-n, use item-item to find k items&lt;/li&gt;
+&lt;li&gt;Use score formula to compute n * k items&amp;rsquo; score&lt;/li&gt;
+&lt;li&gt;pick top 100, and output top 100 items as the nomination result in this Item CF Channel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;swing&#34;&gt;Swing&lt;/h3&gt;
+&lt;h4 id=&#34;intuition-1&#34;&gt;Intuition&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;If two items are not that relavant, but it got forwarded into a same small group, we want to lower the similarity score.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;formula-1&#34;&gt;Formula&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;u1 -&amp;gt; j1, u2 -&amp;gt; j2
+&lt;ul&gt;
+&lt;li&gt;$\text{overlap}(u_1, u_2) = |\mathcal{J}_1 \cap \mathcal{J}_2|$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;i1 -&amp;gt; w1, i2 -&amp;gt; w2, v = w1 ∩ w2
+&lt;ul&gt;
+&lt;li&gt;$\text{sim}(i_1, i_2) = \sum_{u_1 \in V} \sum_{u_2 \in V} \frac{1}{\alpha + \text{overlap}(u_1, u_2)}$, to compute similarity, a is a hyper-parameter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;if overlap is big, then the contribution to similarity becomes low&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;user-cf&#34;&gt;User CF&lt;/h3&gt;
+&lt;h4 id=&#34;intuition-2&#34;&gt;Intuition&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;I will like the notes which liked by someone who is similar to me.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;formula-2&#34;&gt;Formula&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Method1: like, collect, click notes are similar&lt;/li&gt;
+&lt;li&gt;Method2: Subscribed authors are similar&lt;/li&gt;
+&lt;li&gt;u1 -&amp;gt; j1, u2 -&amp;gt; j2, I = j1 ∩ j2, nl: the number of users who likes l
+&lt;ul&gt;
+&lt;li&gt;$sim = \text{sim}(u_1, u_2) = \frac{|I|}{\sqrt{|\mathcal{J}_1| \cdot |\mathcal{J}_2|}}$&lt;/li&gt;
+&lt;li&gt;$sim = \text{sim}(u_1, u_2) = \frac{\sum_{I \in I} \frac{1}{\log(1 + n_I)}}{\sqrt{|\mathcal{J}_1| \cdot |\mathcal{J}_2|}}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$score = \sum_j \text{sim(user, user}_j\text{)} \times \text{like(user}_j, \text{item)}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;implementation-1&#34;&gt;Implementation&lt;/h4&gt;
+&lt;h5 id=&#34;offline-1&#34;&gt;Offline:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;User -&amp;gt; Item Indexing
+&lt;ul&gt;
+&lt;li&gt;return the last-n items with interaction that this user interacts with.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;User -&amp;gt; User Indexing
+&lt;ul&gt;
+&lt;li&gt;compute sim (i, j)&lt;/li&gt;
+&lt;li&gt;for each user, find the cloest k users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;online&#34;&gt;Online:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;user-user indexing: id -&amp;gt; k cloest users&lt;/li&gt;
+&lt;li&gt;user-item indexing: for each user, find his/her last-n, use user-item to find n items&lt;/li&gt;
+&lt;li&gt;compute score: Use the formula to compute n * k items&amp;rsquo; score&lt;/li&gt;
+&lt;li&gt;rank: pick top 100, and output top 100 items as the nomination result in this User CF Channel&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recommender System Study Notes Basics (1/1)</title>
+      <link>http://localhost:1313/post/2024-09-01-rec-sys-basics-1/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-01-rec-sys-basics-1/</guid>
       <description>&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
 &lt;div class=&#34;markmap&#34; style=&#34;height: 200px;&#34;&gt;
 
@@ -139,13 +341,6 @@ MAU monthly active user&lt;/li&gt;
 &lt;li&gt;Experiment Rollout&lt;/li&gt;
 &lt;li&gt;Experiment Reverse&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;nominationcandidate-generation&#34;&gt;Nomination(candidate generation)&lt;/h3&gt;
-&lt;h4 id=&#34;item-cf&#34;&gt;Item CF&lt;/h4&gt;
-$$
-\[
-\sum_j \text{like(user, item}\_j\text{)} \times \text{sim(item}\_j, \text{ item)}
-\]
-$$
 &lt;h3 id=&#34;pre-ranking-rankingscoring&#34;&gt;Pre-Ranking, Ranking(scoring)&lt;/h3&gt;
 &lt;h3 id=&#34;re-ranking&#34;&gt;Re-Ranking&lt;/h3&gt;
 </description>
