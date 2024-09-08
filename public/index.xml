@@ -111,7 +111,66 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</description>
+&lt;h3 id=&#34;bloom-filter&#34;&gt;Bloom Filter&lt;/h3&gt;
+&lt;h4 id=&#34;intuition&#34;&gt;Intuition&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;If user has seen an item, then we do not recommend this item to user&lt;/li&gt;
+&lt;li&gt;For each user, record item that has been recommended(maybe for a month)&lt;/li&gt;
+&lt;li&gt;For each item, check if it&amp;rsquo;s been recommended before&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;basics&#34;&gt;Basics&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The Bloom filter determines whether an item ID is in the set of exposed items.&lt;/li&gt;
+&lt;li&gt;If the judgment is &amp;ldquo;no&amp;rdquo;, then the item is definitely not in the set.&lt;/li&gt;
+&lt;li&gt;If the judgment is &amp;ldquo;yes&amp;rdquo;, then the item is likely in the set. (There may be false positives, where an unexposed item is incorrectly judged as exposed and thus filtered out.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;heading&#34;&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The size of the exposed item set is \( n \), the dimensionality of the binary vector is \( m \), and \( k \) hash functions are used.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The false positive probability of the Bloom filter \( \delta \) is approximately:&lt;/p&gt;
+\[
+  \delta \approx \left( 1 - \exp\left( \frac{-kn}{m} \right) \right)^k
+  \]
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As \( n \) increases, the more 1&amp;rsquo;s there are in the vector, and the higher the false positive probability. (The probability that all \( k \) positions corresponding to unexposed items are set to 1 increases.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As \( m \) increases, the vector becomes longer, making hash collisions less likely.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If \( k \) is too large or too small, it is not ideal; \( k \) has an optimal value.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Exposed Filtering Path:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               +-------------+              +---------+              +-------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               |   Recall 1  |------------&amp;gt; | Sorting |------------&amp;gt; |   Item 1    |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               +-------------+              +---------+              +-------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               |   Recall 2  |                                                   |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               +-------------+                                                   |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               |   Recall 3  |                                                   |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               +-------------+                                                   v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                                           +-------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                                           |   Item 2    |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                                           +-------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                                           |     ...     |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                                           +-------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                                           |   Item q    |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                                           +-------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                      ^                                                        |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                      |                                                        |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;+------------------+  |                                                        |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| Binary Vector    |&amp;lt;-+                                                        |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;+------------------+                                                           v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                             +-------------------+     +-----------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                             | Bloom Filter      |&amp;lt;----| Real-time Processing   |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                             | (Exposure Filter) |     |  (Kafka + Flink)       |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                             +-------------------+     +-----------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>

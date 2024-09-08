@@ -39,7 +39,7 @@ sections:
 
         Fun fact: On average, American people relocate _11.7_ times in their lifetime. Surprisingly, I have already moved _8_ times.
 
-        Places where I have been lived for more than 2 weeks: Nanjing, San Diego, New Haven, New York, Mountain View, San Jose.
+        Places where I have been lived for more than 1 month: Nanjing, San Diego, New Haven, Beijing, Suzhou, Mountain View, San Jose ... What's next?
 
     design:
       columns: "1"

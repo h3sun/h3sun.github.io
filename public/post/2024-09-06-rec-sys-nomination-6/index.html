@@ -1124,6 +1124,15 @@
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
         <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#cache-nomination">Cache Nomination</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#bloom-filter">Bloom Filter</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#intuition">Intuition</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#basics">Basics</a>
       </li></ul>
 
   
@@ -1173,7 +1182,7 @@
         
         <span class="mx-1">·</span>
         <span class="mx-1">
-          1 min read
+          3 min read
         </span>
         
         </div>
@@ -1271,7 +1280,66 @@
 </ul>
 </li>
 </ul>
-
+<h3 id="bloom-filter">Bloom Filter</h3>
+<h4 id="intuition">Intuition</h4>
+<ul>
+<li>If user has seen an item, then we do not recommend this item to user</li>
+<li>For each user, record item that has been recommended(maybe for a month)</li>
+<li>For each item, check if it&rsquo;s been recommended before</li>
+</ul>
+<h4 id="basics">Basics</h4>
+<ul>
+<li>The Bloom filter determines whether an item ID is in the set of exposed items.</li>
+<li>If the judgment is &ldquo;no&rdquo;, then the item is definitely not in the set.</li>
+<li>If the judgment is &ldquo;yes&rdquo;, then the item is likely in the set. (There may be false positives, where an unexposed item is incorrectly judged as exposed and thus filtered out.)</li>
+</ul>
+<h4 id="heading"></h4>
+<ul>
+<li>
+<p>The size of the exposed item set is \( n \), the dimensionality of the binary vector is \( m \), and \( k \) hash functions are used.</p>
+</li>
+<li>
+<p>The false positive probability of the Bloom filter \( \delta \) is approximately:</p>
+\[
+  \delta \approx \left( 1 - \exp\left( \frac{-kn}{m} \right) \right)^k
+  \]
+</li>
+<li>
+<p>As \( n \) increases, the more 1&rsquo;s there are in the vector, and the higher the false positive probability. (The probability that all \( k \) positions corresponding to unexposed items are set to 1 increases.)</p>
+</li>
+<li>
+<p>As \( m \) increases, the vector becomes longer, making hash collisions less likely.</p>
+</li>
+<li>
+<p>If \( k \) is too large or too small, it is not ideal; \( k \) has an optimal value.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Exposed Filtering Path:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">               +-------------+              +---------+              +-------------+
+</span></span><span class="line"><span class="cl">               |   Recall 1  |------------&gt; | Sorting |------------&gt; |   Item 1    |
+</span></span><span class="line"><span class="cl">               +-------------+              +---------+              +-------------+
+</span></span><span class="line"><span class="cl">               |   Recall 2  |                                                   |
+</span></span><span class="line"><span class="cl">               +-------------+                                                   |
+</span></span><span class="line"><span class="cl">               |   Recall 3  |                                                   |
+</span></span><span class="line"><span class="cl">               +-------------+                                                   v
+</span></span><span class="line"><span class="cl">                                                                           +-------------+
+</span></span><span class="line"><span class="cl">                                                                           |   Item 2    |
+</span></span><span class="line"><span class="cl">                                                                           +-------------+
+</span></span><span class="line"><span class="cl">                                                                           |     ...     |
+</span></span><span class="line"><span class="cl">                                                                           +-------------+
+</span></span><span class="line"><span class="cl">                                                                           |   Item q    |
+</span></span><span class="line"><span class="cl">                                                                           +-------------+
+</span></span><span class="line"><span class="cl">                      ^                                                        |
+</span></span><span class="line"><span class="cl">                      |                                                        |
+</span></span><span class="line"><span class="cl">+------------------+  |                                                        |
+</span></span><span class="line"><span class="cl">| Binary Vector    |&lt;-+                                                        |
+</span></span><span class="line"><span class="cl">+------------------+                                                           v
+</span></span><span class="line"><span class="cl">                             +-------------------+     +-----------------------+
+</span></span><span class="line"><span class="cl">                             | Bloom Filter      |&lt;----| Real-time Processing   |
+</span></span><span class="line"><span class="cl">                             | (Exposure Filter) |     |  (Kafka + Flink)       |
+</span></span><span class="line"><span class="cl">                             +-------------------+     +-----------------------+
+</span></span></code></pre></div>
       </div>
 
       
