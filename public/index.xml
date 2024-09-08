@@ -34,15 +34,460 @@
     </item>
     
     <item>
-      <title>Recommender System Study Notes - Nomination(3/)</title>
-      <link>http://localhost:1313/post/2024-09-03-rec-sys-nomination-3/</link>
-      <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-09-03-rec-sys-nomination-3/</guid>
+      <title>Recommender System Study Notes - Nomination(6/6)</title>
+      <link>http://localhost:1313/post/2024-09-06-rec-sys-nomination-6/</link>
+      <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-06-rec-sys-nomination-6/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;GeoHash Nomination&lt;/li&gt;
+&lt;li&gt;Author Nomination
+&lt;ul&gt;
+&lt;li&gt;Subscribed Author&lt;/li&gt;
+&lt;li&gt;Interacted Author&lt;/li&gt;
+&lt;li&gt;Similar Author&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cache Nomination&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;geohash-nomination&#34;&gt;GeoHash Nomination&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Indexing
+&lt;ul&gt;
+&lt;li&gt;GeoHash -&amp;gt; Item with good quality(reverse chronological order)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;No personalized&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;subscribed-author-nomination&#34;&gt;Subscribed Author Nomination&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Indexing:
+&lt;ul&gt;
+&lt;li&gt;User -&amp;gt; subscribed authors&lt;/li&gt;
+&lt;li&gt;author -&amp;gt; uploaded items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Nomination:
+&lt;ul&gt;
+&lt;li&gt;User -&amp;gt; Subscribed Author -&amp;gt; New Item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;interacted-author-nomination&#34;&gt;Interacted Author Nomination&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;If someone likes/love/forward an item&lt;/li&gt;
+&lt;li&gt;Indexing:
+&lt;ul&gt;
+&lt;li&gt;User -&amp;gt; Interacted Author (update it)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Nomination:
+&lt;ul&gt;
+&lt;li&gt;User -&amp;gt; Interacted Author -&amp;gt; New Item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;similar-author-nomination&#34;&gt;Similar Author Nomination&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Indexing:
+&lt;ul&gt;
+&lt;li&gt;Author -&amp;gt; Similar Author&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Nomination:
+&lt;ul&gt;
+&lt;li&gt;User ID -&amp;gt; Liked Author -&amp;gt; Similar Author -&amp;gt; New Item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cache-nomination&#34;&gt;Cache Nomination&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Intuition: Use the previous ranking winning candidates discarded by re-ranking.&lt;/li&gt;
+&lt;li&gt;Top 50 items, but get discarded by re-ranking, go to nomination.&lt;/li&gt;
+&lt;li&gt;Cache is fixed. How to clear the cache
+&lt;ul&gt;
+&lt;li&gt;Got impressed&lt;/li&gt;
+&lt;li&gt;At most 10 times&lt;/li&gt;
+&lt;li&gt;At most 3 days&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recommender System Study Notes - Nomination(5/6)</title>
+      <link>http://localhost:1313/post/2024-09-05-rec-sys-nomination-5/</link>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-05-rec-sys-nomination-5/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Recommender System Study Notes - Nomination(2/)</title>
+      <title>Recommender System Study Notes - Nomination(4/6)</title>
+      <link>http://localhost:1313/post/2024-09-04-rec-sys-nomination-4/</link>
+      <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-04-rec-sys-nomination-4/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Two tower model full update/incremental update.
+&lt;ul&gt;
+&lt;li&gt;Online Nomination: Online compute user ID, ANN in stored vector database with item.&lt;/li&gt;
+&lt;li&gt;Full Update: 1 epoch, 1 day.&lt;/li&gt;
+&lt;li&gt;Incremental Update: Only upadte ID embedding, frozen the fully connected layer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Two tower model Self-supervised learning
+&lt;ul&gt;
+&lt;li&gt;Problem: Two tower cannot learn item with limited amount of clicks (data biased).&lt;/li&gt;
+&lt;li&gt;Self-supervised learning: random feature transformation&lt;/li&gt;
+&lt;li&gt;bi&amp;rsquo;, bi&amp;rsquo;&amp;rsquo; high similarity&lt;/li&gt;
+&lt;li&gt;bi&amp;rsquo;, bj&amp;rsquo;&amp;rsquo; low similarity&lt;/li&gt;
+&lt;li&gt;Training:
+&lt;ul&gt;
+&lt;li&gt;pick n (user - item) as a batch for training.&lt;/li&gt;
+&lt;li&gt;m items as a batch(uniform sampling) for self-supervised learning.&lt;/li&gt;
+&lt;li&gt;$\frac{1}{n} \sum_{i=1}^{n} L_{\text{main}}[i] + \alpha \cdot \frac{1}{m} \sum_{j=1}^{m} L_{\text{self}}[j]$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;online-nomination&#34;&gt;Online Nomination&lt;/h3&gt;
+&lt;h4 id=&#34;implementation&#34;&gt;Implementation&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Item
+&lt;ul&gt;
+&lt;li&gt;Use neural network to compute item b&amp;rsquo;s embedding.&lt;/li&gt;
+&lt;li&gt;Store them in vectorized databse (Milvus, Faiss, HnswLib).&lt;/li&gt;
+&lt;li&gt;Indexing, for ANN search.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;User
+&lt;ul&gt;
+&lt;li&gt;Use user ID, feature, etc to compute user a&amp;rsquo;s embedding.&lt;/li&gt;
+&lt;li&gt;ANN search
+&lt;ul&gt;
+&lt;li&gt;Use a as query.&lt;/li&gt;
+&lt;li&gt;Return the top k as return.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Why store item but compute user online?
+&lt;ul&gt;
+&lt;li&gt;User is only 1, item is O(b).&lt;/li&gt;
+&lt;li&gt;User often changes quickly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;model-update&#34;&gt;Model Update&lt;/h3&gt;
+&lt;h4 id=&#34;full-update-vs-incremental-update&#34;&gt;Full Update VS Incremental Update&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Full Update
+&lt;ul&gt;
+&lt;li&gt;Use yesterday&amp;rsquo;s tfrecord, train 1 epoch.&lt;/li&gt;
+&lt;li&gt;Update the new user neural network, store item data into database.&lt;/li&gt;
+&lt;li&gt;Easy to implement, easy requirement for the system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Incremental Update(online learning)
+&lt;ul&gt;
+&lt;li&gt;Why? User&amp;rsquo;s interest can change quickly.&lt;/li&gt;
+&lt;li&gt;Data streaming, TFRecord.&lt;/li&gt;
+&lt;li&gt;Online learning, gradient descent, only update ID Embedding, not other parameters in the neural network.&lt;/li&gt;
+&lt;li&gt;Update the new ID embedding.&lt;/li&gt;
+&lt;li&gt;To be discarded after full update.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Why only incremental update is not having the best result?
+&lt;ul&gt;
+&lt;li&gt;Hourly data is biased.&lt;/li&gt;
+&lt;li&gt;Full update: random shuffle, 1 epoch.&lt;/li&gt;
+&lt;li&gt;Incremental update: train from morning to night, this is not having the best result.&lt;/li&gt;
+&lt;li&gt;random shuffle makes a positive impact on the learning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;two-tower-model-self-supervised-learning&#34;&gt;Two tower model Self-supervised learning&lt;/h3&gt;
+&lt;h4 id=&#34;problem&#34;&gt;Problem&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The head effect in the recommendation system is severe:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A small number of items account for most of the clicks.&lt;/li&gt;
+&lt;li&gt;Most items have a low number of clicks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The features of high-click items are well-learned, but the features of long-tail items are not well-learned.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Self-supervised learning: data augumentation, to better learn long-tail items&amp;rsquo; embedding.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;intuition&#34;&gt;Intuition&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;A simple feature transformation will make minimal impact on their feature embeddings, and pairwise, the similarity still remains large.&lt;/li&gt;
+&lt;li&gt;i -&amp;gt; i&amp;rsquo; -&amp;gt; bi&amp;rsquo;, i -&amp;gt; i&amp;rsquo;&amp;rsquo; -&amp;gt; bi&amp;rsquo;&amp;rsquo;, j -&amp;gt; j&amp;rsquo; -&amp;gt; bj&amp;rsquo;, j -&amp;gt; j&amp;rsquo;&amp;rsquo;-&amp;gt;bj&#39;&#39;&lt;/li&gt;
+&lt;li&gt;i, bi&amp;rsquo; and bi&amp;rsquo;&amp;rsquo; has high similarity&lt;/li&gt;
+&lt;li&gt;i, j, bi&amp;rsquo; and bj&amp;rsquo;&amp;rsquo; has low similarity&lt;/li&gt;
+&lt;li&gt;cos(bi, bi&amp;rsquo;&amp;rsquo;) big, cos(bi&amp;rsquo;, bj&amp;rsquo;) small&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;methods&#34;&gt;Methods&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Random Mask&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Randomly pick labels, and set them to null.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Dropout&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Randomly dropout 50% label.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Complementary&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ID, Label, Keywords, City.&lt;/li&gt;
+&lt;li&gt;Randomly divide them into two {ID, keyword} and {Label, City}.&lt;/li&gt;
+&lt;li&gt;{ID, default, Keyword, default} -&amp;gt; Item embedding.&lt;/li&gt;
+&lt;li&gt;{default, Label, default, City} -&amp;gt; Item embedding.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Mask a set of correlated features&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;U = {Male, Female, Unisex}.&lt;/li&gt;
+&lt;li&gt;V = {Photography, Football, IT, Makeup}.&lt;/li&gt;
+&lt;li&gt;u = female, v = Makeup, p(u, v) is high.&lt;/li&gt;
+&lt;li&gt;u = female, v = IT, p(u, v) is low.&lt;/li&gt;
+&lt;li&gt;$MI(U, V) = \sum_{u \in U} \sum_{v \in V} p(u, v) \cdot \log \frac{p(u, v)}{p(u) \cdot p(v)}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Learning:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Assume there are a total of \( k \) features. Calculate the MI (Mutual Information) between any two features offline, resulting in a \( k \times k \) matrix.&lt;/li&gt;
+&lt;li&gt;Randomly select one feature as a seed and find the \( k/2 \) features most related to the seed.&lt;/li&gt;
+&lt;li&gt;Mask the seed and its related \( k/2 \) features, retaining the remaining \( k/2 \) features.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Training:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sampling m items as a batch&lt;/li&gt;
+&lt;li&gt;cos(bi&amp;rsquo;, bi&amp;rsquo;&amp;rsquo;) -&amp;gt; 1, other cos(bi&amp;rsquo;, bj&amp;rsquo;&amp;rsquo;) -&amp;gt; 0&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recommender System Study Notes - Nomination(3/6)</title>
+      <link>http://localhost:1313/post/2024-09-03-rec-sys-nomination-3/</link>
+      <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-03-rec-sys-nomination-3/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Two Tower Model - Architecture + Training&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pointwise Training
+&lt;ul&gt;
+&lt;li&gt;View nomination as binary classification&lt;/li&gt;
+&lt;li&gt;Sample: cos(a,b) -&amp;gt; +1, negative sample: cos(a, b) -&amp;gt; -1&lt;/li&gt;
+&lt;li&gt;Positive : negative = 1:2 / 1:3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Pairwise Training
+&lt;ul&gt;
+&lt;li&gt;Intuntion: cos(a, b+) &amp;gt; cos(a, b-)&lt;/li&gt;
+&lt;li&gt;Triplet hinge loss = max(0, cos(a, b-) + m - cos(a, b+))&lt;/li&gt;
+&lt;li&gt;Triplet logistic loss = log(1 + exp(σ) * cos(a, b-) - cos(a, b+))&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Listwise Training
+&lt;ul&gt;
+&lt;li&gt;CrossEntropyLoss&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Two Tower Model - Positive Samples + Negative Samples&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Positive Sample:
+&lt;ul&gt;
+&lt;li&gt;Impressed and clicked&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Negative Sample:&lt;/li&gt;
+&lt;li&gt;Easy negative sample:
+&lt;ul&gt;
+&lt;li&gt;All items&lt;/li&gt;
+&lt;li&gt;In-batch items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Hard negative sample:
+&lt;ul&gt;
+&lt;li&gt;Nominated, but discarded by ranking&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Mix easy and hard for training dataset&lt;/li&gt;
+&lt;li&gt;Wrong sampling:
+&lt;ul&gt;
+&lt;li&gt;Impressed, but not clicked (can be used for training ranking but not nomination)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;two-tower-modeldssm---architecture-and-training&#34;&gt;Two Tower Model(DSSM) - Architecture and Training&lt;/h3&gt;
+&lt;h4 id=&#34;two-tower-model-architecture&#34;&gt;Two Tower Model Architecture&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Neural Network
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    └── Concatenate
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        ├── Embedding Layer (User ID)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        │      └── Embedding (Vector Representation)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        ├── Embedding Layers (User Discrete Feature)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        │      └── Embedding (Vector Representation)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        └── Normalization, Binning, etc. (normalize to 1, put into buckets)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               └── User Continuous Features (Vector Representation)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;$\cos(a, b) = \frac{a \cdot b}{\|a\|_2 \cdot \|b\|_2}$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                            Cosine Similarity:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                  /    \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                /        \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                             a            b
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                          /                 \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;              Neural Network              Neural Network
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                /                                \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         Feature Transformation           Feature Transformation
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         /                                          \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;User ID, Discrete Features,                 Product ID, Discrete Features,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Continuous Features                         Continuous Features
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;two-tower-model-training&#34;&gt;Two Tower Model Training&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Pointwise (binary classification)&lt;/li&gt;
+&lt;li&gt;Pairwise&lt;/li&gt;
+&lt;li&gt;Listwise&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;pointwise-training&#34;&gt;Pointwise Training&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Intuition: View nomination as binary classification&lt;/li&gt;
+&lt;li&gt;positive sample: cos(a,b) -&amp;gt; +1, negative sample: cos(a, b) -&amp;gt; -1&lt;/li&gt;
+&lt;li&gt;positive : negative = 1:2 / 1:3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;pairwise-training&#34;&gt;Pairwise Training&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    cos(a, b⁺)          cos(a, b⁻)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    /      \            /      \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                   /        \          /        \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                b⁺               a                  b⁻
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        (Positive Sample)       (User)           (Negative Sample)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                |                  |                    |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        Neural Network      Neural Network     Neural Network
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                |                  |                    |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Feature Transformation   Feature Transformation Feature Transformation
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                |                  |                    |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Positive Item Feature     User Features          Negative Item Feature
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Intuntion: cos(a, b+) &amp;gt; cos(a, b-)&lt;/li&gt;
+&lt;li&gt;triplet hinge loss = max(0, cos(a, b-) + m - cos(a, b+))&lt;/li&gt;
+&lt;li&gt;triplet logistic loss = log(1 + exp(σ) * cos(a, b-) - cos(a, b+))&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;listwise-training&#34;&gt;Listwise Training&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CrossEntropyLoss(y, s) = -log(s⁺)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                       +-----------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                       |    CrossEntropyLoss   |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                       +-----------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                 |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                 |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                          +-------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                          |  Softmax Activation Function  |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                          +-------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                 |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      +------------+------------+-------------+ ... +------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      |            |            |             |     |            |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     s⁺         s⁻_1       s⁻_2         ...   s⁻_n
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; (Positive)    (Negative)  (Negative)        (Negative)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    |             |             |                     |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    |             |             |                     |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; cos(a, b⁺)   cos(a, b⁻_1)  cos(a, b⁻_2)   ...  cos(a, b⁻_n)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   |              |             |                     |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(Positive)    (Negative)   (Negative)         (Negative)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; Sample         Sample        Sample            Sample
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;two-tower-modeldssm---positive-samples--negative-samples&#34;&gt;Two Tower Model(DSSM) - Positive Samples + Negative Samples&lt;/h3&gt;
+&lt;h4 id=&#34;positive-samples&#34;&gt;Positive Samples&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;impressed and clicked&lt;/li&gt;
+&lt;li&gt;problem: 20% item takes 80% click&lt;/li&gt;
+&lt;li&gt;solution:
+&lt;ul&gt;
+&lt;li&gt;up-sampling: one sample appear multiple times&lt;/li&gt;
+&lt;li&gt;down-sampling: discard samples&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;negative-samples&#34;&gt;Negative Samples&lt;/h4&gt;
+&lt;h5 id=&#34;simple-negative-sampling-all-items&#34;&gt;Simple Negative Sampling: All Items&lt;/h5&gt;
+&lt;h6 id=&#34;uniform-sampling-unfair-to-unpopular-items&#34;&gt;Uniform Sampling: Unfair to unpopular items&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;Most positive samples are popular items.&lt;/li&gt;
+&lt;li&gt;If uniform sampling produces negative samples, most of the negative samples are unpopular items.&lt;/li&gt;
+&lt;li&gt;positive sample: popular items, negative sample: unpopular items, this is unfair.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;non-uniform-sampling-the-goal-is-to-suppress-popular-items&#34;&gt;Non-uniform Sampling: The goal is to suppress popular items&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;The probability of negative sampling is positively correlated with popularity (clicks).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sampling probability ∝ (clicks) ^ 0.75&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;simple-negative-sampling-negative-sample-within-a-batch&#34;&gt;Simple Negative Sampling: Negative Sample within a batch&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;user1 - item1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;user2 - item2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;user3 - item3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;user_n - item_n
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;one batch has n positive samples&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;one batch has n(n - 1) negative samples&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The probablity that an item appear in a batch is propotional to the number of times it clicked.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We aim to get it propotional to clicks^0.75.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;offline training cos(a, bi) - log(pi), pi ∝ clicks&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;online inference cos(a, bi)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;hard-negative-sampling&#34;&gt;Hard Negative Sampling&lt;/h4&gt;
+&lt;h5 id=&#34;hard-negative-samples&#34;&gt;Hard negative samples:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Items that are ranked and close to the target (relatively hard).&lt;/li&gt;
+&lt;li&gt;Items that are ranked far behind the target (extremely hard).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;binary-classification-for-positive-and-negative-samples&#34;&gt;Binary classification for positive and negative samples:&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;All items (simple): High classification accuracy.&lt;/li&gt;
+&lt;li&gt;Items that are ranked and close to the target (relatively hard): Easy to misclassify.&lt;/li&gt;
+&lt;li&gt;Items that are ranked far behind the target (extremely hard): Even easier to misclassify.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;datasets&#34;&gt;Datasets&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Mix negative samples&lt;/li&gt;
+&lt;li&gt;50% easy negative sample&lt;/li&gt;
+&lt;li&gt;50% hard negative sample&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recommender System Study Notes - Nomination(2/6)</title>
       <link>http://localhost:1313/post/2024-09-03-rec-sys-nomination-2/</link>
       <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/2024-09-03-rec-sys-nomination-2/</guid>
@@ -132,7 +577,7 @@
     </item>
     
     <item>
-      <title>Recommender System Study Notes - Nomination(1/)</title>
+      <title>Recommender System Study Notes - Nomination(1/6)</title>
       <link>http://localhost:1313/post/2024-09-02-rec-sys-nomination-1/</link>
       <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/2024-09-02-rec-sys-nomination-1/</guid>
@@ -369,17 +814,17 @@ MAU monthly active user&lt;/li&gt;
     
     <item>
       <title>Areas of Exploration and Growth</title>
-      <link>http://localhost:1313/post/2024-08-27/</link>
+      <link>http://localhost:1313/post/2024-08-27-area-of-growth/</link>
       <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-08-27/</guid>
+      <guid>http://localhost:1313/post/2024-08-27-area-of-growth/</guid>
       <description>&lt;h4 id=&#34;health-and-fitness&#34;&gt;Health and Fitness&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Gym&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;machine-learning&#34;&gt;Machine Learning&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Deep Learning&lt;/li&gt;
-&lt;li&gt;Neural Networks: Zero to Hero&lt;/li&gt;
+&lt;li&gt;Recommender System&lt;/li&gt;
+&lt;li&gt;CS224N: Natural Language Processing with Deep Learning&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;city-planning&#34;&gt;City Planning&lt;/h4&gt;
 &lt;ul&gt;
@@ -387,7 +832,7 @@ MAU monthly active user&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;mindset-through-reading-and-writing&#34;&gt;Mindset (through reading and writing)&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Read more books.&lt;/li&gt;
+&lt;li&gt;Thinking in system.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

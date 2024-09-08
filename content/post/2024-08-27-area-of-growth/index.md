@@ -16,8 +16,8 @@ image:
 
 #### Machine Learning
 
-- Deep Learning
-- Neural Networks: Zero to Hero
+- Recommender System
+- CS224N: Natural Language Processing with Deep Learning
 
 #### City Planning
 
@@ -25,4 +25,4 @@ image:
 
 #### Mindset (through reading and writing)
 
-- Read more books.
+- Thinking in system.
