@@ -1,5 +1,5 @@
 ---
-title: Recommender System Study Notes - Nomination(1/)
+title: Recommender System Study Notes - Nomination(1/6)
 summary: Item CF, Swing, User CF
 date: 2024-09-01
 authors:

@@ -1,5 +1,5 @@
 ---
-title: Recommender System Study Notes - Nomination(2/)
+title: Recommender System Study Notes - Nomination(2/6)
 summary: discrete feature, matrix completion
 date: 2024-09-02
 authors:
