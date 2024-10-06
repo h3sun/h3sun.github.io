@@ -34,10 +34,82 @@
     </item>
     
     <item>
-      <title>DDIA Chapter 5 - Partition</title>
-      <link>http://localhost:1313/post/2024-10-05-ddia-chapter-5/</link>
+      <title>DDIA Chapter 6 - Partition</title>
+      <link>http://localhost:1313/post/2024-10-06-ddia-chapter-6-partition/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-10-06-ddia-chapter-6-partition/</guid>
+      <description>&lt;h2 id=&#34;two-types-of-partition-techniques&#34;&gt;Two types of partition techniques&lt;/h2&gt;
+&lt;h3 id=&#34;key-range-partition&#34;&gt;Key Range Partition&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;How: [a-c], [d-e], &amp;hellip;&lt;/li&gt;
+&lt;li&gt;Pros: Efficient for range query.&lt;/li&gt;
+&lt;li&gt;Cons: Hot spot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hash-partition&#34;&gt;Hash Partition&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;How: hash first, then use range.&lt;/li&gt;
+&lt;li&gt;Pros: Distribute load evenly.&lt;/li&gt;
+&lt;li&gt;Cons: Range query is inefficient.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hybrid&#34;&gt;Hybrid&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;How: one part -&amp;gt; partition, the other part -&amp;gt; sort order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;partitioning-secondary-indexes&#34;&gt;Partitioning Secondary Indexes&lt;/h2&gt;
+&lt;h3 id=&#34;partitioning-secondary-indexes-by-document&#34;&gt;Partitioning Secondary Indexes by Document&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Database can perform indexing automatically.&lt;/li&gt;
+&lt;li&gt;Note: in KV-only DB, application level secondary indexing is prone to inconsistency.&lt;/li&gt;
+&lt;li&gt;Each partition maintains its own secondary indexes.&lt;/li&gt;
+&lt;li&gt;A.K.A. local index.&lt;/li&gt;
+&lt;li&gt;Need to send the query to all partitions, and combine all the results you get back (scatter/gather).&lt;/li&gt;
+&lt;li&gt;Read queries are expensive, and prone to latency amplification. But widely used.&lt;/li&gt;
+&lt;li&gt;Recommend structure the partitioning scheme so that secondary index queries can be served from a single partition.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;partitioning-secondary-indexes-by-term&#34;&gt;Partitioning Secondary Indexes by Term&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A global index must also be partitioned (term-partitioned).&lt;/li&gt;
+&lt;li&gt;Partition the index by the term itself, or using a hash of the term.&lt;/li&gt;
+&lt;li&gt;Pro: more efficient read (no scatter/gather).&lt;/li&gt;
+&lt;li&gt;Con: write slower and more complicated, require distributed transaction.&lt;/li&gt;
+&lt;li&gt;Updates to global secondary indexes are asynchronous, e.g., Amazon DynamoDB.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;strategies-for-rebalancing&#34;&gt;Strategies for Rebalancing&lt;/h2&gt;
+&lt;h3 id=&#34;how-not-to-do-it-hash-mod-n&#34;&gt;How not to do it: hash mod N&lt;/h3&gt;
+&lt;p&gt;Problem: move data more than necessary&lt;/p&gt;
+&lt;h3 id=&#34;fixed-number-of-partitions&#34;&gt;Fixed number of partitions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Create many more partitions than there are nodes, and assign several partitions to each node.&lt;/li&gt;
+&lt;li&gt;The new node can steal a few partitions from every existing node.&lt;/li&gt;
+&lt;li&gt;The number of partitions is usually fixed when the database is first set up and not changed afterward.&lt;/li&gt;
+&lt;li&gt;If partitions are very large, rebalancing and recovery from node failures become expensive. But if partitions are too small, they incur too much overhead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;request-routing&#34;&gt;Request Routing&lt;/h2&gt;
+&lt;h3 id=&#34;strategy-for-routing&#34;&gt;Strategy for routing&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Send requests to all nodes, and if we do not get result, reoute to next node.&lt;/li&gt;
+&lt;li&gt;Implement a routing tier which knows which node has the specific partition.&lt;/li&gt;
+&lt;li&gt;Client knows the partition.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;how-does-the-component-make-the-routing-decision&#34;&gt;How does the component make the routing decision&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Zookeeper which is a service that knows the partition.&lt;/li&gt;
+&lt;li&gt;Gossip protocol.&lt;/li&gt;
+&lt;li&gt;Mannual rebalance.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;source:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://xgwang.me/posts/ddia-6-partitioning/#intro&#34;&gt;https://xgwang.me/posts/ddia-6-partitioning/#intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ddia&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DDIA Chapter 5 - Repliation</title>
+      <link>http://localhost:1313/post/2024-10-05-ddia-chapter-5-replication/</link>
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-10-05-ddia-chapter-5/</guid>
+      <guid>http://localhost:1313/post/2024-10-05-ddia-chapter-5-replication/</guid>
       <description>&lt;h1 id=&#34;importance-of-replication&#34;&gt;Importance of Replication&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Fault Tolerance: keep the system running, even when one machine (or several machines) go down.&lt;/li&gt;

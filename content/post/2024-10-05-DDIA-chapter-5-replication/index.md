@@ -1,5 +1,5 @@
 ---
-title: DDIA Chapter 5 - Partition
+title: DDIA Chapter 5 - Repliation
 summary: This summarizes the DDIA chapter 5.
 date: 2024-10-05
 authors:

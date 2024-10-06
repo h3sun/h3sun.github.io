@@ -5,12 +5,63 @@
     <link>http://localhost:1313/post/</link>
       <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Blog</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 29 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>Blog</title>
       <link>http://localhost:1313/post/</link>
     </image>
+    
+    <item>
+      <title>DDIA Chapter 5 - Partition</title>
+      <link>http://localhost:1313/post/2024-10-05-ddia-chapter-5/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-10-05-ddia-chapter-5/</guid>
+      <description>&lt;h1 id=&#34;importance-of-replication&#34;&gt;Importance of Replication&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Fault Tolerance: keep the system running, even when one machine (or several machines) go down.&lt;/li&gt;
+&lt;li&gt;Disconnected operation: Allow an application to continue to work when there is a network interruption.&lt;/li&gt;
+&lt;li&gt;Latency: Placing data geographically close to users, so users can interact with it with a lower latency.&lt;/li&gt;
+&lt;li&gt;Scalability: Being able to handle higher volume of reads than a single machine could handle.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;three-main-approaches-to-replication&#34;&gt;Three main approaches to replication&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Single-leader replication: Clients send write operation to a single node(leader), which sends a stream of data change to other replicas(followers). Reads can be performed on any replica, but reads from followers might be stale.&lt;/li&gt;
+&lt;li&gt;Multi-leader replication: Clients send each write to onoe of several leader nodes, any of which can accept writes. The leaders send streams of data change events to each other and any follower nodes.&lt;/li&gt;
+&lt;li&gt;Leaderless replication: Clients send each write to several nodes, and read from several nodes in parallel in order to detect and correct nodes with stale data. w + r &amp;gt; n.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;three-interesting-effects-can-be-caused-by-replication-lag&#34;&gt;Three interesting effects can be caused by replication lag&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Read-after-write consistency&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Users should always see data that they submit themselves.&lt;/p&gt;
+&lt;p&gt;Solution:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When read something that user can modify, read from leader.&lt;/li&gt;
+&lt;li&gt;Track update time t, and from t to t + 1 minutes, read from leader(essentially wait for replica picking up the data from leader).&lt;/li&gt;
+&lt;li&gt;Track the logical timestamp and compare it with follower node, if smaller, than find another node.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Monotonic reads&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After users have seen the data at one point in time, they shouldn&amp;rsquo;t later see the data from ealier point in time.&lt;/p&gt;
+&lt;p&gt;Solution:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Always read from a single replica.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Consistent prefix reads&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Users should see data in a state that makes causal sense: for example, an answer should come after a question.&lt;/p&gt;
+&lt;p&gt;Solution:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Write to the same partition.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, we discussed the concurrency issues that are inherent in multi-leader and leaderless replication approaches: because such systems allow multiple writes to happen concurrently, conflicts may occur. We examined an algorithm that a database might use to determine whether one operation happened before another, or whether they happened concurrently. We also touched on methods for resolving conflicts by merging together concurrently written values.
+In the next chapter we will continue looking at data that is distributed across multiple machines, through the counterpart of replication: splitting a large dataset into partitions.&lt;/p&gt;
+&lt;p&gt;From DDIA chapter 5.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>谈谈户晨风</title>
