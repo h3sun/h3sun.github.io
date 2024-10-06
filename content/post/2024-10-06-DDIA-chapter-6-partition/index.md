@@ -1,6 +1,6 @@
 ---
 title: DDIA Chapter 6 - Partition
-summary: This summarizes the DDIA chapter 5.
+summary: This summarizes the DDIA chapter 6.
 date: 2024-10-06
 authors:
   - admin
