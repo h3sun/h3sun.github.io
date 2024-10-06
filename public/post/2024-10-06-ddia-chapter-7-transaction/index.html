@@ -41,10 +41,10 @@
   
     
   
-  <meta name="description" content="GeoHash Nomination, Author Nomination, Cache Nomination, Bloom Filter" />
+  <meta name="description" content="This summarizes the DDIA chapter 7." />
 
   
-  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/post/2024-09-06-rec-sys-nomination-6/" />
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/post/2024-10-06-ddia-chapter-7-transaction/" />
 
   
   
@@ -161,7 +161,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="http://localhost:1313/post/2024-09-06-rec-sys-nomination-6/" />
+  <link rel="canonical" href="http://localhost:1313/post/2024-10-06-ddia-chapter-7-transaction/" />
 
   
   
@@ -187,18 +187,18 @@
     <meta property="twitter:creator" content="@GetResearchDev" />
   
   <meta property="og:site_name" content="Haihao Sun&#39;s Homepage" />
-  <meta property="og:url" content="http://localhost:1313/post/2024-09-06-rec-sys-nomination-6/" />
-  <meta property="og:title" content="Recommender System Study Notes - Nomination(6/6) | Haihao Sun&#39;s Homepage" />
-  <meta property="og:description" content="GeoHash Nomination, Author Nomination, Cache Nomination, Bloom Filter" /><meta property="og:image" content="http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:url" content="http://localhost:1313/post/2024-10-06-ddia-chapter-7-transaction/" />
+  <meta property="og:title" content="DDIA Chapter 7 - Transaction | Haihao Sun&#39;s Homepage" />
+  <meta property="og:description" content="This summarizes the DDIA chapter 7." /><meta property="og:image" content="http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2024-09-06T00:00:00&#43;00:00"
+        content="2024-10-06T00:00:00&#43;00:00"
       />
     
-    <meta property="article:modified_time" content="2024-09-06T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2024-10-06T00:00:00&#43;00:00">
   
 
   
@@ -208,7 +208,7 @@
   
 
 
-  <title>Recommender System Study Notes - Nomination(6/6) | Haihao Sun&#39;s Homepage</title>
+  <title>DDIA Chapter 7 - Transaction | Haihao Sun&#39;s Homepage</title>
 
   
   
@@ -905,13 +905,58 @@
   >DDIA Chapter 6 - Partition
     </a>
               
-            </li><li class="flex flex-col "><a
+            </li><li class="flex flex-col open"><a
     class="hb-sidebar-custom-link
-      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+      sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900"
     href="/post/2024-10-06-ddia-chapter-7-transaction/"
     
   >DDIA Chapter 7 - Transaction
     </a>
+  
+    <ul class="hb-sidebar-mobile-toc"><li>
+              <a
+                href="#read-committed-to-combat-dirty-read"
+                class="hb-docs-link"
+              >Read Committed (To combat dirty read)</a>
+            </li>
+          <li>
+              <a
+                href="#snapshot-isolation-and-repeatable-read-to-combat-nonrepeatable-read"
+                class="hb-docs-link"
+              >Snapshot Isolation and Repeatable Read (To combat nonrepeatable read)</a>
+            </li>
+          <li>
+              <a
+                href="#preventing-lost-updates"
+                class="hb-docs-link"
+              >Preventing Lost Updates</a>
+            </li>
+          <li>
+              <a
+                href="#write-skew-and-phantoms"
+                class="hb-docs-link"
+              >Write Skew and Phantoms</a>
+            </li>
+          <li>
+              <a
+                href="#actual-serial-execution"
+                class="hb-docs-link"
+              >Actual Serial Execution</a>
+            </li>
+          <li>
+              <a
+                href="#two-phase-locking"
+                class="hb-docs-link"
+              >Two-Phase Locking</a>
+            </li>
+          <li>
+              <a
+                href="#serializable-snapshot-isolation-ssi"
+                class="hb-docs-link"
+              >Serializable Snapshot Isolation (SSI)</a>
+            </li>
+          </ul>
+  
               
             </li><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
@@ -929,22 +974,13 @@
   >谈谈户晨风
     </a>
               
-            </li><li class="flex flex-col open"><a
+            </li><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
-      sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900"
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
     href="/post/2024-09-06-rec-sys-nomination-6/"
     
   >Recommender System Study Notes - Nomination(6/6)
     </a>
-  
-    <ul class="hb-sidebar-mobile-toc"><li>
-              <a
-                href="#"
-                class="hb-docs-link"
-              ></a>
-            </li>
-          </ul>
-  
               
             </li><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
@@ -1146,30 +1182,51 @@
 
 
 
-  <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4 rtl:-ml-4"><p class="mb-4 font-semibold tracking-tight">On this page</p><ul>
+  <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4 rtl:-ml-4"><p class="mb-4 font-semibold tracking-tight">On this page</p><ul></ul><ul>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#geohash-nomination">GeoHash Nomination</a>
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#read-committed-to-combat-dirty-read">Read Committed (To combat dirty read)</a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#subscribed-author-nomination">Subscribed Author Nomination</a>
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#what-is-dirty-read">What is dirty read?</a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#interacted-author-nomination">Interacted Author Nomination</a>
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#implement-read-committed">Implement Read Committed</a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#similar-author-nomination">Similar Author Nomination</a>
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#snapshot-isolation-and-repeatable-read-to-combat-nonrepeatable-read">Snapshot Isolation and Repeatable Read (To combat nonrepeatable read)</a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#cache-nomination">Cache Nomination</a>
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#what-is-nonrepetabale-read">What is nonrepetabale read?</a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#bloom-filter">Bloom Filter</a>
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#snapshot-isoltion">Snapshot Isoltion</a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#intuition">Intuition</a>
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#preventing-lost-updates">Preventing Lost Updates</a>
+      </li></ul><ul>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#write-skew-and-phantoms">Write Skew and Phantoms</a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#basics">Basics</a>
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#actual-serial-execution">Actual Serial Execution</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#two-phase-locking">Two-Phase Locking</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#serializable-snapshot-isolation-ssi">Serializable Snapshot Isolation (SSI)</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#pessimistic-versus-optimistic-concurrency-control">Pessimistic versus optimistic concurrency control</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#detecting-stale-mvcc-reads">Detecting stale MVCC reads</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#detecting-writes-that-affect-prior-reads">Detecting writes that affect prior reads</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#performance-of-serializable-snapshot-isolation">Performance of serializable snapshot isolation</a>
       </li></ul>
 
   
@@ -1199,10 +1256,10 @@
 
       
 
-      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Recommender System Study Notes - Nomination(6/6)</h1>
+      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">DDIA Chapter 7 - Transaction</h1>
 
       <div class="mt-4 mb-16">
-      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">Sep 6, 2024</span><span class="mx-1">·</span>
+      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">Oct 6, 2024</span><span class="mx-1">·</span>
         
           
           
@@ -1244,145 +1301,111 @@
       
 
       <div class="prose prose-slate lg:prose-xl dark:prose-invert">
-        <ul>
-<li>GeoHash Nomination</li>
-<li>Author Nomination
+        <h1 id="acid">ACID</h1>
 <ul>
-<li>Subscribed Author</li>
-<li>Interacted Author</li>
-<li>Similar Author</li>
+<li>Atomicity: All or nothing.</li>
+<li>Consistency: Invariants must always be true (This is from application perspective).</li>
+<li>Isolation: Transactions are executed in a way that their operations do not interfere with each other.</li>
+<li>Durability: Once commited, data will not be forgetten.</li>
 </ul>
-</li>
-<li>Cache Nomination</li>
-</ul>
-<h3 id="geohash-nomination">GeoHash Nomination</h3>
+<h1 id="weak-isolation-levels">Weak Isolation Levels</h1>
+<h2 id="read-committed-to-combat-dirty-read">Read Committed (To combat dirty read)</h2>
+<h3 id="what-is-dirty-read">What is dirty read?</h3>
 <ul>
-<li>Indexing
+<li>Read a data that has not been committed by a transaction.</li>
+</ul>
+<h3 id="implement-read-committed">Implement Read Committed</h3>
 <ul>
-<li>GeoHash -&gt; Item with good quality(reverse chronological order)</li>
+<li>Lock on write.</li>
+<li>Lock on read (performance hit).</li>
+<li>Remember old + new value.</li>
 </ul>
-</li>
-<li>No personalized</li>
-</ul>
-<h3 id="subscribed-author-nomination">Subscribed Author Nomination</h3>
+<h2 id="snapshot-isolation-and-repeatable-read-to-combat-nonrepeatable-read">Snapshot Isolation and Repeatable Read (To combat nonrepeatable read)</h2>
+<h3 id="what-is-nonrepetabale-read">What is nonrepetabale read?</h3>
 <ul>
-<li>Indexing:
+<li>Alice read account A (50).</li>
+<li>Alice executes A = A + 10.</li>
+<li>Alice executes B = B - 10.</li>
+<li>Alice read account B (40).</li>
+<li>Sum is 50 + 40 which is not 100.</li>
+</ul>
+<h3 id="snapshot-isoltion">Snapshot Isoltion</h3>
 <ul>
-<li>User -&gt; subscribed authors</li>
-<li>author -&gt; uploaded items</li>
+<li>Each transaction sees the snapshot of the database at the start of the transaction.</li>
+<li>MVCC(Multi-version concurrency control).</li>
 </ul>
-</li>
-<li>Nomination:
+<h2 id="preventing-lost-updates">Preventing Lost Updates</h2>
 <ul>
-<li>User -&gt; Subscribed Author -&gt; New Item</li>
+<li>Atomic write operations.</li>
+<li>Explicit locking.</li>
+<li>Automotically deleting lost updates.</li>
+<li>Compare and set.</li>
+<li>Conflict resolution and replica.</li>
 </ul>
-</li>
-</ul>
-<h3 id="interacted-author-nomination">Interacted Author Nomination</h3>
+<h1 id="serializability-to-combat-phantom">Serializability (To combat phantom)</h1>
+<h2 id="write-skew-and-phantoms">Write Skew and Phantoms</h2>
+<p>oncall-rotation in emergency room.</p>
 <ul>
-<li>If someone likes/love/forward an item</li>
-<li>Indexing:
+<li>Pattern</li>
+</ul>
+<ol>
+<li>select</li>
+<li>decide how to continue based on select</li>
+<li>INSERT, UPDATE, DELTE</li>
+</ol>
+<h2 id="actual-serial-execution">Actual Serial Execution</h2>
 <ul>
-<li>User -&gt; Interacted Author (update it)</li>
+<li>Every transaction must be small and fast for performance.</li>
+<li>It is limited to use cases where the active dataset can fit in memory for performance.</li>
+<li>Write throughput must be low enough to be handled on a single CPU core, or else transactions need to be partitioned without requiring cross-partition coordination.</li>
+<li>Cross-partition transactions are possible, but there is a hard limit to the extent to which they can be used.</li>
 </ul>
-</li>
-<li>Nomination:
+<h2 id="two-phase-locking">Two-Phase Locking</h2>
 <ul>
-<li>User -&gt; Interacted Author -&gt; New Item</li>
+<li>read: acquire the lock in shared mode, if exclusive exists, wait.</li>
+<li>write: acquire the lock in exclusive mode.</li>
+<li>read then write: acquire in shared first, then exclusive.</li>
+<li>commit or abort: hold until abort or commit</li>
 </ul>
-</li>
-</ul>
-<h3 id="similar-author-nomination">Similar Author Nomination</h3>
+<h2 id="serializable-snapshot-isolation-ssi">Serializable Snapshot Isolation (SSI)</h2>
 <ul>
-<li>Indexing:
+<li>Goal of SSI: full serializability with small perf penalty compared to snapshot isolation.</li>
+<li>Used in single-node (PostgreSQL 9.1) and distributed, may become the new default.</li>
+</ul>
+<h3 id="pessimistic-versus-optimistic-concurrency-control">Pessimistic versus optimistic concurrency control</h3>
 <ul>
-<li>Author -&gt; Similar Author</li>
+<li>2PL is pessimistic</li>
+<li>SSI is optimistic: When a transaction wants to commit, the database checks isolation violations</li>
+<li>If there is enough spare capacity, and if contention between transactions is not too high, optimistic concurrency control techniques perform better</li>
+<li>On top of snapshot isolation, SSI adds an algorithm for detecting serialization conflicts among writes and determining which transactions to abort.</li>
 </ul>
-</li>
-<li>Nomination:
+<p>Decisions based on an outdated premise
+A premise is a fact that was true at the beginning of the transaction. How does the database know if a query result might have changed?</p>
+<h3 id="detecting-stale-mvcc-reads">Detecting stale MVCC reads</h3>
 <ul>
-<li>User ID -&gt; Liked Author -&gt; Similar Author -&gt; New Item</li>
+<li>The database needs to track when a transaction ignores another transaction’s writes due to MVCC visibility rules.</li>
+<li>Check any of the ignored writes has been committed and abort if so.</li>
+<li>Wait until committing because read-only won&rsquo;t write skew, and other write transactions might be aborted.</li>
+<li>Key is to avoid unnecessary aborts.</li>
 </ul>
-</li>
-</ul>
-<h3 id="cache-nomination">Cache Nomination</h3>
+<h3 id="detecting-writes-that-affect-prior-reads">Detecting writes that affect prior reads</h3>
 <ul>
-<li>Intuition: Use the previous ranking winning candidates discarded by re-ranking.</li>
-<li>Top 50 items, but get discarded by re-ranking, go to nomination.</li>
-<li>Cache is fixed. How to clear the cache
+<li>DB track ephemeral information about transactions reading data on index, or at the table level.</li>
+<li>When a transaction writes, notify existing reader of that data</li>
+<li>Check other writes commit when commit reader.</li>
+<li>(Question: why not notify existing reader when committing the other writer transaction?)</li>
+</ul>
+<h3 id="performance-of-serializable-snapshot-isolation">Performance of serializable snapshot isolation</h3>
 <ul>
-<li>Got impressed</li>
-<li>At most 10 times</li>
-<li>At most 3 days</li>
+<li>The rate of aborts significantly affects the overall performance of SSI. So SSI requires short read-write transactions, but it&rsquo;s less sensitive to slow transactions than two-phase locking or serial execution.</li>
 </ul>
-</li>
-</ul>
-<h3 id="bloom-filter">Bloom Filter</h3>
-<h4 id="intuition">Intuition</h4>
-<ul>
-<li>If user has seen an item, then we do not recommend this item to user</li>
-<li>For each user, record item that has been recommended(maybe for a month)</li>
-<li>For each item, check if it&rsquo;s been recommended before</li>
-</ul>
-<h4 id="basics">Basics</h4>
-<ul>
-<li>The Bloom filter determines whether an item ID is in the set of exposed items.</li>
-<li>If the judgment is &ldquo;no&rdquo;, then the item is definitely not in the set.</li>
-<li>If the judgment is &ldquo;yes&rdquo;, then the item is likely in the set. (There may be false positives, where an unexposed item is incorrectly judged as exposed and thus filtered out.)</li>
-</ul>
-<h4 id="heading"></h4>
-<ul>
-<li>
-<p>The size of the exposed item set is \( n \), the dimensionality of the binary vector is \( m \), and \( k \) hash functions are used.</p>
-</li>
-<li>
-<p>The false positive probability of the Bloom filter \( \delta \) is approximately:</p>
-\[
-  \delta \approx \left( 1 - \exp\left( \frac{-kn}{m} \right) \right)^k
-  \]
-</li>
-<li>
-<p>As \( n \) increases, the more 1&rsquo;s there are in the vector, and the higher the false positive probability. (The probability that all \( k \) positions corresponding to unexposed items are set to 1 increases.)</p>
-</li>
-<li>
-<p>As \( m \) increases, the vector becomes longer, making hash collisions less likely.</p>
-</li>
-<li>
-<p>If \( k \) is too large or too small, it is not ideal; \( k \) has an optimal value.</p>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Exposed Filtering Path:
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">               +-------------+              +---------+              +-------------+
-</span></span><span class="line"><span class="cl">               |   Recall 1  |------------&gt; | Sorting |------------&gt; |   Item 1    |
-</span></span><span class="line"><span class="cl">               +-------------+              +---------+              +-------------+
-</span></span><span class="line"><span class="cl">               |   Recall 2  |                                                   |
-</span></span><span class="line"><span class="cl">               +-------------+                                                   |
-</span></span><span class="line"><span class="cl">               |   Recall 3  |                                                   |
-</span></span><span class="line"><span class="cl">               +-------------+                                                   v
-</span></span><span class="line"><span class="cl">                                                                           +-------------+
-</span></span><span class="line"><span class="cl">                                                                           |   Item 2    |
-</span></span><span class="line"><span class="cl">                                                                           +-------------+
-</span></span><span class="line"><span class="cl">                                                                           |     ...     |
-</span></span><span class="line"><span class="cl">                                                                           +-------------+
-</span></span><span class="line"><span class="cl">                                                                           |   Item q    |
-</span></span><span class="line"><span class="cl">                                                                           +-------------+
-</span></span><span class="line"><span class="cl">                      ^                                                        |
-</span></span><span class="line"><span class="cl">                      |                                                        |
-</span></span><span class="line"><span class="cl">+------------------+  |                                                        |
-</span></span><span class="line"><span class="cl">| Binary Vector    |&lt;-+                                                        |
-</span></span><span class="line"><span class="cl">+------------------+                                                           v
-</span></span><span class="line"><span class="cl">                             +-------------------+     +-----------------------+
-</span></span><span class="line"><span class="cl">                             | Bloom Filter      |&lt;----| Real-time Processing   |
-</span></span><span class="line"><span class="cl">                             | (Exposure Filter) |     |  (Kafka + Flink)       |
-</span></span><span class="line"><span class="cl">                             +-------------------+     +-----------------------+
-</span></span></code></pre></div>
+
       </div>
 
       
-  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2024-09-06T00:00:00.000Z">
+  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2024-10-06T00:00:00.000Z">
     <span>Last updated on</span>
-    Sep 6, 2024</time>
+    Oct 6, 2024</time>
 
       <div class="container mx-auto prose prose-slate lg:prose-xl dark:prose-invert mt-5">
         
@@ -1394,7 +1417,7 @@
 
 <div class="flex justify-center">
   
-  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/machine-learning/">Machine-Learning</a>
+  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/system-design/">System-Design</a>
   
 </div>
 
@@ -1412,7 +1435,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-06-rec-sys-nomination-6%2F&amp;text=Recommender&#43;System&#43;Study&#43;Notes&#43;-&#43;Nomination%286%2F6%29"
+    href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-10-06-ddia-chapter-7-transaction%2F&amp;text=DDIA&#43;Chapter&#43;7&#43;-&#43;Transaction"
     title="X"
     aria-label="X"
     id="share-link-x"
@@ -1430,7 +1453,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-06-rec-sys-nomination-6%2F&amp;t=Recommender&#43;System&#43;Study&#43;Notes&#43;-&#43;Nomination%286%2F6%29"
+    href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-10-06-ddia-chapter-7-transaction%2F&amp;t=DDIA&#43;Chapter&#43;7&#43;-&#43;Transaction"
     title="Facebook"
     aria-label="Facebook"
     id="share-link-facebook"
@@ -1450,7 +1473,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="mailto:?subject=Recommender%20System%20Study%20Notes%20-%20Nomination%286%2F6%29&amp;body=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-06-rec-sys-nomination-6%2F"
+    href="mailto:?subject=DDIA%20Chapter%207%20-%20Transaction&amp;body=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-10-06-ddia-chapter-7-transaction%2F"
     title="Email"
     aria-label="Email"
     id="share-link-email"
@@ -1468,7 +1491,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-06-rec-sys-nomination-6%2F&amp;title=Recommender&#43;System&#43;Study&#43;Notes&#43;-&#43;Nomination%286%2F6%29"
+    href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-10-06-ddia-chapter-7-transaction%2F&amp;title=DDIA&#43;Chapter&#43;7&#43;-&#43;Transaction"
     title="LinkedIn"
     aria-label="LinkedIn"
     id="share-link-linkedin"
@@ -1486,7 +1509,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="whatsapp://send?text=Recommender&#43;System&#43;Study&#43;Notes&#43;-&#43;Nomination%286%2F6%29%20http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-06-rec-sys-nomination-6%2F"
+    href="whatsapp://send?text=DDIA&#43;Chapter&#43;7&#43;-&#43;Transaction%20http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-10-06-ddia-chapter-7-transaction%2F"
     title="WhatsApp"
     aria-label="WhatsApp"
     id="share-link-whatsapp"
@@ -1624,17 +1647,17 @@
   <div class="flex flex-col md:flex-row flex-nowrap justify-between gap-5 pt-2">
     <div class="">
       
-        <a class="group flex no-underline" href="/post/2024-09-29-%E6%88%B7%E6%99%A8%E9%A3%8E/">
+        <a class="group flex no-underline" href="/post/2024-10-06-ddia-chapter-6-partition/">
           <span
             class="mt-[-0.3rem] me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
           ><span class="ltr:inline rtl:hidden">&larr;</span></span>
           <span class="flex flex-col">
             <span
               class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-            >谈谈户晨风</span>
+            >DDIA Chapter 6 - Partition</span>
             <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
               
-                Sep 29, 2024
+                Oct 6, 2024
               
             </span>
           </span>
@@ -1643,15 +1666,15 @@
     </div>
     <div class="">
       
-        <a class="group flex text-right no-underline" href="/post/2024-09-05-rec-sys-nomination-5/">
+        <a class="group flex text-right no-underline" href="/post/2024-10-05-ddia-chapter-5-replication/">
           <span class="flex flex-col">
             <span
               class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-            >Recommender System Study Notes - Nomination(5/6)</span
+            >DDIA Chapter 5 - Repliation</span
             >
             <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
               
-                Sep 5, 2024
+                Oct 5, 2024
               
             </span>
           </span>
