@@ -112,3 +112,8 @@ A premise is a fact that was true at the beginning of the transaction. How does 
 ### Performance of serializable snapshot isolation
 
 - The rate of aborts significantly affects the overall performance of SSI. So SSI requires short read-write transactions, but it's less sensitive to slow transactions than two-phase locking or serial execution.
+
+source:
+
+- https://xgwang.me/posts/ddia-7-transactions/
+- ddia
