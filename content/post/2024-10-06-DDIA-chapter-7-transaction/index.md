@@ -1,7 +1,7 @@
 ---
 title: DDIA Chapter 7 - Transaction
 summary: This summarizes the DDIA chapter 7.
-date: 2024-10-06
+date: 2024-10-07
 authors:
   - admin
 tags:
