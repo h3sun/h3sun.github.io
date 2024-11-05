@@ -34,73 +34,90 @@
     </item>
     
     <item>
-      <title>DDIA Chapter 6 - Partition</title>
-      <link>http://localhost:1313/post/2024-10-06-ddia-chapter-6-partition/</link>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-10-06-ddia-chapter-6-partition/</guid>
-      <description>&lt;h2 id=&#34;two-types-of-partition-techniques&#34;&gt;Two types of partition techniques&lt;/h2&gt;
-&lt;h3 id=&#34;key-range-partition&#34;&gt;Key Range Partition&lt;/h3&gt;
+      <title>Poker Strategy</title>
+      <link>http://localhost:1313/post/2024-11-04-poker/</link>
+      <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-11-04-poker/</guid>
+      <description>&lt;h1 id=&#34;mdf-and-bf&#34;&gt;MDF and BF&lt;/h1&gt;
+&lt;h2 id=&#34;mdf&#34;&gt;MDF&lt;/h2&gt;
+&lt;p&gt;If the pot is \(1\) and your opponent&amp;rsquo;s bet is \(b\):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;How: [a-c], [d-e], &amp;hellip;&lt;/li&gt;
-&lt;li&gt;Pros: Efficient for range query.&lt;/li&gt;
-&lt;li&gt;Cons: Hot spot.&lt;/li&gt;
+&lt;li&gt;you fold: \(1 \times (1 - p(\text{you-call}))\)&lt;/li&gt;
+&lt;li&gt;you call: \(-b \times p(\text{you-call})\)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;hash-partition&#34;&gt;Hash Partition&lt;/h3&gt;
+&lt;p&gt;Adding both cases:&lt;/p&gt;
+\[
+1 \times (1 - p(\text{you-call})) + p(\text{you-call}) \times -b = 0
+\]
+&lt;p&gt;Simplifying:&lt;/p&gt;
+\[
+1 = (1 + b) \times p(\text{you-call})
+\]
+&lt;p&gt;Solving for \(p(\text{you-call})\):&lt;/p&gt;
+\[
+p(\text{you-call}) = \frac{1}{1 + b}
+\]
+&lt;h2 id=&#34;bluffing-frequency&#34;&gt;Bluffing Frequency&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;How: hash first, then use range.&lt;/li&gt;
-&lt;li&gt;Pros: Distribute load evenly.&lt;/li&gt;
-&lt;li&gt;Cons: Range query is inefficient.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;hybrid&#34;&gt;Hybrid&lt;/h3&gt;
+&lt;li&gt;0.75 pot
 &lt;ul&gt;
-&lt;li&gt;How: one part -&amp;gt; partition, the other part -&amp;gt; sort order.&lt;/li&gt;
+&lt;li&gt;flop 67%&lt;/li&gt;
+&lt;li&gt;turn 50%&lt;/li&gt;
+&lt;li&gt;river 33%&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;partitioning-secondary-indexes&#34;&gt;Partitioning Secondary Indexes&lt;/h2&gt;
-&lt;h3 id=&#34;partitioning-secondary-indexes-by-document&#34;&gt;Partitioning Secondary Indexes by Document&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Database can perform indexing automatically.&lt;/li&gt;
-&lt;li&gt;Note: in KV-only DB, application level secondary indexing is prone to inconsistency.&lt;/li&gt;
-&lt;li&gt;Each partition maintains its own secondary indexes.&lt;/li&gt;
-&lt;li&gt;A.K.A. local index.&lt;/li&gt;
-&lt;li&gt;Need to send the query to all partitions, and combine all the results you get back (scatter/gather).&lt;/li&gt;
-&lt;li&gt;Read queries are expensive, and prone to latency amplification. But widely used.&lt;/li&gt;
-&lt;li&gt;Recommend structure the partitioning scheme so that secondary index queries can be served from a single partition.&lt;/li&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;partitioning-secondary-indexes-by-term&#34;&gt;Partitioning Secondary Indexes by Term&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;A global index must also be partitioned (term-partitioned).&lt;/li&gt;
-&lt;li&gt;Partition the index by the term itself, or using a hash of the term.&lt;/li&gt;
-&lt;li&gt;Pro: more efficient read (no scatter/gather).&lt;/li&gt;
-&lt;li&gt;Con: write slower and more complicated, require distributed transaction.&lt;/li&gt;
-&lt;li&gt;Updates to global secondary indexes are asynchronous, e.g., Amazon DynamoDB.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;strategies-for-rebalancing&#34;&gt;Strategies for Rebalancing&lt;/h2&gt;
-&lt;h3 id=&#34;how-not-to-do-it-hash-mod-n&#34;&gt;How not to do it: hash mod N&lt;/h3&gt;
-&lt;p&gt;Problem: move data more than necessary&lt;/p&gt;
-&lt;h3 id=&#34;fixed-number-of-partitions&#34;&gt;Fixed number of partitions&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Create many more partitions than there are nodes, and assign several partitions to each node.&lt;/li&gt;
-&lt;li&gt;The new node can steal a few partitions from every existing node.&lt;/li&gt;
-&lt;li&gt;The number of partitions is usually fixed when the database is first set up and not changed afterward.&lt;/li&gt;
-&lt;li&gt;If partitions are very large, rebalancing and recovery from node failures become expensive. But if partitions are too small, they incur too much overhead.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;request-routing&#34;&gt;Request Routing&lt;/h2&gt;
-&lt;h3 id=&#34;strategy-for-routing&#34;&gt;Strategy for routing&lt;/h3&gt;
+&lt;h1 id=&#34;how-to-bet&#34;&gt;How to bet&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;Send requests to all nodes, and if we do not get result, reoute to next node.&lt;/li&gt;
-&lt;li&gt;Implement a routing tier which knows which node has the specific partition.&lt;/li&gt;
-&lt;li&gt;Client knows the partition.&lt;/li&gt;
+&lt;li&gt;Size&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;how-does-the-component-make-the-routing-decision&#34;&gt;How does the component make the routing decision&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Zookeeper which is a service that knows the partition.&lt;/li&gt;
-&lt;li&gt;Gossip protocol.&lt;/li&gt;
-&lt;li&gt;Mannual rebalance.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;source:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://xgwang.me/posts/ddia-6-partitioning/#intro&#34;&gt;https://xgwang.me/posts/ddia-6-partitioning/#intro&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;ddia&lt;/li&gt;
+&lt;li&gt;If you have nuts advantage, bet bigger.&lt;/li&gt;
+&lt;li&gt;If you do not have nuts advantage, bet smaller.&lt;/li&gt;
+&lt;li&gt;Nuts advantage: when you have more combinations of super strong hands (two-pair or better) than his opponent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Find Value Cards&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The inequality \( \text{Equity} &gt; 1 - \frac{1}{2(1+b)} \) suggests a threshold where a player’s equity (their share of the pot if the hand goes to showdown) should exceed a certain value in order for them to make a profitable move, such as calling or betting.&lt;/p&gt;
+&lt;p&gt;To understand this better, we can break it down:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Setting Up the Inequality&lt;/strong&gt;: The right side, \(1 - \frac{1}{2(1+b)}\), provides a boundary value. This boundary depends on the size of the bet \(b\) relative to the pot (normalized to 1).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Interpretation of the Threshold&lt;/strong&gt;: If a player’s equity in the hand is greater than \(1 - \frac{1}{2(1+b)}\), then their hand is likely profitable enough to proceed with aggressive action, such as betting or calling.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Breakdown of the Expression&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For larger bets \(b\), \( \frac{1}{2(1+b)} \) becomes smaller, and therefore \(1 - \frac{1}{2(1+b)}\) approaches 1. This implies that when the bet is large, the player needs a higher equity to continue.&lt;/li&gt;
+&lt;li&gt;For smaller bets \(b\), \( \frac{1}{2(1+b)} \) is larger, meaning that \(1 - \frac{1}{2(1+b)}\) is lower. In this case, a player can proceed with lower equity since the risk is relatively lower.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Value bet&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;If I check, the remaining streets &amp;lt; biggest that I can get, I 100% bet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;What to bluff&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Backdoor Draw&lt;/li&gt;
+&lt;li&gt;Frontdoor Draw&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;exploitation&#34;&gt;exploitation&lt;/h2&gt;
+&lt;h3 id=&#34;call&#34;&gt;Call&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;If opponent bluff too much, call, otherwise not (BF to check)&lt;/li&gt;
+&lt;li&gt;Only call one street.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;bluff&#34;&gt;Bluff&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;If your opponent is calling too much, do not bluff, otherwise, bluff (MDF to check)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -108,7 +125,7 @@
     <item>
       <title>DDIA Chapter 7 - Transaction</title>
       <link>http://localhost:1313/post/2024-10-06-ddia-chapter-7-transaction/</link>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/2024-10-06-ddia-chapter-7-transaction/</guid>
       <description>&lt;h1 id=&#34;acid&#34;&gt;ACID&lt;/h1&gt;
 &lt;ul&gt;
@@ -207,6 +224,83 @@ A premise is a fact that was true at the beginning of the transaction. How does 
 &lt;h3 id=&#34;performance-of-serializable-snapshot-isolation&#34;&gt;Performance of serializable snapshot isolation&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The rate of aborts significantly affects the overall performance of SSI. So SSI requires short read-write transactions, but it&amp;rsquo;s less sensitive to slow transactions than two-phase locking or serial execution.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;source:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://xgwang.me/posts/ddia-7-transactions/&#34;&gt;https://xgwang.me/posts/ddia-7-transactions/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ddia&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DDIA Chapter 6 - Partition</title>
+      <link>http://localhost:1313/post/2024-10-06-ddia-chapter-6-partition/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-10-06-ddia-chapter-6-partition/</guid>
+      <description>&lt;h2 id=&#34;two-types-of-partition-techniques&#34;&gt;Two types of partition techniques&lt;/h2&gt;
+&lt;h3 id=&#34;key-range-partition&#34;&gt;Key Range Partition&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;How: [a-c], [d-e], &amp;hellip;&lt;/li&gt;
+&lt;li&gt;Pros: Efficient for range query.&lt;/li&gt;
+&lt;li&gt;Cons: Hot spot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hash-partition&#34;&gt;Hash Partition&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;How: hash first, then use range.&lt;/li&gt;
+&lt;li&gt;Pros: Distribute load evenly.&lt;/li&gt;
+&lt;li&gt;Cons: Range query is inefficient.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hybrid&#34;&gt;Hybrid&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;How: one part -&amp;gt; partition, the other part -&amp;gt; sort order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;partitioning-secondary-indexes&#34;&gt;Partitioning Secondary Indexes&lt;/h2&gt;
+&lt;h3 id=&#34;partitioning-secondary-indexes-by-document&#34;&gt;Partitioning Secondary Indexes by Document&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Database can perform indexing automatically.&lt;/li&gt;
+&lt;li&gt;Note: in KV-only DB, application level secondary indexing is prone to inconsistency.&lt;/li&gt;
+&lt;li&gt;Each partition maintains its own secondary indexes.&lt;/li&gt;
+&lt;li&gt;A.K.A. local index.&lt;/li&gt;
+&lt;li&gt;Need to send the query to all partitions, and combine all the results you get back (scatter/gather).&lt;/li&gt;
+&lt;li&gt;Read queries are expensive, and prone to latency amplification. But widely used.&lt;/li&gt;
+&lt;li&gt;Recommend structure the partitioning scheme so that secondary index queries can be served from a single partition.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;partitioning-secondary-indexes-by-term&#34;&gt;Partitioning Secondary Indexes by Term&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A global index must also be partitioned (term-partitioned).&lt;/li&gt;
+&lt;li&gt;Partition the index by the term itself, or using a hash of the term.&lt;/li&gt;
+&lt;li&gt;Pro: more efficient read (no scatter/gather).&lt;/li&gt;
+&lt;li&gt;Con: write slower and more complicated, require distributed transaction.&lt;/li&gt;
+&lt;li&gt;Updates to global secondary indexes are asynchronous, e.g., Amazon DynamoDB.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;strategies-for-rebalancing&#34;&gt;Strategies for Rebalancing&lt;/h2&gt;
+&lt;h3 id=&#34;how-not-to-do-it-hash-mod-n&#34;&gt;How not to do it: hash mod N&lt;/h3&gt;
+&lt;p&gt;Problem: move data more than necessary&lt;/p&gt;
+&lt;h3 id=&#34;fixed-number-of-partitions&#34;&gt;Fixed number of partitions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Create many more partitions than there are nodes, and assign several partitions to each node.&lt;/li&gt;
+&lt;li&gt;The new node can steal a few partitions from every existing node.&lt;/li&gt;
+&lt;li&gt;The number of partitions is usually fixed when the database is first set up and not changed afterward.&lt;/li&gt;
+&lt;li&gt;If partitions are very large, rebalancing and recovery from node failures become expensive. But if partitions are too small, they incur too much overhead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;request-routing&#34;&gt;Request Routing&lt;/h2&gt;
+&lt;h3 id=&#34;strategy-for-routing&#34;&gt;Strategy for routing&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Send requests to all nodes, and if we do not get result, reoute to next node.&lt;/li&gt;
+&lt;li&gt;Implement a routing tier which knows which node has the specific partition.&lt;/li&gt;
+&lt;li&gt;Client knows the partition.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;how-does-the-component-make-the-routing-decision&#34;&gt;How does the component make the routing decision&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Zookeeper which is a service that knows the partition.&lt;/li&gt;
+&lt;li&gt;Gossip protocol.&lt;/li&gt;
+&lt;li&gt;Mannual rebalance.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;source:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://xgwang.me/posts/ddia-6-partitioning/#intro&#34;&gt;https://xgwang.me/posts/ddia-6-partitioning/#intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ddia&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

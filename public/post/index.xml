@@ -5,7 +5,7 @@
     <link>http://localhost:1313/post/</link>
       <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Blog</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>Blog</title>
@@ -13,10 +13,202 @@
     </image>
     
     <item>
-      <title>DDIA Chapter 5 - Partition</title>
-      <link>http://localhost:1313/post/2024-10-05-ddia-chapter-5/</link>
+      <title>Poker Strategy</title>
+      <link>http://localhost:1313/post/2024-11-04-poker/</link>
+      <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-11-04-poker/</guid>
+      <description>&lt;p&gt;test&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DDIA Chapter 7 - Transaction</title>
+      <link>http://localhost:1313/post/2024-10-06-ddia-chapter-7-transaction/</link>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-10-06-ddia-chapter-7-transaction/</guid>
+      <description>&lt;h1 id=&#34;acid&#34;&gt;ACID&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Atomicity: All or nothing.&lt;/li&gt;
+&lt;li&gt;Consistency: Invariants must always be true (This is from application perspective).&lt;/li&gt;
+&lt;li&gt;Isolation: Transactions are executed in a way that their operations do not interfere with each other.&lt;/li&gt;
+&lt;li&gt;Durability: Once commited, data will not be forgetten.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;weak-isolation-levels&#34;&gt;Weak Isolation Levels&lt;/h1&gt;
+&lt;h2 id=&#34;read-committed-to-combat-dirty-read&#34;&gt;Read Committed (To combat dirty read)&lt;/h2&gt;
+&lt;h3 id=&#34;what-is-dirty-read&#34;&gt;What is dirty read?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Read a data that has not been committed by a transaction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;implement-read-committed&#34;&gt;Implement Read Committed&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Lock on write.&lt;/li&gt;
+&lt;li&gt;Lock on read (performance hit).&lt;/li&gt;
+&lt;li&gt;Remember old + new value.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;snapshot-isolation-and-repeatable-read-to-combat-nonrepeatable-read&#34;&gt;Snapshot Isolation and Repeatable Read (To combat nonrepeatable read)&lt;/h2&gt;
+&lt;h3 id=&#34;what-is-nonrepetabale-read&#34;&gt;What is nonrepetabale read?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Alice read account A (50).&lt;/li&gt;
+&lt;li&gt;Alice executes A = A + 10.&lt;/li&gt;
+&lt;li&gt;Alice executes B = B - 10.&lt;/li&gt;
+&lt;li&gt;Alice read account B (40).&lt;/li&gt;
+&lt;li&gt;Sum is 50 + 40 which is not 100.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;snapshot-isoltion&#34;&gt;Snapshot Isoltion&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Each transaction sees the snapshot of the database at the start of the transaction.&lt;/li&gt;
+&lt;li&gt;MVCC(Multi-version concurrency control).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;preventing-lost-updates&#34;&gt;Preventing Lost Updates&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Atomic write operations.&lt;/li&gt;
+&lt;li&gt;Explicit locking.&lt;/li&gt;
+&lt;li&gt;Automotically deleting lost updates.&lt;/li&gt;
+&lt;li&gt;Compare and set.&lt;/li&gt;
+&lt;li&gt;Conflict resolution and replica.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;serializability-to-combat-phantom&#34;&gt;Serializability (To combat phantom)&lt;/h1&gt;
+&lt;h2 id=&#34;write-skew-and-phantoms&#34;&gt;Write Skew and Phantoms&lt;/h2&gt;
+&lt;p&gt;oncall-rotation in emergency room.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pattern&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;select&lt;/li&gt;
+&lt;li&gt;decide how to continue based on select&lt;/li&gt;
+&lt;li&gt;INSERT, UPDATE, DELTE&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;actual-serial-execution&#34;&gt;Actual Serial Execution&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Every transaction must be small and fast for performance.&lt;/li&gt;
+&lt;li&gt;It is limited to use cases where the active dataset can fit in memory for performance.&lt;/li&gt;
+&lt;li&gt;Write throughput must be low enough to be handled on a single CPU core, or else transactions need to be partitioned without requiring cross-partition coordination.&lt;/li&gt;
+&lt;li&gt;Cross-partition transactions are possible, but there is a hard limit to the extent to which they can be used.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;two-phase-locking&#34;&gt;Two-Phase Locking&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;read: acquire the lock in shared mode, if exclusive exists, wait.&lt;/li&gt;
+&lt;li&gt;write: acquire the lock in exclusive mode.&lt;/li&gt;
+&lt;li&gt;read then write: acquire in shared first, then exclusive.&lt;/li&gt;
+&lt;li&gt;commit or abort: hold until abort or commit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;serializable-snapshot-isolation-ssi&#34;&gt;Serializable Snapshot Isolation (SSI)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Goal of SSI: full serializability with small perf penalty compared to snapshot isolation.&lt;/li&gt;
+&lt;li&gt;Used in single-node (PostgreSQL 9.1) and distributed, may become the new default.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pessimistic-versus-optimistic-concurrency-control&#34;&gt;Pessimistic versus optimistic concurrency control&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;2PL is pessimistic&lt;/li&gt;
+&lt;li&gt;SSI is optimistic: When a transaction wants to commit, the database checks isolation violations&lt;/li&gt;
+&lt;li&gt;If there is enough spare capacity, and if contention between transactions is not too high, optimistic concurrency control techniques perform better&lt;/li&gt;
+&lt;li&gt;On top of snapshot isolation, SSI adds an algorithm for detecting serialization conflicts among writes and determining which transactions to abort.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Decisions based on an outdated premise
+A premise is a fact that was true at the beginning of the transaction. How does the database know if a query result might have changed?&lt;/p&gt;
+&lt;h3 id=&#34;detecting-stale-mvcc-reads&#34;&gt;Detecting stale MVCC reads&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The database needs to track when a transaction ignores another transaction’s writes due to MVCC visibility rules.&lt;/li&gt;
+&lt;li&gt;Check any of the ignored writes has been committed and abort if so.&lt;/li&gt;
+&lt;li&gt;Wait until committing because read-only won&amp;rsquo;t write skew, and other write transactions might be aborted.&lt;/li&gt;
+&lt;li&gt;Key is to avoid unnecessary aborts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;detecting-writes-that-affect-prior-reads&#34;&gt;Detecting writes that affect prior reads&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;DB track ephemeral information about transactions reading data on index, or at the table level.&lt;/li&gt;
+&lt;li&gt;When a transaction writes, notify existing reader of that data&lt;/li&gt;
+&lt;li&gt;Check other writes commit when commit reader.&lt;/li&gt;
+&lt;li&gt;(Question: why not notify existing reader when committing the other writer transaction?)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;performance-of-serializable-snapshot-isolation&#34;&gt;Performance of serializable snapshot isolation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The rate of aborts significantly affects the overall performance of SSI. So SSI requires short read-write transactions, but it&amp;rsquo;s less sensitive to slow transactions than two-phase locking or serial execution.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;source:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://xgwang.me/posts/ddia-7-transactions/&#34;&gt;https://xgwang.me/posts/ddia-7-transactions/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ddia&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DDIA Chapter 6 - Partition</title>
+      <link>http://localhost:1313/post/2024-10-06-ddia-chapter-6-partition/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-10-06-ddia-chapter-6-partition/</guid>
+      <description>&lt;h2 id=&#34;two-types-of-partition-techniques&#34;&gt;Two types of partition techniques&lt;/h2&gt;
+&lt;h3 id=&#34;key-range-partition&#34;&gt;Key Range Partition&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;How: [a-c], [d-e], &amp;hellip;&lt;/li&gt;
+&lt;li&gt;Pros: Efficient for range query.&lt;/li&gt;
+&lt;li&gt;Cons: Hot spot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hash-partition&#34;&gt;Hash Partition&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;How: hash first, then use range.&lt;/li&gt;
+&lt;li&gt;Pros: Distribute load evenly.&lt;/li&gt;
+&lt;li&gt;Cons: Range query is inefficient.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hybrid&#34;&gt;Hybrid&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;How: one part -&amp;gt; partition, the other part -&amp;gt; sort order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;partitioning-secondary-indexes&#34;&gt;Partitioning Secondary Indexes&lt;/h2&gt;
+&lt;h3 id=&#34;partitioning-secondary-indexes-by-document&#34;&gt;Partitioning Secondary Indexes by Document&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Database can perform indexing automatically.&lt;/li&gt;
+&lt;li&gt;Note: in KV-only DB, application level secondary indexing is prone to inconsistency.&lt;/li&gt;
+&lt;li&gt;Each partition maintains its own secondary indexes.&lt;/li&gt;
+&lt;li&gt;A.K.A. local index.&lt;/li&gt;
+&lt;li&gt;Need to send the query to all partitions, and combine all the results you get back (scatter/gather).&lt;/li&gt;
+&lt;li&gt;Read queries are expensive, and prone to latency amplification. But widely used.&lt;/li&gt;
+&lt;li&gt;Recommend structure the partitioning scheme so that secondary index queries can be served from a single partition.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;partitioning-secondary-indexes-by-term&#34;&gt;Partitioning Secondary Indexes by Term&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A global index must also be partitioned (term-partitioned).&lt;/li&gt;
+&lt;li&gt;Partition the index by the term itself, or using a hash of the term.&lt;/li&gt;
+&lt;li&gt;Pro: more efficient read (no scatter/gather).&lt;/li&gt;
+&lt;li&gt;Con: write slower and more complicated, require distributed transaction.&lt;/li&gt;
+&lt;li&gt;Updates to global secondary indexes are asynchronous, e.g., Amazon DynamoDB.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;strategies-for-rebalancing&#34;&gt;Strategies for Rebalancing&lt;/h2&gt;
+&lt;h3 id=&#34;how-not-to-do-it-hash-mod-n&#34;&gt;How not to do it: hash mod N&lt;/h3&gt;
+&lt;p&gt;Problem: move data more than necessary&lt;/p&gt;
+&lt;h3 id=&#34;fixed-number-of-partitions&#34;&gt;Fixed number of partitions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Create many more partitions than there are nodes, and assign several partitions to each node.&lt;/li&gt;
+&lt;li&gt;The new node can steal a few partitions from every existing node.&lt;/li&gt;
+&lt;li&gt;The number of partitions is usually fixed when the database is first set up and not changed afterward.&lt;/li&gt;
+&lt;li&gt;If partitions are very large, rebalancing and recovery from node failures become expensive. But if partitions are too small, they incur too much overhead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;request-routing&#34;&gt;Request Routing&lt;/h2&gt;
+&lt;h3 id=&#34;strategy-for-routing&#34;&gt;Strategy for routing&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Send requests to all nodes, and if we do not get result, reoute to next node.&lt;/li&gt;
+&lt;li&gt;Implement a routing tier which knows which node has the specific partition.&lt;/li&gt;
+&lt;li&gt;Client knows the partition.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;how-does-the-component-make-the-routing-decision&#34;&gt;How does the component make the routing decision&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Zookeeper which is a service that knows the partition.&lt;/li&gt;
+&lt;li&gt;Gossip protocol.&lt;/li&gt;
+&lt;li&gt;Mannual rebalance.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;source:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://xgwang.me/posts/ddia-6-partitioning/#intro&#34;&gt;https://xgwang.me/posts/ddia-6-partitioning/#intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ddia&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DDIA Chapter 5 - Repliation</title>
+      <link>http://localhost:1313/post/2024-10-05-ddia-chapter-5-replication/</link>
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-10-05-ddia-chapter-5/</guid>
+      <guid>http://localhost:1313/post/2024-10-05-ddia-chapter-5-replication/</guid>
       <description>&lt;h1 id=&#34;importance-of-replication&#34;&gt;Importance of Replication&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Fault Tolerance: keep the system running, even when one machine (or several machines) go down.&lt;/li&gt;
