@@ -56,5 +56,12 @@ After the citywalk, we went back to City Hotel, I said farewell to him, and he d
 
 # Day3
 
-Waked up at 1:30AM, and
-Slept from 5:00AM to 7:00AM, I waked up again, feeling lucid.
+Waked up at 1:30AM, and then Slept from 5:00AM to 7:00AM, I waked up again, feeling lucid.
+
+Had an egg crepe in the morning, then went to the Shanghai World Financial Center where Google's office located. Then I spent some time in the office, hopping between 60F and 64F, had lunch at Hai Cafe at 62F. Stayed there until 6:00PM for the night view.
+
+I met my parents at 6:30 PM at City Hotel. We were all overcome with emotion and cried when we saw each other. The bond I share with my parents is truly incredible and irreplaceable.
+
+# Day 4
+
+Met with my manager, Met with the new manager, Went to Visa Appointment, got approved right away.
