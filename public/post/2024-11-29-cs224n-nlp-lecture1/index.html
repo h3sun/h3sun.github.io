@@ -41,10 +41,10 @@
   
     
   
-  <meta name="description" content="random thoughts about huchenfeng" />
+  <meta name="description" content="This article sumarizes the cs224n study notes" />
 
   
-  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/post/2024-09-29-%E6%88%B7%E6%99%A8%E9%A3%8E/" />
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/post/2024-11-29-cs224n-nlp-lecture1/" />
 
   
   
@@ -161,7 +161,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="http://localhost:1313/post/2024-09-29-%E6%88%B7%E6%99%A8%E9%A3%8E/" />
+  <link rel="canonical" href="http://localhost:1313/post/2024-11-29-cs224n-nlp-lecture1/" />
 
   
   
@@ -187,18 +187,18 @@
     <meta property="twitter:creator" content="@GetResearchDev" />
   
   <meta property="og:site_name" content="Haihao Sun&#39;s Homepage" />
-  <meta property="og:url" content="http://localhost:1313/post/2024-09-29-%E6%88%B7%E6%99%A8%E9%A3%8E/" />
-  <meta property="og:title" content="谈谈户晨风 | Haihao Sun&#39;s Homepage" />
-  <meta property="og:description" content="random thoughts about huchenfeng" /><meta property="og:image" content="http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:url" content="http://localhost:1313/post/2024-11-29-cs224n-nlp-lecture1/" />
+  <meta property="og:title" content="CS224n-NLP-lecture 1 | Haihao Sun&#39;s Homepage" />
+  <meta property="og:description" content="This article sumarizes the cs224n study notes" /><meta property="og:image" content="http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2024-09-29T00:00:00&#43;00:00"
+        content="2024-11-29T00:00:00&#43;00:00"
       />
     
-    <meta property="article:modified_time" content="2024-09-29T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2024-11-29T00:00:00&#43;00:00">
   
 
   
@@ -208,7 +208,7 @@
   
 
 
-  <title>谈谈户晨风 | Haihao Sun&#39;s Homepage</title>
+  <title>CS224n-NLP-lecture 1 | Haihao Sun&#39;s Homepage</title>
 
   
   
@@ -900,13 +900,34 @@
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg>
         </span>
     </a><div class="ltr:pr-0 overflow-hidden">
-        <ul class="hb-sidebar-list"><li class="flex flex-col "><a
+        <ul class="hb-sidebar-list"><li class="flex flex-col open"><a
     class="hb-sidebar-custom-link
-      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+      sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900"
     href="/post/2024-11-29-cs224n-nlp-lecture1/"
     
   >CS224n-NLP-lecture 1
     </a>
+  
+    <ul class="hb-sidebar-mobile-toc"><li>
+              <a
+                href="#how"
+                class="hb-docs-link"
+              >How</a>
+            </li>
+          <li>
+              <a
+                href="#word2vector-idea"
+                class="hb-docs-link"
+              >Word2Vector idea</a>
+            </li>
+          <li>
+              <a
+                href="#math"
+                class="hb-docs-link"
+              >Math</a>
+            </li>
+          </ul>
+  
               
             </li><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
@@ -948,14 +969,13 @@
   >DDIA Chapter 5 - Repliation
     </a>
               
-            </li><li class="flex flex-col open"><a
+            </li><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
-      sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900"
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
     href="/post/2024-09-29-%E6%88%B7%E6%99%A8%E9%A3%8E/"
     
   >谈谈户晨风
     </a>
-  
               
             </li><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
@@ -1165,7 +1185,16 @@
 
 
 
-  <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4 rtl:-ml-4">
+  <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4 rtl:-ml-4"><p class="mb-4 font-semibold tracking-tight">On this page</p><ul>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#how">How</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#word2vector-idea">Word2Vector idea</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#math">Math</a>
+      </li></ul>
 
   
   
@@ -1194,10 +1223,10 @@
 
       
 
-      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">谈谈户晨风</h1>
+      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">CS224n-NLP-lecture 1</h1>
 
       <div class="mt-4 mb-16">
-      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">Sep 29, 2024</span><span class="mx-1">·</span>
+      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">Nov 29, 2024</span><span class="mx-1">·</span>
         
           
           
@@ -1239,70 +1268,41 @@
       
 
       <div class="prose prose-slate lg:prose-xl dark:prose-invert">
-        <p>大学申请的文书曾经有一题叫做 <code>What's unique about you?</code>， 当时高中的我并没有感到自己的差异性，我只感到自己和有着同质化的教育背景的同学们一起愉快地学习，生活，成长。如果让现在的我挑一点自己的特殊性，我认为自己是一个兴趣爱好非常广泛的人。有一两个长期的兴趣爱好持续十几年，短期的兴趣爱好通常能维持 2-4 周，数据可能是 long-tail（长尾）分布的。简单列举一些我感兴趣过的话题包括但不限于：出老千，缅甸电信诈骗噶腰子，活佛，Splendor，Dominion，X 调查，X 博士播客，张雪峰谈升学&hellip;</p>
-<p><code>最近让我的大脑感到刺激的是一位名叫户晨风的短视频创作者。</code>他在简中互联网独特的生态位，他犀利到有些偏激的观点，以及他相声般的直播，都让他收获了许多的订阅。我非常喜欢他产生的内容，但我对他有些过激的观点也有不同，综合来说自己并不完全算他的粉丝。</p>
-<p>他创作的内容以及直播效果有非常多独特的地方，我想从以下三个方面简单谈谈他的内容：1.购买力系列 + 送钱系列视频，2.直播的辩论套路，3.核心观点（中医无用，文言文无用，传统文化无用，苹果手机最优越，如何使用互联网+的思维赚钱）。</p>
-<ol>
-<li>
-<p>购买力系列与送钱系列视频：</p>
-<ol>
-<li>购买力系列视频：在国内/国外的拍摄中，户晨风会随机询问一个陌生人 ta 的一小时工资，然后在当地大型平价连锁超市进行消费，主要购买肉蛋奶，最终通过日用品的购买体现当地劳动收入的购买力。</li>
-<li>送钱视频：在国内的拍摄中，他在重庆，上海，成都等地区随机采访一个陌生人，随机问陌生人三个简单的问题，送给陌生人 500-2000 元不等，拍摄陌生人会怎么花这笔钱。但一般来说这些陌生人并不完全是随机的，很多情况下都是请的看似比较穷苦的人进行这个挑战，大致也是给穷苦人送钱。</li>
-</ol>
+        <h1 id="word2vector">Word2Vector</h1>
+<h2 id="how">How</h2>
+<ul>
+<li>Represent words by their context (Distributional semantics): A word&rsquo;s meaning is given by words frequently appear close-by, within a fixed-size.</li>
+<li>Use the many contexts of w to build up a representation of w.</li>
+<li>We build a dense vector for each word, chosen so that it is similar to vectors of words that appear in similar context.</li>
+<li>Note that word vectors are also called word embeddings, or neural word representations. They are a distributed representation.</li>
+</ul>
+<h2 id="word2vector-idea">Word2Vector idea</h2>
+<ul>
+<li>We have a large body of text (corpus).</li>
+<li>Every word in a fixed vocabulary is represented by vector.</li>
+<li>Go through each position t in the text, which has a center word (c) and a context word (o).</li>
+<li>Use similarity of word vectors for c and o, calculate the probablity of o given c.</li>
+<li>Keep adjusting the word vector to maximize this probablity.</li>
+</ul>
+<h2 id="math">Math</h2>
+<ul>
+<li>$L(\theta) = \prod_{t=1}^T \prod_{\substack{-m \leq j \leq m \\ j \neq 0}} P(w_{t+j} \mid w_t; \theta)$</li>
+<li>$J(\theta) = -\frac{1}{T} \log L(\theta) = -\frac{1}{T} \sum_{t=1}^T \sum_{\substack{-m \leq j \leq m \\ j \neq 0}} \log P(w_{t+j} \mid w_t; \theta)$</li>
+<li>$P(o \mid c) = \frac{\exp(u_o^T v_c)}{\sum_{w \in V} \exp(u_w^T v_c)}$
+<ul>
+<li>Exponentiation makes anything positive</li>
+<li>Dot product compares similarity of o and c.</li>
+<li>Normalize over entire vocabulary to give probability distribution</li>
+</ul>
 </li>
-<li>
-<p>直播流程与辩论套路</p>
-<ol>
-<li>直播流程：和游戏，才艺，户外直播不同，他的直播通常更像是一场辩论。他会让想上麦的 b 友打开直播，点击 pk，和他进行观点的碰撞。</li>
-<li>辩论套路：
-<ol>
-<li>在对方表达观点时打断别人说话，打乱别人节奏
-<ol>
-<li>读个 sc 啊，xxxxx。</li>
-<li>感谢 xxx 总。</li>
-<li>别说敏感的。</li>
-<li>你的麦有回音，是什么手机，安卓手机？这就对了，不是说安卓不好啊。</li>
-</ol>
-</li>
-<li>查户口，夹在一些人生攻击
-<ol>
-<li>你是什么学历？</li>
-<li>你是哪里人？</li>
-<li>做什么工作？</li>
-<li>一年挣多少钱？</li>
-<li>你用什么手机？</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<p>总之，他的直播效果通常来自于或是上麦 b 友的观点实在站不住脚，或是一种训诫别人的方式。</p>
-</li>
-<li>
-<p>核心观点：</p>
-<ol>
-<li>中医无用论：如果不借用西医的仪器，中医无法判断什么是肿瘤，什么是腰椎间盘突出。青蒿素来自于黄花蒿，和中医没关系。</li>
-<li>文言文无用论：文言文完全脱离生活，喜欢的可以学习研究，没必要放到学校课程中。</li>
-<li>传统文化无用 ：比如春节，中秋节，全都是糟粕，春节没必要贴春联，月饼全是糖和油，中秋节不要吃月饼。</li>
-<li>苹果手机最优越：苹果手机，designed by apple in California，吊打世界上所有手机，其他所有手机厂商都在亏钱，苹果大陆抽成 30%，别的安卓手机抽成也是 30%，甚至更多 50%。</li>
-<li>如何使用互联网+的思维赚钱：三件套：开卡车 （xxx 考研中） Vlog，收入公开，直播捞米。开油厂：收入公开，给大家做透明，拉近距离，提高信任，事实上他自己也这么做的。</li>
-</ol>
-</li>
-</ol>
-<p>总结一下观看他内容 2 周后的一些思考</p>
-<ol>
-<li>虽然他是高中学历，但是他具有很多常识，查过很多中医方面的资料，学过很多历史方面的知识，他吃这碗饭是有那个金刚钻的。</li>
-<li>互联网+的思维：收入公开，获得信任，然后直播捞米</li>
-<li>有一次观看他直播，他在安慰一个女儿有先天性疾病的父亲：</li>
-</ol>
-<p>有些时候人要接受事实，什么叫事实？有些病人类没有到那个程度，无法靠药物治好，只能期盼他自愈。人要接受这个现实，确实没办法，大家都经历过这种时刻，人类科技确实治不了，治不了怎么办，只能坦然接受，期盼他自愈。</p>
+</ul>
 
       </div>
 
       
-  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2024-09-29T00:00:00.000Z">
+  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2024-11-29T00:00:00.000Z">
     <span>Last updated on</span>
-    Sep 29, 2024</time>
+    Nov 29, 2024</time>
 
       <div class="container mx-auto prose prose-slate lg:prose-xl dark:prose-invert mt-5">
         
@@ -1314,7 +1314,7 @@
 
 <div class="flex justify-center">
   
-  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/random-thoughts/">Random-Thoughts</a>
+  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/machine-learning/">Machine-Learning</a>
   
 </div>
 
@@ -1332,7 +1332,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-29-%25E6%2588%25B7%25E6%2599%25A8%25E9%25A3%258E%2F&amp;text=%E8%B0%88%E8%B0%88%E6%88%B7%E6%99%A8%E9%A3%8E"
+    href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-11-29-cs224n-nlp-lecture1%2F&amp;text=CS224n-NLP-lecture&#43;1"
     title="X"
     aria-label="X"
     id="share-link-x"
@@ -1350,7 +1350,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-29-%25E6%2588%25B7%25E6%2599%25A8%25E9%25A3%258E%2F&amp;t=%E8%B0%88%E8%B0%88%E6%88%B7%E6%99%A8%E9%A3%8E"
+    href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-11-29-cs224n-nlp-lecture1%2F&amp;t=CS224n-NLP-lecture&#43;1"
     title="Facebook"
     aria-label="Facebook"
     id="share-link-facebook"
@@ -1370,7 +1370,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="mailto:?subject=%E8%B0%88%E8%B0%88%E6%88%B7%E6%99%A8%E9%A3%8E&amp;body=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-29-%25E6%2588%25B7%25E6%2599%25A8%25E9%25A3%258E%2F"
+    href="mailto:?subject=CS224n-NLP-lecture%201&amp;body=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-11-29-cs224n-nlp-lecture1%2F"
     title="Email"
     aria-label="Email"
     id="share-link-email"
@@ -1388,7 +1388,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-29-%25E6%2588%25B7%25E6%2599%25A8%25E9%25A3%258E%2F&amp;title=%E8%B0%88%E8%B0%88%E6%88%B7%E6%99%A8%E9%A3%8E"
+    href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-11-29-cs224n-nlp-lecture1%2F&amp;title=CS224n-NLP-lecture&#43;1"
     title="LinkedIn"
     aria-label="LinkedIn"
     id="share-link-linkedin"
@@ -1406,7 +1406,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="whatsapp://send?text=%E8%B0%88%E8%B0%88%E6%88%B7%E6%99%A8%E9%A3%8E%20http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-09-29-%25E6%2588%25B7%25E6%2599%25A8%25E9%25A3%258E%2F"
+    href="whatsapp://send?text=CS224n-NLP-lecture&#43;1%20http%3A%2F%2Flocalhost%3A1313%2Fpost%2F2024-11-29-cs224n-nlp-lecture1%2F"
     title="WhatsApp"
     aria-label="WhatsApp"
     id="share-link-whatsapp"
@@ -1544,34 +1544,18 @@
   <div class="flex flex-col md:flex-row flex-nowrap justify-between gap-5 pt-2">
     <div class="">
       
-        <a class="group flex no-underline" href="/post/2024-10-05-ddia-chapter-5-replication/">
-          <span
-            class="mt-[-0.3rem] me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
-          ><span class="ltr:inline rtl:hidden">&larr;</span></span>
-          <span class="flex flex-col">
-            <span
-              class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-            >DDIA Chapter 5 - Repliation</span>
-            <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-              
-                Oct 5, 2024
-              
-            </span>
-          </span>
-        </a>
-      
     </div>
     <div class="">
       
-        <a class="group flex text-right no-underline" href="/post/2024-09-06-rec-sys-nomination-6/">
+        <a class="group flex text-right no-underline" href="/post/2024-11-25-shanghai-trip/">
           <span class="flex flex-col">
             <span
               class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-            >Recommender System Study Notes - Nomination(6/6)</span
+            >Trip in Shanghai</span
             >
             <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
               
-                Sep 6, 2024
+                Nov 25, 2024
               
             </span>
           </span>

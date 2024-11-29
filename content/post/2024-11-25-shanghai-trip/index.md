@@ -62,6 +62,8 @@ Had an egg crepe in the morning, then went to the Shanghai World Financial Cente
 
 I met my parents at 6:30 PM at City Hotel. We were all overcome with emotion and cried when we saw each other. The bond I share with my parents is truly incredible and irreplaceable.
 
+We went to the Bund together, there was a little rain, and we all like the view in the Bund.
+
 # Day 4
 
 Met with my manager, Met with the new manager, Went to Visa Appointment, got approved right away.
