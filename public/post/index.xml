@@ -5,12 +5,48 @@
     <link>http://localhost:1313/post/</link>
       <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Blog</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 25 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>Blog</title>
       <link>http://localhost:1313/post/</link>
     </image>
+    
+    <item>
+      <title>CS224n-NLP-lecture 1</title>
+      <link>http://localhost:1313/post/2024-11-29-cs224n-nlp-lecture1/</link>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-11-29-cs224n-nlp-lecture1/</guid>
+      <description>&lt;h1 id=&#34;word2vector&#34;&gt;Word2Vector&lt;/h1&gt;
+&lt;h2 id=&#34;how&#34;&gt;How&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Represent words by their context (Distributional semantics): A word&amp;rsquo;s meaning is given by words frequently appear close-by, within a fixed-size.&lt;/li&gt;
+&lt;li&gt;Use the many contexts of w to build up a representation of w.&lt;/li&gt;
+&lt;li&gt;We build a dense vector for each word, chosen so that it is similar to vectors of words that appear in similar context.&lt;/li&gt;
+&lt;li&gt;Note that word vectors are also called word embeddings, or neural word representations. They are a distributed representation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;word2vector-idea&#34;&gt;Word2Vector idea&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;We have a large body of text (corpus).&lt;/li&gt;
+&lt;li&gt;Every word in a fixed vocabulary is represented by vector.&lt;/li&gt;
+&lt;li&gt;Go through each position t in the text, which has a center word (c) and a context word (o).&lt;/li&gt;
+&lt;li&gt;Use similarity of word vectors for c and o, calculate the probablity of o given c.&lt;/li&gt;
+&lt;li&gt;Keep adjusting the word vector to maximize this probablity.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;$L(\theta) = \prod_{t=1}^T \prod_{\substack{-m \leq j \leq m \\ j \neq 0}} P(w_{t+j} \mid w_t; \theta)$&lt;/li&gt;
+&lt;li&gt;$J(\theta) = -\frac{1}{T} \log L(\theta) = -\frac{1}{T} \sum_{t=1}^T \sum_{\substack{-m \leq j \leq m \\ j \neq 0}} \log P(w_{t+j} \mid w_t; \theta)$&lt;/li&gt;
+&lt;li&gt;$P(o \mid c) = \frac{\exp(u_o^T v_c)}{\sum_{w \in V} \exp(u_w^T v_c)}$
+&lt;ul&gt;
+&lt;li&gt;Exponentiation makes anything positive&lt;/li&gt;
+&lt;li&gt;Dot product compares similarity of o and c.&lt;/li&gt;
+&lt;li&gt;Normalize over entire vocabulary to give probability distribution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Trip in Shanghai</title>
@@ -45,7 +81,9 @@
 &lt;p&gt;I met my parents at 6:30 PM at City Hotel. We were all overcome with emotion and cried when we saw each other. The bond I share with my parents is truly incredible and irreplaceable.&lt;/p&gt;
 &lt;p&gt;We went to the Bund together, there was a little rain, and we all like the view in the Bund.&lt;/p&gt;
 &lt;h1 id=&#34;day-4&#34;&gt;Day 4&lt;/h1&gt;
-&lt;p&gt;Met with my manager, Met with the new manager, Went to Visa Appointment, got approved right away.&lt;/p&gt;
+&lt;p&gt;Met with my manager, Met with the new manager.&lt;/p&gt;
+&lt;p&gt;Went to Visa Appointment, got approved right away.&lt;/p&gt;
+&lt;p&gt;Went back my city, Nanjing.&lt;/p&gt;
 </description>
     </item>
     

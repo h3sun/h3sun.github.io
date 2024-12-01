@@ -66,4 +66,8 @@ We went to the Bund together, there was a little rain, and we all like the view 
 
 # Day 4
 
-Met with my manager, Met with the new manager, Went to Visa Appointment, got approved right away.
+Met with my manager, Met with the new manager.
+
+Went to Visa Appointment, got approved right away.
+
+Went back my city, Nanjing.
