@@ -1,7 +1,7 @@
 ---
 title: communication with my parents
 summary: This article sumarizes communication with my parents
-date: 2024-12-07
+date: 2025-12-07
 authors:
   - admin
 tags:
