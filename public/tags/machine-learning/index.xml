@@ -13,10 +13,10 @@
     </image>
     
     <item>
-      <title>CS224n-NLP-lecture 1</title>
-      <link>http://localhost:1313/post/2024-11-29-cs224n-nlp-lecture1/</link>
+      <title>CS224n-NLP-lecture 1, 2</title>
+      <link>http://localhost:1313/post/2024-11-29-cs224n-nlp-lecture1&#43;2-word2vec/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-11-29-cs224n-nlp-lecture1/</guid>
+      <guid>http://localhost:1313/post/2024-11-29-cs224n-nlp-lecture1&#43;2-word2vec/</guid>
       <description>&lt;h1 id=&#34;word2vector&#34;&gt;Word2Vector&lt;/h1&gt;
 &lt;h2 id=&#34;how&#34;&gt;How&lt;/h2&gt;
 &lt;ul&gt;
@@ -45,6 +45,94 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;gradient-descent-and-stochastic-gradient-descent&#34;&gt;Gradient Descent and Stochastic Gradient Descent&lt;/h2&gt;
+&lt;h3 id=&#34;problem&#34;&gt;Problem:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;J is a function of all windows in the corpus, gradient is expensive to compute.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;solution&#34;&gt;Solution:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SGD Stochastic Gradient Descent&lt;/li&gt;
+&lt;li&gt;SGD in each window: we only have at most 2m + 1 words&lt;/li&gt;
+&lt;li&gt;Either we need sparse matrix updates operations to only update certain rows of full embedding metrics U and V, or we need to keep around a hash of word vector. Millions of word vectors allow us to do distributed computing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;word2vector-algo-family&#34;&gt;Word2Vector Algo Family&lt;/h2&gt;
+&lt;h3 id=&#34;two-models&#34;&gt;Two models:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Skip-gram(SG), predict context (outside) words given center words.&lt;/li&gt;
+&lt;li&gt;Continuous bag of words (CBOW), predict context words from context words.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;negative-sampling&#34;&gt;Negative Sampling&lt;/h3&gt;
+&lt;h4 id=&#34;problem-1&#34;&gt;Problem&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The normalization demonitator is computionally expensive.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;solution-1&#34;&gt;Solution&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Train a binary logistic regression for a true pair vs noise pair.&lt;/li&gt;
+&lt;li&gt;$J(\theta) = \frac{1}{T} \sum_{t=1}^{T} J_t(\theta)$&lt;/li&gt;
+&lt;li&gt;$J_t(\theta) = \log \sigma \left( u_o^\top v_c \right) + \sum_{i=1}^{k} \mathbb{E}_{j \sim P(w)} \left[ \log \sigma \left( -u_j^\top v_c \right) \right]$&lt;/li&gt;
+&lt;li&gt;$\sigma(x) = \frac{1}{1 + e^{-x}}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Take k negative samples&lt;/li&gt;
+&lt;li&gt;Maxmize probablity that real words appear, minimize probablity that random words appear around the center words.&lt;/li&gt;
+&lt;li&gt;Sample with P(w) = u(w)^(3/4)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;co-occurence-counting&#34;&gt;Co-occurence counting&lt;/h2&gt;
+&lt;h3 id=&#34;problems&#34;&gt;Problems:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;vector increase in sizes&lt;/li&gt;
+&lt;li&gt;Subsequent classification models have sparsity issues.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;singular-value-decomposition&#34;&gt;Singular Value Decomposition&lt;/h3&gt;
+&lt;p&gt;X = USV&lt;/p&gt;
+&lt;h3 id=&#34;glove&#34;&gt;GloVe&lt;/h3&gt;
+&lt;p&gt;Crucial Insight: Ratios of co-occurence probablities can encode meaning components (meaning component means going from male to female etc).&lt;/p&gt;
+&lt;p&gt;$J = \sum_{i,j=1}^{V} f(X_{ij}) \left( w_i^\top \tilde{w}_j + b_i + \tilde{b}_j - \log X_{ij} \right)^2$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$X\_{ij}$: The co-occurrence count between words \( i \) and \( j \).&lt;/li&gt;
+&lt;li&gt;\( w_i \): The word vector for the word \( i \).&lt;/li&gt;
+&lt;li&gt;\( \tilde{w}\_j \): The context word vector for the word \( j \).&lt;/li&gt;
+&lt;li&gt;\( b_i \): The bias term for the word \( i \).&lt;/li&gt;
+&lt;li&gt;\( \tilde{b}\_j \): The bias term for the context word \( j \).&lt;/li&gt;
+&lt;li&gt;\( \log X*{ij} \): The logarithm of the co-occurrence count \( X*{ij} \).&lt;/li&gt;
+&lt;li&gt;\( f(X\_{ij}) \): A weighting function to limit the influence of very frequent or very infrequent word pairs.&lt;/li&gt;
+&lt;li&gt;\( x\_{\text{max}} \): A maximum co-occurrence count threshold.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-evaluate&#34;&gt;How to evaluate&lt;/h2&gt;
+&lt;h3 id=&#34;intrinsics&#34;&gt;Intrinsics&lt;/h3&gt;
+&lt;h4 id=&#34;definition&#34;&gt;Definition&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Evaluation on a specific subtask.&lt;/li&gt;
+&lt;li&gt;Fast to compute.&lt;/li&gt;
+&lt;li&gt;Helps to understand the system.&lt;/li&gt;
+&lt;li&gt;Not clear if it really helps unless correlation to real task is established.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;example&#34;&gt;Example&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Word Vector Analogy&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;man:woman :: king:?&lt;/li&gt;
+&lt;li&gt;Evaluate word vectors by how will their cosine distance after addition captures intuitive semantics and syntatic analogy questions.&lt;/li&gt;
+&lt;li&gt;Discard the input words from search&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;WordSim human judgement&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;extrinsics&#34;&gt;Extrinsics&lt;/h3&gt;
+&lt;h4 id=&#34;definition-1&#34;&gt;Definition&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Evaluation on a real task.&lt;/li&gt;
+&lt;li&gt;Can take a long time to compute.&lt;/li&gt;
+&lt;li&gt;Unclear if the subsystem is the probelm or its interaction or other subsystems.&lt;/li&gt;
+&lt;li&gt;If replacing exactly one subsystem is making progress, that&amp;rsquo;s good.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;example-1&#34;&gt;Example&lt;/h4&gt;
+&lt;p&gt;Named Entity recognition.&lt;/p&gt;
+&lt;h2 id=&#34;word-sense&#34;&gt;Word sense&lt;/h2&gt;
+&lt;p&gt;A word can have multiple meanings.&lt;/p&gt;
 </description>
     </item>
     
