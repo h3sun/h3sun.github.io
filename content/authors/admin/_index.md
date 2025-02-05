@@ -53,18 +53,18 @@ interests:
 education:
   - area: Master of Computer Science
     institution: Yale University
-    date_start: 2022-05-31
-    date_end: 2021-09-01
-    # summary: |
+    date_start: 2021-09-01
+    date_end: 2022-05-31
+    summary: Had fun in east rocks, Helen Hadley Hall, Boston, and New York.
 
-    button:
-      text: "Read Thesis"
-      url: "https://example.com"
+    # button:
+    #   text: "Read Thesis"
+    #   # url: "https://example.com"
   - area: Bachelor of Computer Science and Engineering
     institution: UC San Diego
-    date_start: 2021-06-15
-    date_end: 2018-09-18
-    # summary: |
+    date_start: 2018-09-18
+    date_end: 2021-06-15
+    summary: Had fun in computer labs, black beach, and Manna Korean BBQ.
 
 work:
   - position: Software Engineer
