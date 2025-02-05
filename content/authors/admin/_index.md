@@ -75,8 +75,11 @@ work:
     date_end: 2022-07-18
     summary: |2-
       Responsibilities include:
-      - Surround View
-      - Scene API
+      - Youtube Search
+        - Youtube WatchEmbed, embedding queries and documents into the same vector space, enabling efficient retrieval to fulfill search intent.
+      - Android Automotive
+        - Surround View, stitching multiple cameras images to create a 360-degree bird’s-eye view for parking.
+        - Scene API, applying on-device machine learning to detect objects, powering next-gen parking solutions.
   # - position: Backend Software Engineer
   #   company_name: X
   #   company_url: ""
