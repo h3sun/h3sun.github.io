@@ -1,6 +1,6 @@
 ---
 title: 野蛮生长
-summary: This article
+summary: 《野蛮生长》读后感
 date: 2025-02-04
 authors:
   - admin
