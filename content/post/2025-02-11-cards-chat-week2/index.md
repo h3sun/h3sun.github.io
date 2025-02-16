@@ -14,13 +14,9 @@ tags:
 
 1. Check a flop such as 789s
 2. Check if four or more players see the flop
-3. Don't C-Bet showdown value hands: hero's hand(55) - flop(K96)
+3. Check if you do not want to get check-raised. (Medium strong hand, just check).
 4. Don't C-Bet when you monopolize Flop vs Recs: hero's hand(AA) - flop (AA2)
-
-### Facing C-Bet
-
-1. Check to an opponent who has the opportunity to C-bet, check to preflop aggressor.
-2.
+5. Check to an opponent who has the opportunity to C-bet, check to preflop aggressor.
 
 ## Day 9 Implied Odds and Reverse Implied Odds (A vital deep-stack concept)
 
@@ -43,6 +39,13 @@ tags:
 
 1. If you are aheads, you will win little or no money
 2. If you are behind, you will lose a lot more money
+
+### Summarization
+
+1. Implied odds capture the concept of how we can win more money from our opponents than just the current pot when we hit a big hand.
+2. We should (at least) call with pocket pairs getting 20:1 or
+   better implied odds pre-flop, and be a lot more inclined to continue with draws after the flop when we’re getting good implied odds.
+3. You can profitably make tight folds in situations with bad reverse implied odds: Situations where you’re likely to lose more money when behind or win little more when ahead.
 
 ## Day 10 - The key to play the draws (Raise and Cross Your Fingers)
 
