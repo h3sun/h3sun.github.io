@@ -93,13 +93,13 @@ tags:
 
 - 22+
 - A2+
+- K2s+
 - K60+
+- Q4s+
 - Q70+
+- J6s+
 - J80+
 - T80+
-- K2s+
-- Q4s+
-- J6s+
 - 54s+
 
 ### Small Blind:
