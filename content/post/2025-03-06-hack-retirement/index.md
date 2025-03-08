@@ -5,7 +5,7 @@ date: 2025-03-06
 authors:
   - admin
 tags:
-  - random-thoughts
+  - finance
 ---
 
 # 🚀 退休金梳理 101
