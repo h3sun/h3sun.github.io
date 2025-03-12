@@ -1,6 +1,6 @@
 ---
 title: 从大学电路课程到人生旅途
-summary: Reflections on life
+summary: 生活的怪诞在于人不能赚到认知以外的钱，但却会遇到认知以外的困难和苦难。
 date: 2025-03-01
 authors:
   - admin
