@@ -5,7 +5,7 @@
     <link>http://localhost:1313/tags/finance/</link>
       <atom:link href="http://localhost:1313/tags/finance/index.xml" rel="self" type="application/rss+xml" />
     <description>Finance</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>Finance</title>
@@ -13,36 +13,150 @@
     </image>
     
     <item>
-      <title>投资工具-储蓄</title>
-      <link>http://localhost:1313/post/2025-03-11-%E5%82%A8%E8%93%84/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2025-03-11-%E5%82%A8%E8%93%84/</guid>
-      <description>&lt;h2 id=&#34;投资工具---储蓄&#34;&gt;投资工具 - 储蓄&lt;/h2&gt;
-&lt;h3 id=&#34;cd-certificate-of-deposit&#34;&gt;CD (certificate of deposit)&lt;/h3&gt;
+      <title>报税-W2</title>
+      <link>http://localhost:1313/post/2025-03-14-%E6%8A%A5%E7%A8%8E-w2/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-03-14-%E6%8A%A5%E7%A8%8E-w2/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;今天是 PI 节日，每次 PI 节都是 3 月 14 号，也是如火如荼的报税季节。今年这是我工作第三年，美国报税也有几次了，但我非常讨厌报税，填表格。讨厌的原因有两点，一个是填表格的过程非常繁琐，另一个是填表格结果的正确对于一个完美主义者来说会令人十分令人焦虑。&lt;/p&gt;
+&lt;p&gt;首先说说这个填表格的过程：每次填表格都是信息检索的过程，首先要理解问题问的是什么，然后在脑子里思考问题的答案是什么，很多时候相同的信息并不会有改变，但是反复在不同的地方填写，实在是浪费时间！&lt;/p&gt;
+&lt;p&gt;再说说对填表格的结果的焦虑：重要的表格填完了以后还要检查，尤其是对我这样略微带有完美主义倾向的人来说填表格不能出半点差错，如果有点对不上就想研究明白是为什么原因，一研究就进入了兔子洞，研究出来还好，研究不明白则非和自己较劲，非得研究明白才算完，有时候会打扰一晚上的计划和心情。&lt;/p&gt;
+&lt;p&gt;真希望以后大脑介入芯片的话直接通过 protocol 进行交流，不需要进行无意义的重复信息检索，也不用焦虑结果的差错。&lt;/p&gt;
+&lt;p&gt;仔细分析为什么我会反感甚至拖延报税，有一个原因就在于自己其实对报税表格的理解不足，如果一个问题是你是明白清晰逻辑的，那么遇到这样的问题自然大脑就觉得很舒适。但如果一个问题你不明白逻辑，搞不清里面的概念，那每次遇到这样的问题就不想作答，就拖延。&lt;/p&gt;
+&lt;p&gt;毕竟这也不是故意让你填错的表格，设计应该是符合直观逻辑的。但一方面是这样思考，另一方面也承认这个表格的复杂性，我猜测这个表格就像一个代码库，刚开始逻辑清晰简单，但是随着时间的变化，每一届总统，每一个法官都有自己的想法，颁布不同的法案，适应当时的社会状况。随着这些迭代，这种表格必然就有了更复杂的形式。&lt;/p&gt;
+&lt;p&gt;一个比较好的 growth mindset 就是不会就学，学不懂继续思考，总相信自己能学懂。所以今天想写一下 w2 表格不同格子里具体代表什么内容。&lt;/p&gt;
+&lt;h2 id=&#34;w2&#34;&gt;W2&lt;/h2&gt;
+&lt;h3 id=&#34;大致&#34;&gt;大致&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;w2 表格总结了年度的收入和预缴，FICA，医保，退休，HSA。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;每个格子&#34;&gt;每个格子&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;a. social security number
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;b. employer id
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;c. employ name, address, zip code
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;d. control number (your id in company)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;e. employee&amp;#39;s name, address
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;f. employee&amp;#39;s zip code.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. wages,tips, other comp, 联邦所得税的税基 （扣除 401k 以后）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. federal income tax witheld，联邦税预缴
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. social security tax，社保税基 （cap 168600 - 2024），超过的部分不用交 social security tax
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4. social security tax withheld 社保税收的预缴，税收是 6.2%
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;5. medicare wages/tips 医保税基，没有 cap，含 401k
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;6. medicare tax withheld 医保税收的预缴，1.45%，超过 20 万+0.9%
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;7. social security tips 小费收入
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;8. allocated tips 小费收入
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;9. blank
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;10. Dependent Care Benefits
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;11. Nonqualified Plans 给 executive，高管
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;12. 401k，HSA contribution，etc
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;14. state disability insurance
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;15. state 州
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;16. state wages 工资，和 box 1 不一样，因为 HSA 在 state level 收税，但是在 federal level 不收税
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;17. state income tax 州税收
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;./w2-example.png&#34; alt=&#34;w2-example&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;reference&#34;&gt;reference&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=_FTOcAjmFVs&amp;amp;ab_channel=%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%B0%88%E9%92%B1&#34;&gt;https://www.youtube.com/watch?v=_FTOcAjmFVs&amp;amp;ab_channel=%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%B0%88%E9%92%B1&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>投资工具-Bond</title>
+      <link>http://localhost:1313/post/2025-03-13-bond-%E5%9B%BD%E5%80%BA/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-03-13-bond-%E5%9B%BD%E5%80%BA/</guid>
+      <description>&lt;h2 id=&#34;treasury-分类&#34;&gt;Treasury 分类&lt;/h2&gt;
+&lt;h3 id=&#34;t-bill-treasury-bill&#34;&gt;T-Bill, Treasury Bill&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;短期：4 week，8 week，12 week， etc。&lt;/li&gt;
+&lt;li&gt;没有 coupon（票面利息），只有折价发行，折价率，本质是 interest 而不是 capital gain。&lt;/li&gt;
+&lt;li&gt;利息是 recurring gain，税率低。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;t-note-treasury-note&#34;&gt;T-Note, Treasury Note&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;中期：2-10 年。&lt;/li&gt;
+&lt;li&gt;开始有票面利息，6 个月付一次。&lt;/li&gt;
+&lt;li&gt;有二级市场，流动性好。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;简单来说就是存钱拿利息&lt;/li&gt;
+&lt;li&gt;一级市场：primary market, 融资的公司直接卖给你，价格事先通过投行（investment banking）定好，IPO。Bond 等于是政府定价。&lt;/li&gt;
+&lt;li&gt;二级市场：secondary market，投资人与投资人之间互相的买卖，价格通过互相买卖的市场决定。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;penalty-free-cd&#34;&gt;Penalty Free CD&lt;/h3&gt;
+&lt;h3 id=&#34;t-bond-treasury-bond&#34;&gt;T-Bond, Treasury Bond&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;长期：10-30 年期。&lt;/li&gt;
+&lt;li&gt;6 个月付一次利息。&lt;/li&gt;
+&lt;li&gt;花一定价格购买 face value 的 Bond，会有利息，到期以后你会拿到 face value 的钱&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;比 CD 利息低，但是没有提前取出的 penalty&lt;/li&gt;
+&lt;li&gt;收益率曲线倒挂：变成钟形，长期反而低。（yield 叫做实际收益率）可能会出现经济危机。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;t-bills&#34;&gt;T-Bills&lt;/h3&gt;
+&lt;h3 id=&#34;tips-treasury-inflation-protected-securities&#34;&gt;TIPS, Treasury Inflation Protected Securities&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;长期：5 年，10 年，30 年。&lt;/li&gt;
+&lt;li&gt;6 个月付一次，本金会随着通货膨胀率调整。通货膨胀时候拿的多，相反通货紧缩拿的少。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;frn-floating-rate-note&#34;&gt;FRN, Floating Rate Note&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;中期：2 年期。&lt;/li&gt;
+&lt;li&gt;6 个月付一次，利率根据 13 周 T-Bills 利率上下浮动。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;常识&#34;&gt;常识&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;国债免 state tax，local tax，但是 federal tax 是不能免除的。&lt;/li&gt;
+&lt;li&gt;bank/broker 购买和 treasury direct 购买的区别：bank/broker 可以用 non-competitive billing 和 competitive billing 购买。非竞争性竞价肯定可以买到，但是买之前不能准确知道以什么价格买，竞争性竞价规定我以什么价格购买。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;reference&#34;&gt;reference:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=kj87yxWJ9qQ&amp;amp;ab_channel=%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%B0%88%E9%92%B1&#34;&gt;https://www.youtube.com/watch?v=kj87yxWJ9qQ&amp;amp;ab_channel=%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%B0%88%E9%92%B1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=HdcL9J1cp8w&amp;amp;ab_channel=%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%B0%88%E9%92%B1&#34;&gt;https://www.youtube.com/watch?v=HdcL9J1cp8w&amp;amp;ab_channel=%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%B0%88%E9%92%B1&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;qa&#34;&gt;Q&amp;amp;A&lt;/h2&gt;
+&lt;h3 id=&#34;what-are-series-ee-and-series-i-savings-bond&#34;&gt;What are Series EE and Series I savings bond?&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Savings Bond 就是一个从风险和收益率和定期存款非常像的一个产品，定期存款 CD 在美国是商业银行发行的，Savings Bond 是美国政府发行的。&lt;/li&gt;
+&lt;li&gt;Savings Bond 分 Series EE 和 Series I。
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.treasurydirect.gov/&#34;&gt;购买网站&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;基本没有风险，可以免除 state tax&lt;/li&gt;
+&lt;li&gt;Series EE 是折价发行，甚至是半价，20 年就能赎回，1 年内赎回就丧失所有钱，5 年内丧失最后三个月利息（early withdraw penalty），没有二级市场，所以更像 Saving 而不是储蓄。首先利率很低，其次即使翻倍也有通货膨胀的因素，(1.03)^20 = 1.8, (1.04)^20 = 2.1&lt;/li&gt;
+&lt;li&gt;Series I 最大不同在于它并不是折价发行，面值发行，赋予利息，利率是 CPI correlated 的。Series I 有 floor，下限。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;money-market&#34;&gt;Money Market&lt;/h3&gt;
+&lt;/li&gt;
+&lt;li&gt;Series H Bond，这种在 04 年以后不发行了。&lt;/li&gt;
+&lt;li&gt;tax
 &lt;ul&gt;
-&lt;li&gt;好的流动，高的利率&lt;/li&gt;
+&lt;li&gt;只是 federal tax，no local/state tax。&lt;/li&gt;
+&lt;li&gt;独特之处在于你可以选择每年拿利息交税，也可以前 20 年不拿利息，最后 20 年交一笔税，选了之后不能变了，如果不止一只 savings bond，每个 bond 选择得相同。&lt;/li&gt;
+&lt;li&gt;如果你用于 education，可以用来学费，qualified intuition expense，书本住宿还是不能免税，结婚以后得联合 file tax。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;c-of-i-zero-interest-certificate-of-indebedness&#34;&gt;C of I, Zero Interest Certificate of Indebedness&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Zero Interest 不等于 0 coupon(没有票面利息的债券)，折价发行会有利息在里面&lt;/li&gt;
+&lt;li&gt;就是没有利息的理财产品？为什么不存在银行拿 interest 或者买 bond？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;stripsseparate-trading-of-registered-interest-and-principal-of-securities&#34;&gt;Strips，Separate Trading of Registered Interest and Principal of Securities&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;把一个 T-Note，T-Bond 给拆成本金和利息，你只拿到利息或者只拿到本金&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;没有看到国债有-fdic-保险&#34;&gt;没有看到国债有 fdic 保险&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;基本没有风险，不用考虑这个问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;secondary-issue-bond&#34;&gt;Secondary Issue Bond&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;二级市场购买的 Bond。&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
     <item>
       <title>投资策略-Laddering(梯状配股)</title>
-      <link>http://localhost:1313/post/2025-03-11-%E5%82%A8%E8%93%84%E7%9A%84%E7%AD%96%E7%95%A5/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2025-03-11-%E5%82%A8%E8%93%84%E7%9A%84%E7%AD%96%E7%95%A5/</guid>
+      <link>http://localhost:1313/post/2025-03-12-%E5%82%A8%E8%93%84%E7%9A%84%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-03-12-%E5%82%A8%E8%93%84%E7%9A%84%E7%AD%96%E7%95%A5/</guid>
       <description>&lt;p&gt;(written by chatgpt, reviewed by haihaosun)&lt;/p&gt;
 &lt;h1 id=&#34;laddering-a-smart-investment-strategy&#34;&gt;Laddering: A Smart Investment Strategy&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Laddering&lt;/strong&gt; is an investment strategy used to manage risk, increase liquidity, and optimize returns by diversifying investment maturities across different time frames. This strategy is commonly applied to fixed-income investments like &lt;strong&gt;certificates of deposit (CDs), bonds, and Treasury securities&lt;/strong&gt;.&lt;/p&gt;
@@ -167,6 +281,34 @@
 &lt;p&gt;是不要把鸡蛋放在一个篮子里的另一种在时间轴上的体现。即使投入的理财产品是相同的，但是投入的时间不同也会降低风险。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;reference: &lt;a href=&#34;https://www.youtube.com/watch?v=je5j9ZiJa2k&amp;amp;ab_channel=%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%B0%88%E9%92%B1&#34;&gt;https://www.youtube.com/watch?v=je5j9ZiJa2k&amp;amp;ab_channel=%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%B0%88%E9%92%B1&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>投资工具-储蓄</title>
+      <link>http://localhost:1313/post/2025-03-11-%E5%82%A8%E8%93%84/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-03-11-%E5%82%A8%E8%93%84/</guid>
+      <description>&lt;h2 id=&#34;投资工具---储蓄&#34;&gt;投资工具 - 储蓄&lt;/h2&gt;
+&lt;h3 id=&#34;cd-certificate-of-deposit&#34;&gt;CD (certificate of deposit)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;简单来说就是存钱拿利息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;penalty-free-cd&#34;&gt;Penalty Free CD&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;比 CD 利息低，但是没有提前取出的 penalty&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;t-bills&#34;&gt;T-Bills&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.treasurydirect.gov/&#34;&gt;购买网站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;基本没有风险，可以免除 state tax&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;money-market&#34;&gt;Money Market&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;好的流动，高的利率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;reference: &lt;a href=&#34;https://www.youtube.com/watch?v=CQ63ec_qWKQ&amp;amp;ab_channel=%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%B0%88%E9%92%B1&#34;&gt;https://www.youtube.com/watch?v=CQ63ec_qWKQ&amp;amp;ab_channel=%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%B0%88%E9%92%B1&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
