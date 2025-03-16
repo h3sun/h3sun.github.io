@@ -15,11 +15,23 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/tags/finance/</loc>
-    <lastmod>2025-03-14T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-03-14T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/post/2025-03-16-%E8%B4%A2%E5%AF%8C%E8%87%AA%E7%94%B1%E8%AE%A1%E7%AE%97/</loc>
+    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/tags/random-thoughts/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/post/2025-03-15-%E4%BB%B7%E5%80%BC%E8%A7%82/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/post/2025-03-14-%E6%8A%A5%E7%A8%8E-w2/</loc>
@@ -40,10 +52,6 @@
   </url><url>
     <loc>http://localhost:1313/post/2025-03-09-%E6%8A%95%E8%B5%84%E5%93%B2%E5%AD%A6&#43;%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5&#43;%E6%8A%95%E8%B5%84%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>http://localhost:1313/tags/random-thoughts/</loc>
-    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/post/2025-03-07-systemic-thinking/</loc>

@@ -5,12 +5,131 @@
     <link>http://localhost:1313/tags/finance/</link>
       <atom:link href="http://localhost:1313/tags/finance/index.xml" rel="self" type="application/rss+xml" />
     <description>Finance</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 16 Mar 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>Finance</title>
       <link>http://localhost:1313/tags/finance/</link>
     </image>
+    
+    <item>
+      <title>需要多少钱才能退休</title>
+      <link>http://localhost:1313/post/2025-03-16-%E8%B4%A2%E5%AF%8C%E8%87%AA%E7%94%B1%E8%AE%A1%E7%AE%97/</link>
+      <pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-03-16-%E8%B4%A2%E5%AF%8C%E8%87%AA%E7%94%B1%E8%AE%A1%E7%AE%97/</guid>
+      <description>&lt;p&gt;书接前文，上次谈到要计算多少钱能退休，现在通过和 chatgpt 以及网络搜索的汇总以后，我得到以下一些思考。&lt;/p&gt;
+&lt;h2 id=&#34;一个人活到老的版本&#34;&gt;一个人活到老的版本&lt;/h2&gt;
+&lt;h3 id=&#34;每年要花多少钱的计算按美金计算&#34;&gt;每年要花多少钱的计算，按美金计算&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Category&lt;/th&gt;
+&lt;th&gt;Monthly Cost ($)&lt;/th&gt;
+&lt;th&gt;Annual Cost ($)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Housing&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;2,000&lt;/td&gt;
+&lt;td&gt;24,000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Food&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;2,000&lt;/td&gt;
+&lt;td&gt;24,000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Transportation&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;- Car Insurance&lt;/td&gt;
+&lt;td&gt;150&lt;/td&gt;
+&lt;td&gt;1,800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;- Gas&lt;/td&gt;
+&lt;td&gt;150&lt;/td&gt;
+&lt;td&gt;1,800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;- Maintenance&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;360&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Total Transport&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;330&lt;/td&gt;
+&lt;td&gt;3,960&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Healthcare&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;- Insurance&lt;/td&gt;
+&lt;td&gt;468&lt;/td&gt;
+&lt;td&gt;5,616&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;- Out-of-Pocket&lt;/td&gt;
+&lt;td&gt;250&lt;/td&gt;
+&lt;td&gt;3,000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Total Healthcare&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;718&lt;/td&gt;
+&lt;td&gt;8,616&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Entertainment &amp;amp; Leisure&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;150&lt;/td&gt;
+&lt;td&gt;1,800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Other Bills&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;- Phone&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td&gt;300&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;- Internet&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;1,200&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;- Clothing&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;1,200&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Total Other Bills&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;225&lt;/td&gt;
+&lt;td&gt;2,700&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;TOTAL EXPENSES&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;5,423&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;65,076&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;FIRE Number (3% Rule - 33.3x Annual Expenses)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;$2,167,030&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;3-4-rule&#34;&gt;3-4% rule&lt;/h3&gt;
+&lt;h2 id=&#34;两个人结婚生孩子的版本&#34;&gt;两个人结婚生孩子的版本&lt;/h2&gt;
+</description>
+    </item>
     
     <item>
       <title>报税-W2</title>

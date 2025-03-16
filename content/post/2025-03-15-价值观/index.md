@@ -1,7 +1,7 @@
 ---
 title: 价值观
 summary: 谈谈自己节省的价值观，以及拥有一个更平衡的价值观
-date: 2025-03-14
+date: 2025-03-15
 authors:
   - admin
 tags:
