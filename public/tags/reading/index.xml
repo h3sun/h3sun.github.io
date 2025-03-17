@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reading | Haihao Sun&#39;s Homepage</title>
+    <link>http://localhost:1313/tags/reading/</link>
+      <atom:link href="http://localhost:1313/tags/reading/index.xml" rel="self" type="application/rss+xml" />
+    <description>Reading</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 17 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
+      <title>Reading</title>
+      <link>http://localhost:1313/tags/reading/</link>
+    </image>
+    
+    <item>
+      <title>The Psychology of Money - Distillation</title>
+      <link>http://localhost:1313/post/2025-03-17-the-psychology-of-money-intro&#43;1&#43;2/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-03-17-the-psychology-of-money-intro&#43;1&#43;2/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The author lists two examples: Ronald James, a gas station attendant, managed to save up to 8 million by retirement; Richard Fuscone, a harvard-educated Merrill Lynch executive, declared bankrupt during recession. The author ties to prove that finance is a soft science that does not require a lot of intelligence. Rather it requires behaviors.&lt;/p&gt;
+&lt;h2 id=&#34;chapter-1-no-ones-crazy&#34;&gt;Chapter 1. No one&amp;rsquo;s crazy&lt;/h2&gt;
+&lt;p&gt;The author claims that people with dramatically different experience will make extremely different decisions, but those decisions are all logical to their own minds. To illustrate this point, author lists how stock market price changes differently if you were born in 1950s and 1970s, how inflation rate changes differently if you were born in 1960s and 1990s.&lt;/p&gt;
+&lt;p&gt;In addition, the author also points out that how we make decisions about money are relatively new to the world, so it&amp;rsquo;s totally reasonable that there are some decisions that are not the most correct.&lt;/p&gt;
+&lt;h2 id=&#34;chapter-2-luckrisk&#34;&gt;Chapter 2. Luck&amp;amp;Risk&lt;/h2&gt;
+&lt;p&gt;Nothing is as good or as bad as it seems. The author lists examples where luck plays in a role at Bill Gates since he was very lucky to be 1 of a million students who get access to computers in high school. On the contrary, Gates&amp;rsquo; best friend passed away accidently in a mountain climbing, which is also 1 of 1 million but in a different direction.
+In investment, it&amp;rsquo;s hard to separate the luck/risk from the strategy. Therefore, focus less on individual cases but more on broad patterns.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
