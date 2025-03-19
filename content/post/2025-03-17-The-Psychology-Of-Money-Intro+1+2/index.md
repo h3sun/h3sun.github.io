@@ -1,5 +1,5 @@
 ---
-title: The Psychology of Money - Distillation
+title: The Psychology of Money - Distillation, Chapter 1 - 2
 summary: Distilling Introduction, Chapter 1, Chapter 2
 date: 2025-03-17
 authors:
