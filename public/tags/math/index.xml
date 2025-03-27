@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math | Haihao Sun&#39;s Homepage</title>
+    <link>http://localhost:1313/tags/math/</link>
+      <atom:link href="http://localhost:1313/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <description>Math</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 22 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
+      <title>Math</title>
+      <link>http://localhost:1313/tags/math/</link>
+    </image>
+    
+    <item>
+      <title>An interesting Math problem</title>
+      <link>http://localhost:1313/post/2025-03-26-interesting-math-problem/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-03-26-interesting-math-problem/</guid>
+      <description>&lt;h2 id=&#34;-solve-the-equation&#34;&gt;📘 Solve the equation:&lt;/h2&gt;
+\[
+\sqrt{5 - x} = 5 - x^2
+\]
+&lt;hr&gt;
+&lt;h3 id=&#34;-step-1-eliminate-the-square-root&#34;&gt;✏️ Step 1: Eliminate the square root&lt;/h3&gt;
+&lt;p&gt;Square both sides:&lt;/p&gt;
+\[
+(\sqrt{5 - x})^2 = (5 - x^2)^2
+\]
+\[
+5 - x = 25 + x^4 - 10x^2
+\]
+&lt;hr&gt;
+&lt;h3 id=&#34;-step-2-rearrange-into-a-standard-polynomial-form&#34;&gt;✏️ Step 2: Rearrange into a standard polynomial form&lt;/h3&gt;
+&lt;p&gt;Move all terms to one side:&lt;/p&gt;
+\[
+0 = x^4 - 5 - 10x^2 + x + 25
+\]
+&lt;hr&gt;
+&lt;h3 id=&#34;-step-3-lets-use-the-quadratic-formula&#34;&gt;✏️ Step 3: Let’s use the quadratic formula&lt;/h3&gt;
+&lt;p&gt;We write this as a quadratic in terms of \(5\):&lt;br&gt;
+Let:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\(a = 1\)&lt;/li&gt;
+&lt;li&gt;\(b = -(2x^2 + 1)\)&lt;/li&gt;
+&lt;li&gt;\(c = x^4 + x\)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the quadratic formula:&lt;/p&gt;
+\[
+5 = \frac{(2x^2 + 1) \pm \sqrt{(2x^2 + 1)^2 - 4(x^4 + x)}}{2}
+\]
+&lt;hr&gt;
+&lt;h3 id=&#34;-step-4-apply-the-quadratic-formula-and-simplify&#34;&gt;✏️ Step 4: Apply the Quadratic Formula and Simplify&lt;/h3&gt;
+&lt;p&gt;We are solving:&lt;/p&gt;
+\[
+5 = \frac{2x^2 + 1 \pm \sqrt{(-2x^2 - 1)^2 - 4(x^4 + x)}}{2}
+\]
+&lt;p&gt;Now simplify the discriminant:&lt;/p&gt;
+\[
+= \frac{2x^2 + 1 \pm \sqrt{4x^2 - 4x + 1}}{2}
+\]
+&lt;p&gt;Factor the square root:&lt;/p&gt;
+\[
+= \frac{2x^2 + 1 \pm (2x - 1)}{2}
+\]
+&lt;p&gt;Now evaluate the two cases from here, which can be solve using standard quard formula.&lt;/p&gt;
+&lt;h3 id=&#34;-step-5-solve-the-two-quadratic-equations&#34;&gt;✏️ Step 5: Solve the two quadratic equations&lt;/h3&gt;
+&lt;p&gt;Using the quadratic formula:&lt;/p&gt;
+&lt;h4 id=&#34;equation-1&#34;&gt;Equation 1:&lt;/h4&gt;
+\[
+x^2 + x - 5 = 0 \Rightarrow x = \frac{-1 \pm \sqrt{1^2 + 4 \cdot 5}}{2} = \frac{-1 \pm \sqrt{21}}{2}
+\]
+&lt;h4 id=&#34;equation-2&#34;&gt;Equation 2:&lt;/h4&gt;
+\[
+x^2 - x - 4 = 0 \Rightarrow x = \frac{1 \pm \sqrt{1^2 + 4 \cdot 4}}{2} = \frac{1 \pm \sqrt{17}}{2}
+\]
+&lt;hr&gt;
+&lt;h3 id=&#34;-final-answer&#34;&gt;✅ Final Answer:&lt;/h3&gt;
+&lt;p&gt;Check all four roots against the original equation. Only two satisfy it:&lt;/p&gt;
+\[
+\boxed{\frac{1}{2}(1 - \sqrt{17}) \quad \text{and} \quad \frac{1}{2}(\sqrt{21} - 1)}
+\]
+</description>
+    </item>
+    
+  </channel>
+</rss>
