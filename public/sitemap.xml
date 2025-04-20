@@ -14,6 +14,42 @@
     <lastmod>2027-12-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>http://localhost:1313/post/2025-04-19-chapter3-1&#43;2-linear-regression/</loc>
+    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/tags/machine-learning/</loc>
+    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/post/2025-04-12-chapter2-6&#43;7-probabilty-and-statistics&#43;documentation/</loc>
+    <lastmod>2025-04-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/post/2025-04-09-d2l-chapter2-4&#43;5-calculus&#43;automatic-differentiation/</loc>
+    <lastmod>2025-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/post/2025-04-08-d2l-chapter2-2&#43;3-data-preprocessing&#43;linear-algebra/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/post/2025-04-07-d2l-chapter2-1-data-manipulation/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/post/2025-04-07-d2l-chapter1-2-introduction-2-complete/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/post/2025-04-02-d2l-chapter1-1-introduction-1/</loc>
+    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>http://localhost:1313/post/2025-03-26-interesting-math-problem/</loc>
     <lastmod>2025-03-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -27,10 +63,6 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/tags/reading/</loc>
-    <lastmod>2025-03-22T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-03-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -123,10 +155,6 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/post/2024-11-29-cs224n-nlp-lecture1&#43;2-word2vec/</loc>
-    <lastmod>2024-11-29T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>http://localhost:1313/tags/machine-learning/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
