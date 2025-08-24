@@ -717,9 +717,7 @@
       "371-norms-and-weight-decay",
       "372-high-dimensional-linear-regression",
       "373-implementation-from-scratch",
-      "3731-defining",
       "3731-defining-norm-penalty",
-      "3732",
       "3732-defining-the-model",
       "3733-training-without-regularization",
       "374-concise-implementation",
@@ -1064,6 +1062,7 @@
       "两个人结婚版本",
       "两个人结婚生孩子的版本",
       "个人的-takeaway",
+      "作家和短视频创作者的类似与不同",
       "前言",
       "北极星指标",
       "基础指标",
@@ -1084,7 +1083,8 @@
       "理财新的体系化探索",
       "税收总结",
       "艺术的困境与突破",
-      "附录from-chatgpt"
+      "附录from-chatgpt",
+      "随便探案"
     ]
   }
 }
