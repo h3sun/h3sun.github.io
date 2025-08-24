@@ -14,6 +14,18 @@
     <lastmod>2027-12-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>http://localhost:1313/tags/random-thoughts/</loc>
+    <lastmod>2025-05-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/post/2025-05-19-writer-and-content-creator/</loc>
+    <lastmod>2025-05-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>http://localhost:1313/post/2025-04-20-chapter-3-4-linear-regression-implementation-from-scratch/</loc>
     <lastmod>2025-04-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -31,10 +43,6 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/tags/machine-learning/</loc>
-    <lastmod>2025-04-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-04-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -112,10 +120,6 @@
   </url><url>
     <loc>http://localhost:1313/post/2025-03-16-%E8%B4%A2%E5%AF%8C%E8%87%AA%E7%94%B1%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2025-03-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>http://localhost:1313/tags/random-thoughts/</loc>
-    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/post/2025-03-15-%E4%BB%B7%E5%80%BC%E8%A7%82/</loc>
