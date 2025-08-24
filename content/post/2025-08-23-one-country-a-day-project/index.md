@@ -6,8 +6,7 @@ authors:
   - admin
 tags:
   - data-analysis
-  - geography
-  - learning-project
+  - one-country-a-day
 ---
 
 ## 🌍 One Country a Day Project
@@ -28,7 +27,7 @@ You can find the complete data analysis and methodology in my [GitHub repository
 
 ### 📋 Data Reference: Country Combined Scores
 
-The analysis produced a comprehensive dataset (`country_combined_scores_with_region.csv`) that includes:
+The analysis produced a comprehensive [dataset](https://github.com/h3sun/cursor-country-data-analysis/blob/main/country_analysis_by_region_and_rank.csv) that includes:
 
 - **Country Rankings**: Individual rankings for population, GDP, surface area, and GDP per capita
 - **Combined Scores**: Overall performance metrics across all dimensions
@@ -42,11 +41,12 @@ This dataset serves as the foundation for selecting which countries to study fir
 I'm planning to study the top 100 countries systematically, region by region, following this order:
 
 1. **East Asia & Pacific** - Starting with the dynamic economies of Asia
-2. **Middle East** - Exploring the strategic crossroads of three continents
-3. **Europe & Central Asia** - Understanding the historical and economic powerhouses
-4. **Sub-Saharan Africa** - Discovering the continent's emerging markets and diverse cultures
-5. **North America** - Analyzing the established economic giants
-6. **Latin America & Caribbean** - Exploring the region's natural resources and development
+2. **South Asia** - Exploring the diverse cultures and emerging markets of the Indian subcontinent
+3. **Middle East** - Exploring the strategic crossroads of three continents
+4. **Europe & Central Asia** - Understanding the historical and economic powerhouses
+5. **Sub-Saharan Africa** - Discovering the continent's emerging markets and diverse cultures
+6. **North America** - Analyzing the established economic giants
+7. **Latin America & Caribbean** - Exploring the region's natural resources and development
 
 This regional approach will allow me to understand geographic patterns, cultural similarities, and economic relationships within each area before moving to the next region.
 
@@ -72,3 +72,5 @@ For each country, I'll analyze them across these 5 key dimensions using a 0-5 sc
 With the top 100 countries identified, I'll begin my daily deep-dive into each nation, starting with the most significant countries by the combined metrics. Each day will bring new insights and expand my understanding of our diverse world.
 
 Stay tuned for daily country profiles and insights from this learning journey!
+
+

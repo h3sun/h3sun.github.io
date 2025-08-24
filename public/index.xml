@@ -34,6 +34,87 @@
     </item>
     
     <item>
+      <title>One Country a Day - China</title>
+      <link>http://localhost:1313/post/2025-08-24-one-country-a-day-china/</link>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-08-24-one-country-a-day-china/</guid>
+      <description>&lt;h2 id=&#34;-china---day-1-of-one-country-a-day-project&#34;&gt;🇨🇳 China - Day 1 of One Country a Day Project&lt;/h2&gt;
+&lt;p&gt;Today marks the beginning of my systematic country study journey, starting with China - the world&amp;rsquo;s most populous country and second-largest economy. Using the 5-dimension framework, I&amp;rsquo;ll analyze China&amp;rsquo;s position across natural resources, climate, geopolitics, governance, and economic development.&lt;/p&gt;
+&lt;h3 id=&#34;-quick-facts&#34;&gt;📊 Quick Facts&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Population&lt;/strong&gt;: 1.4 billion (2024)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GDP&lt;/strong&gt;: $18.3 trillion (2024, PPP)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Surface Area&lt;/strong&gt;: 9.6 million km²&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capital&lt;/strong&gt;: Beijing&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Major Cities&lt;/strong&gt;: Beijing, Shanghai, Guangzhou, Shenzhen, Hangzhou, Nanjing(my hometown)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-5-dimension-analysis&#34;&gt;🌍 5-Dimension Analysis&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Dimension&lt;/th&gt;
+&lt;th&gt;Key datapoints (evidence)&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;Score (0–5)&lt;/th&gt;
+&lt;th&gt;Why this score&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;1) Natural Resources&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Land&lt;/strong&gt;: Arable land ≈ &lt;strong&gt;11.5%&lt;/strong&gt; of total area (FAO/WB)&lt;br&gt;&lt;strong&gt;Water&lt;/strong&gt;: Renewable freshwater ≈ &lt;strong&gt;~2,000 m³ per person&lt;/strong&gt; (WB)&lt;br&gt;&lt;strong&gt;Energy&lt;/strong&gt;: Coal &lt;strong&gt;~62%&lt;/strong&gt; of consumption; largest oil importer &lt;strong&gt;11.1 mb/d&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Minerals&lt;/strong&gt;: Processes &lt;strong&gt;~90%&lt;/strong&gt; of global rare earth elements (&lt;a href=&#34;https://tradingeconomics.com/china/arable-land-percent-of-land-area-wb-data.html?utm_source=chatgpt.com&#34; title=&#34;Arable Land (% Of Land Area) - China - Trading Economics&#34;&gt;Trading Economics&lt;/a&gt;, &lt;a href=&#34;https://www.indexmundi.com/facts/china/indicator/ER.H2O.INTR.PC?utm_source=chatgpt.com&#34; title=&#34;China - Renewable internal freshwater resources per ...&#34;&gt;Index Mundi&lt;/a&gt;, &lt;a href=&#34;https://www.eia.gov/international/content/analysis/countries_long/China/?utm_source=chatgpt.com&#34; title=&#34;Table 1. China energy indicators, 2023&#34;&gt;U.S. Energy Information Administration&lt;/a&gt;, &lt;a href=&#34;https://apnews.com/article/dbaaf84b6863e34975ec341cf3ac1d3a?utm_source=chatgpt.com&#34; title=&#34;What to know about China&#39;s new regulations on rare earths&#34;&gt;AP News&lt;/a&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;3.5&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Enormous mineral/energy base (coal, REE processing) boosts score, but limited arable land and per-capita water scarcity are real constraints.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;2) Climate &amp;amp; Livability&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Adaptive Capacity&lt;/strong&gt;: ND-GAIN score &lt;strong&gt;58.1&lt;/strong&gt; (rank 36)&lt;br&gt;&lt;strong&gt;Vulnerability&lt;/strong&gt;: Low at &lt;strong&gt;0.382&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Readiness&lt;/strong&gt;: Higher at &lt;strong&gt;0.544&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Risk Exposure&lt;/strong&gt;: Very high exposure to floods/typhoons along coast (&lt;a href=&#34;https://gain-new.crc.nd.edu/country/china?utm_source=chatgpt.com&#34; title=&#34;China | ND-GAIN Index&#34;&gt;ND-GAIN Index&lt;/a&gt;, &lt;a href=&#34;https://www.preventionweb.net/publication/world-risk-report-2023-focus-diversity?utm_source=chatgpt.com&#34; title=&#34;World Risk Report 2023: Focus: Diversity&#34;&gt;PreventionWeb&lt;/a&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;2.5&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Adaptive capacity is improving, but exposure to extreme weather keeps livability risks moderate.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;3) Geo Composite&lt;/strong&gt; &lt;em&gt;(60% Geo_Defense + 40% Geopolitics)&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Geographic Defense&lt;/strong&gt;: &lt;strong&gt;14 land neighbors&lt;/strong&gt; (tie for most worldwide)&lt;br&gt;&lt;strong&gt;Maritime Control&lt;/strong&gt;: Energy flows depend on &lt;strong&gt;Strait of Malacca&lt;/strong&gt; chokepoint&lt;br&gt;&lt;strong&gt;Regional Integration&lt;/strong&gt;: Member of &lt;strong&gt;RCEP&lt;/strong&gt; (2022) and &lt;strong&gt;SCO&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;External Constraints&lt;/strong&gt;: Faces &lt;strong&gt;U.S. export controls&lt;/strong&gt; on advanced chips (&lt;a href=&#34;https://en.wikipedia.org/wiki/Borders_of_China?utm_source=chatgpt.com&#34; title=&#34;Borders of China&#34;&gt;Wikipedia&lt;/a&gt;, &lt;a href=&#34;https://www.eia.gov/todayinenergy/detail.php?id=32452&amp;amp;utm_source=chatgpt.com&#34; title=&#34;The Strait of Malacca, a key oil trade chokepoint, links ...&#34;&gt;U.S. Energy Information Administration&lt;/a&gt;, &lt;a href=&#34;https://english.www.gov.cn/statecouncil/ministries/202111/04/content_WS61836e1ec6d0df57f98e4832.html?utm_source=chatgpt.com&#34; title=&#34;RCEP to take effect on Jan 1, 2022&#34;&gt;State Council of China&lt;/a&gt;, &lt;a href=&#34;https://eng.sectsco.org/?utm_source=chatgpt.com&#34; title=&#34;The Shanghai cooperation organisation&#34;&gt;The Shanghai cooperation organisation&lt;/a&gt;, &lt;a href=&#34;https://www.bis.gov/media/documents/2023.1.25-updated-faqs-oct-7-advanced-computing-semiconductor-manufacturing-equipment-rule.pdf?utm_source=chatgpt.com&#34; title=&#34;Certain Advanced Computing and Semiconductor ...&#34;&gt;Bureau of Industry and Security&lt;/a&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;3.5&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Strong strategic depth and continental buffers; major trade/multilateral leverage—but chokepoint exposure and tech-control headwinds cap the score.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;4) Governance &amp;amp; Rule of Law&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;N/A&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;N/A&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;N/A&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;5) Economy &amp;amp; Development&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Current Status&lt;/strong&gt;: GDP per capita &lt;strong&gt;$13,303&lt;/strong&gt; (upper-middle income)&lt;br&gt;&lt;strong&gt;Growth Projections&lt;/strong&gt;: IMF &lt;strong&gt;~4.8%&lt;/strong&gt; (2025); OECD &lt;strong&gt;~4.7%&lt;/strong&gt; (2025) → &lt;strong&gt;4.3%&lt;/strong&gt; (2026)&lt;br&gt;&lt;strong&gt;Economic Structure&lt;/strong&gt;: Large, diversified manufacturing-services economy&lt;br&gt;&lt;strong&gt;Challenges&lt;/strong&gt;: Property-sector drag and consumption rebalancing needs (&lt;a href=&#34;https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?utm_source=chatgpt.com&#34; title=&#34;GDP per capita (current US$)&#34;&gt;World Bank Open Data&lt;/a&gt;, &lt;a href=&#34;https://www.imf.org/en/Countries/CHN?utm_source=chatgpt.com&#34; title=&#34;People&#39;s Republic of China and the IMF&#34;&gt;IMF&lt;/a&gt;, &lt;a href=&#34;https://www.oecd.org/en/publications/2025/06/oecd-economic-outlook-volume-2025-issue-1_1fd979a8/full-report/china_bb7827bc.html?utm_source=chatgpt.com&#34; title=&#34;OECD Economic Outlook, Volume 2025 Issue 1: China&#34;&gt;OECD&lt;/a&gt;, &lt;a href=&#34;https://thedocs.worldbank.org/en/doc/8ae5ce818673952a85fee1ee57c3e933-0070012025/original/CEU-June-2025-EN.pdf?utm_source=chatgpt.com&#34; title=&#34;China Economic Update (June 2025)&#34;&gt;The World Bank Docs&lt;/a&gt;)&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;3.5&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Large, diversified manufacturing-services economy with decent medium-term growth, but below high-income and facing structural headwinds.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;-overall-assessment&#34;&gt;🎯 Overall Assessment&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Combined Score: 13/20 (65%)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;China represents a fascinating case study in rapid development and strategic positioning. The country&amp;rsquo;s massive scale, resource wealth, and strategic geography make it a global power.&lt;/p&gt;
+&lt;h3 id=&#34;-key-insights&#34;&gt;🔍 Key Insights&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Scale Matters&lt;/strong&gt;: China&amp;rsquo;s sheer size and population create unique advantages in manufacturing, consumption, and geopolitical influence&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Strategic Geography&lt;/strong&gt;: Control of key maritime routes and natural barriers provides significant strategic advantages&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Global Integration&lt;/strong&gt;: Economic interdependence creates both opportunities and vulnerabilities in international relations&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;-further-reading&#34;&gt;📚 Further Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.worldbank.org/en/country/china&#34;&gt;World Bank China Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cia.gov/the-world-factbook/countries/china/&#34;&gt;CIA World Factbook - China&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.beltroad-initiative.com/&#34;&gt;China&amp;rsquo;s Belt and Road Initiative&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-data-sources--references&#34;&gt;🔗 Data Sources &amp;amp; References&lt;/h3&gt;
+&lt;h3 id=&#34;-tomorrows-country&#34;&gt;🚀 Tomorrow&amp;rsquo;s Country&lt;/h3&gt;
+&lt;p&gt;Tomorrow I&amp;rsquo;ll continue with another East Asia &amp;amp; Pacific country, according to the table it will be Australia.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;This analysis is part of my &amp;ldquo;One Country a Day&amp;rdquo; project, using data-driven approaches to understand global geography, economics, and geopolitics. Follow along as I explore the world, one country at a time.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>One Country a Day Project</title>
       <link>http://localhost:1313/post/2025-08-23-one-country-a-day-project/</link>
       <pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate>
@@ -50,7 +131,7 @@
 &lt;p&gt;This analysis serves as the foundation for my daily country studies, helping me prioritize which countries to explore first and understand the global landscape.&lt;/p&gt;
 &lt;p&gt;You can find the complete data analysis and methodology in my &lt;a href=&#34;https://github.com/h3sun/cursor-country-data-analysis&#34;&gt;GitHub repository&lt;/a&gt;, which includes the World Bank data processing, ranking algorithms, and combined scoring system.&lt;/p&gt;
 &lt;h3 id=&#34;-data-reference-country-combined-scores&#34;&gt;📋 Data Reference: Country Combined Scores&lt;/h3&gt;
-&lt;p&gt;The analysis produced a comprehensive dataset (&lt;code&gt;country_combined_scores_with_region.csv&lt;/code&gt;) that includes:&lt;/p&gt;
+&lt;p&gt;The analysis produced a comprehensive &lt;a href=&#34;https://github.com/h3sun/cursor-country-data-analysis/blob/main/country_analysis_by_region_and_rank.csv&#34;&gt;dataset&lt;/a&gt; that includes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Country Rankings&lt;/strong&gt;: Individual rankings for population, GDP, surface area, and GDP per capita&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Combined Scores&lt;/strong&gt;: Overall performance metrics across all dimensions&lt;/li&gt;
@@ -62,6 +143,7 @@
 &lt;p&gt;I&amp;rsquo;m planning to study the top 100 countries systematically, region by region, following this order:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;East Asia &amp;amp; Pacific&lt;/strong&gt; - Starting with the dynamic economies of Asia&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;South Asia&lt;/strong&gt; - Exploring the diverse cultures and emerging markets of the Indian subcontinent&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Middle East&lt;/strong&gt; - Exploring the strategic crossroads of three continents&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Europe &amp;amp; Central Asia&lt;/strong&gt; - Understanding the historical and economic powerhouses&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Sub-Saharan Africa&lt;/strong&gt; - Discovering the continent&amp;rsquo;s emerging markets and diverse cultures&lt;/li&gt;
