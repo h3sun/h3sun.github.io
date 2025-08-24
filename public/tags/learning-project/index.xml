@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning-Project | Haihao Sun&#39;s Homepage</title>
+    <link>http://localhost:1313/tags/learning-project/</link>
+      <atom:link href="http://localhost:1313/tags/learning-project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Learning-Project</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 23 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
+      <title>Learning-Project</title>
+      <link>http://localhost:1313/tags/learning-project/</link>
+    </image>
+    
+    <item>
+      <title>One Country a Day Project</title>
+      <link>http://localhost:1313/post/2025-08-23-one-country-a-day-project/</link>
+      <pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-08-23-one-country-a-day-project/</guid>
+      <description>&lt;h2 id=&#34;-one-country-a-day-project&#34;&gt;🌍 One Country a Day Project&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve decided to embark on an ambitious learning journey: studying one country every day. This project aims to expand my knowledge of world geography, economics, and cultures through systematic daily exploration.&lt;/p&gt;
+&lt;h3 id=&#34;-day-1-data-analysis-foundation&#34;&gt;📊 Day 1: Data Analysis Foundation&lt;/h3&gt;
+&lt;p&gt;For the first day, I conducted a comprehensive data analysis to identify the top 100 countries based on three key metrics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GDP (Gross Domestic Product)&lt;/strong&gt; - Economic strength and development&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Population&lt;/strong&gt; - Human capital and market size&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Surface Area&lt;/strong&gt; - Geographic scale and natural resources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This analysis serves as the foundation for my daily country studies, helping me prioritize which countries to explore first and understand the global landscape.&lt;/p&gt;
+&lt;p&gt;You can find the complete data analysis and methodology in my &lt;a href=&#34;https://github.com/h3sun/cursor-country-data-analysis&#34;&gt;GitHub repository&lt;/a&gt;, which includes the World Bank data processing, ranking algorithms, and combined scoring system.&lt;/p&gt;
+&lt;h3 id=&#34;-data-reference-country-combined-scores&#34;&gt;📋 Data Reference: Country Combined Scores&lt;/h3&gt;
+&lt;p&gt;The analysis produced a comprehensive dataset (&lt;code&gt;country_combined_scores_with_region.csv&lt;/code&gt;) that includes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Country Rankings&lt;/strong&gt;: Individual rankings for population, GDP, surface area, and GDP per capita&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combined Scores&lt;/strong&gt;: Overall performance metrics across all dimensions&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Regional Classification&lt;/strong&gt;: Countries grouped by geographic regions (East Asia &amp;amp; Pacific, Latin America &amp;amp; Caribbean, Sub-Saharan Africa, Europe &amp;amp; Central Asia, Middle East, North America, South Asia)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Time Period&lt;/strong&gt;: Data from 2020-2024 with calculated averages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This dataset serves as the foundation for selecting which countries to study first, prioritizing nations with the highest combined scores across all metrics.&lt;/p&gt;
+&lt;h3 id=&#34;-regional-study-strategy&#34;&gt;🌏 Regional Study Strategy&lt;/h3&gt;
+&lt;p&gt;I&amp;rsquo;m planning to study the top 100 countries systematically, region by region, following this order:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;East Asia &amp;amp; Pacific&lt;/strong&gt; - Starting with the dynamic economies of Asia&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Middle East&lt;/strong&gt; - Exploring the strategic crossroads of three continents&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Europe &amp;amp; Central Asia&lt;/strong&gt; - Understanding the historical and economic powerhouses&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sub-Saharan Africa&lt;/strong&gt; - Discovering the continent&amp;rsquo;s emerging markets and diverse cultures&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;North America&lt;/strong&gt; - Analyzing the established economic giants&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Latin America &amp;amp; Caribbean&lt;/strong&gt; - Exploring the region&amp;rsquo;s natural resources and development&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This regional approach will allow me to understand geographic patterns, cultural similarities, and economic relationships within each area before moving to the next region.&lt;/p&gt;
+&lt;h3 id=&#34;-5-dimensions-framework&#34;&gt;📐 5 Dimensions Framework&lt;/h3&gt;
+&lt;p&gt;For each country, I&amp;rsquo;ll analyze them across these 5 key dimensions using a 0-5 scoring system:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Natural Resources (0–5)&lt;/strong&gt; – Energy/minerals, arable land, freshwater&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Climate &amp;amp; Livability (0–5)&lt;/strong&gt; – Long-term climate + disaster risk&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Geo Composite (0–5)&lt;/strong&gt; – 60% Geo_Defense (terrain, coast/landlocked, chokepoints, neighbor exposure) + 40% Geopolitics (alliances, sanctions/alignment risk, regional integration, external threats, strategic leverage)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Governance &amp;amp; Rule of Law (0–5)&lt;/strong&gt; – Political rights, civil liberties, corruption&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Economy &amp;amp; Development (0–5)&lt;/strong&gt; – Income level, diversification, medium-term growth&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;-project-goals&#34;&gt;🎯 Project Goals&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Daily Learning&lt;/strong&gt;: Dedicate time each day to study one country&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Comprehensive Understanding&lt;/strong&gt;: Cover geography, history, culture, economy, and current affairs&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data-Driven Approach&lt;/strong&gt;: Use statistics and facts to guide learning priorities&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Global Perspective&lt;/strong&gt;: Develop a broader worldview through systematic exploration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-next-steps&#34;&gt;📈 Next Steps&lt;/h3&gt;
+&lt;p&gt;With the top 100 countries identified, I&amp;rsquo;ll begin my daily deep-dive into each nation, starting with the most significant countries by the combined metrics. Each day will bring new insights and expand my understanding of our diverse world.&lt;/p&gt;
+&lt;p&gt;Stay tuned for daily country profiles and insights from this learning journey!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
