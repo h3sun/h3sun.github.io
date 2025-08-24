@@ -1,14 +1,12 @@
 ---
 title: 作家和短视频创作者的类似与不同
-summary:
+summary: 随便谈谈信息传播的趋势
 date: 2025-05-19
 authors:
   - admin
 tags:
   - random-thoughts
 ---
-
-## 作家和短视频创作者的类似与不同
 
 书和短视频很像，他们都填补了人空闲的时间。
 
