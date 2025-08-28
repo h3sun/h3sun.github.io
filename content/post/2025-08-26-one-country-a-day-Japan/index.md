@@ -71,7 +71,7 @@ Japan represents a fascinating case study in resource scarcity overcome by techn
 
 ### 🚀 Tomorrow's Country
 
-Tomorrow I'll continue with another East Asia & Pacific country, according to the table it will be South Korea.
+Tomorrow I'll continue with another East Asia & Pacific country, according to the table it will be Indonesia.
 
 ---
 
