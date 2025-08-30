@@ -15,9 +15,11 @@ Today I continue my systematic country study journey with Japan - the world's th
 ### 📊 Quick Facts
 - **Population**: 125.7 million (2024)
 - **GDP**: $4.2 trillion (2024, PPP)
+- **GDP per capita**: $32,476 (2024, current US$)
 - **Surface Area**: 377,975 km²
 - **Capital**: Tokyo
 - **Major Cities**: Tokyo, Yokohama, Osaka, Nagoya, Sapporo, Fukuoka
+- **Famous Companies**: Toyota Motor, Sony Group, SoftBank Group, Honda Motor, Nissan Motor, Mitsubishi Group, Nintendo
 
 ### 🌍 5-Dimension Analysis
 

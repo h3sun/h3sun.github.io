@@ -15,9 +15,11 @@ Today I continue my systematic country study journey with Thailand - Southeast A
 ### 📊 Quick Facts
 - **Population**: 71.6 million (2024)
 - **GDP**: $1.4 trillion (2024, PPP)
+- **GDP per capita**: $7,345 (2024, current US$)
 - **Surface Area**: 513,120 km²
 - **Capital**: Bangkok
 - **Major Cities**: Bangkok, Chiang Mai, Pattaya, Phuket, Hat Yai, Udon Thani
+- **Famous Companies**: PTT Group, Charoen Pokphand Group, Siam Cement Group, Central Group, True Corporation, Kasikorn Bank
 
 ### 🌍 5-Dimension Analysis
 
