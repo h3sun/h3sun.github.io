@@ -15,9 +15,11 @@ Today I continue my systematic country study journey with Australia - the world'
 ### 📊 Quick Facts
 - **Population**: 26.4 million (2024)
 - **GDP**: $1.7 trillion (2024, PPP)
+- **GDP per capita**: $64,408 (2024, current US$)
 - **Surface Area**: 7.7 million km²
 - **Capital**: Canberra
 - **Major Cities**: Sydney, Melbourne, Brisbane, Perth, Adelaide
+- **Famous Companies**: BHP Group, Rio Tinto, Commonwealth Bank, Westpac, ANZ Bank, Telstra, Woolworths Group
 
 ### 🌍 5-Dimension Analysis
 

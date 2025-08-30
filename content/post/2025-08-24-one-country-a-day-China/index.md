@@ -15,9 +15,11 @@ Today marks the beginning of my systematic country study journey, starting with 
 ### 📊 Quick Facts
 - **Population**: 1.4 billion (2024)
 - **GDP**: $18.3 trillion (2024, PPP)
+- **GDP per capita**: $13,303 (2024, current US$)
 - **Surface Area**: 9.6 million km²
 - **Capital**: Beijing
 - **Major Cities**: Beijing, Shanghai, Guangzhou, Shenzhen, Hangzhou, Nanjing(my hometown)
+- **Famous Companies**: Alibaba Group, Tencent Holdings, Huawei Technologies, BYD Company, China Construction Bank, Industrial and Commercial Bank of China, PetroChina
 
 ### 🌍 5-Dimension Analysis
 

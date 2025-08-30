@@ -15,9 +15,11 @@ Today I continue my systematic country study journey with Indonesia - the world'
 ### 📊 Quick Facts
 - **Population**: 277.5 million (2024)
 - **GDP**: $4.1 trillion (2024, PPP)
+- **GDP per capita**: $5,000 (2024, current US$)
 - **Surface Area**: 1.9 million km²
 - **Capital**: Jakarta
 - **Major Cities**: Jakarta, Surabaya, Bandung, Medan, Semarang
+- **Famous Companies**: Astra International, Bank Central Asia, Bank Rakyat Indonesia, Indofood Sukses Makmur, Telkom Indonesia, Pertamina
 
 ### 🌍 5-Dimension Analysis
 
