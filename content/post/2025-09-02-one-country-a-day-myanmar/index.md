@@ -83,7 +83,7 @@ Myanmar represents a tragic case of a resource-rich nation held back by authorit
 
 ### 🚀 Tomorrow's Country
 
-Tomorrow I'll continue with another Southeast Asian country, according to the regional study strategy it will be Cambodia.
+Tomorrow I'll continue with another Southeast Asian country, according to the regional study strategy it will be New Zealand.
 
 ---
 
