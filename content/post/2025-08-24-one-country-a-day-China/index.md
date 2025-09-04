@@ -8,7 +8,7 @@ tags:
   - one-country-a-day
 ---
 
-## 🇨🇳 China - Day 1 of One Country a Day Project
+## 🇨🇳 China - Day 0 of One Country a Day Project
 
 Today marks the beginning of my systematic country study journey, starting with China - the world's most populous country and second-largest economy. Using the 5-dimension framework, I'll analyze China's position across natural resources, climate, geopolitics, governance, and economic development.
 

@@ -8,7 +8,7 @@ tags:
   - one-country-a-day
 ---
 
-## 🇦🇺 Australia - Day 2 of One Country a Day Project
+## 🇦🇺 Australia - Day 1 of One Country a Day Project
 
 Today I continue my systematic country study journey with Australia - the world's sixth-largest country by land area and a major player in the Asia-Pacific region. Using the 5-dimension framework, I'll analyze Australia's position across natural resources, climate, geopolitics, governance, and economic development.
 

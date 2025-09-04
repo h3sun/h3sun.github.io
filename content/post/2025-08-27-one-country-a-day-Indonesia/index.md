@@ -8,7 +8,7 @@ tags:
   - one-country-a-day
 ---
 
-## 🇮🇩 Indonesia - Day 4 of One Country a Day Project
+## 🇮🇩 Indonesia - Day 3 of One Country a Day Project
 
 Today I continue my systematic country study journey with Indonesia - the world's largest archipelagic nation and fourth most populous country. Using the 5-dimension framework, I'll analyze Indonesia's position across natural resources, climate, geopolitics, governance, and economic development.
 

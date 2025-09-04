@@ -8,7 +8,7 @@ tags:
   - one-country-a-day
 ---
 
-## 🇯🇵 Japan - Day 3 of One Country a Day Project
+## 🇯🇵 Japan - Day 2 of One Country a Day Project
 
 Today I continue my systematic country study journey with Japan - the world's third-largest economy and a technological powerhouse in East Asia. Using the 5-dimension framework, I'll analyze Japan's position across natural resources, climate, geopolitics, governance, and economic development.
 
