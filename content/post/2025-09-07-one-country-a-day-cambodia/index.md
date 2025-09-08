@@ -69,6 +69,8 @@ Cambodia’s development hinges on sustaining export-led manufacturing while upg
 [17]: https://www.worldbank.org/en/country/cambodia/overview?utm_source=chatgpt.com "The World Bank in Cambodia"
 [18]: https://www.imf.org/en/Countries/KHM?utm_source=chatgpt.com "Cambodia and the IMF"
 
+Next week, I will study South Asia.
+
 ---
 
 *This analysis is part of my "One Country a Day" project, using data-driven approaches to understand global geography, economics, and geopolitics. Follow along as I explore the world, one country at a time.*
