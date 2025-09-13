@@ -51,17 +51,24 @@ Nepal represents a nation with significant untapped potential, particularly in h
 
 ### 🔗 Data Sources & References
 
-[1]: https://data.worldbank.org/country/nepal?utm_source=chatgpt.com "Nepal | Data"
-[2]: https://moewri.gov.np/?utm_source=chatgpt.com "Ministry of Energy, Water Resources and Irrigation"
-[3]: https://gain-new.crc.nd.edu/country/nepal?utm_source=chatgpt.com "Nepal | ND-GAIN Index"
-[4]: https://climateknowledgeportal.worldbank.org/country/nepal?utm_source=chatgpt.com "WB Climate Change Knowledge Portal - Nepal"
-[5]: https://mofa.gov.np/?utm_source=chatgpt.com "Ministry of Foreign Affairs - Nepal"
-[6]: https://www.cia.gov/the-world-factbook/countries/nepal/?utm_source=chatgpt.com "Nepal - The World Factbook"
-[7]: https://freedomhouse.org/country/nepal/freedom-world/2025?utm_source=chatgpt.com "Nepal: Freedom in the World 2025 Country Report"
-[8]: https://www.transparency.org/en/countries/nepal?utm_source=chatgpt.com "Nepal"
-[9]: https://d1qqtien6gys07.cloudfront.net/wp-content/uploads/2025/03/Democracy_INDEX_2024.pdf?utm_source=chatgpt.com "Table 2 Democracy Index 2024 - Cloudfront.net"
-[10]: https://www.imf.org/en/Countries/NPL?utm_source=chatgpt.com "Nepal and the IMF"
-[11]: https://www.nrb.org.np/?utm_source=chatgpt.com "Nepal Rastra Bank"
+[1]: https://tradingeconomics.com/nepal/arable-land-percent-of-land-area-wb-data.html?utm_source=chatgpt.com "Nepal - Arable Land (% Of Land Area) - 2025 Data 2026 ..."
+[2]: https://data.worldbank.org/indicator/AG.LND.FRST.ZS?locations=NP&utm_source=chatgpt.com "Forest area (% of land area) - Nepal"
+[3]: https://storage.googleapis.com/fao-aquastat.appspot.com/countries_regions/factsheets/summary_statistics/en/NPL-CF.pdf?utm_source=chatgpt.com "Country Fact Sheet Area - Googleapis.com"
+[4]: https://www.nbr.org/publication/balanced-hydropower-development-in-nepal/?utm_source=chatgpt.com "Balanced Hydropower Development in Nepal"
+[5]: https://gain-new.crc.nd.edu/country/nepal?utm_source=chatgpt.com "Nepal | ND-GAIN Index"
+[6]: https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099511210252413915/idu1a6b7751e10051a5c913a740a4c1c89?utm_source=chatgpt.com "Nepal Disaster Resilience Second DPC with Cat DDO ..."
+[7]: https://www.indembkathmandu.gov.in/about-india-nepal-relations?utm_source=chatgpt.com "About India Nepal Relations"
+[8]: https://www.reuters.com/world/asia-pacific/india-import-10000-mw-hydroelectricity-nepal-over-10-years-2024-01-04/?utm_source=chatgpt.com "India to import 10000 MW of hydroelectricity from Nepal ..."
+[9]: https://freedomhouse.org/country/nepal/freedom-world/2025?utm_source=chatgpt.com "Nepal: Freedom in the World 2025 Country Report"
+[10]: https://www.transparency.org/en/countries/nepal?utm_source=chatgpt.com "Nepal"
+[11]: https://d1qqtien6gys07.cloudfront.net/wp-content/uploads/2025/03/Democracy_INDEX_2024.pdf?utm_source=chatgpt.com "Table 2 Democracy Index 2024 - Cloudfront.net"
+[12]: https://www.reuters.com/world/asia-pacific/nepal-lifts-social-media-ban-after-protests-leave-19-dead-minister-says-2025-09-09/?utm_source=chatgpt.com "Nepal lifts social media ban after protests leave 19 dead, minister says"
+[13]: https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=NP&utm_source=chatgpt.com "GDP per capita (current US$) - Nepal"
+[14]: https://tradingeconomics.com/nepal/workers-remittances-and-compensation-of-employees-received-percent-of-gdp-wb-data.html?utm_source=chatgpt.com "Personal remittances, received (% of GDP) in Nepal ..."
+
+### 🚀 Next Regional Focus
+
+Next, I will focus on North America, studying the United States and Canada to complete the global analysis.
 
 ---
 
