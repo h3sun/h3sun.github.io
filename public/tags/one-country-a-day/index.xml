@@ -5,12 +5,105 @@
     <link>http://localhost:1313/tags/one-country-a-day/</link>
       <atom:link href="http://localhost:1313/tags/one-country-a-day/index.xml" rel="self" type="application/rss+xml" />
     <description>One-Country-a-Day</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 14 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Sep 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>One-Country-a-Day</title>
       <link>http://localhost:1313/tags/one-country-a-day/</link>
     </image>
+    
+    <item>
+      <title>One Country a Day - United States</title>
+      <link>http://localhost:1313/post/2025-09-15-one-country-a-day-united-states/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-09-15-one-country-a-day-united-states/</guid>
+      <description>&lt;p&gt;The United States of America stands as the world&amp;rsquo;s most powerful nation, wielding unprecedented economic, military, and cultural influence across the globe. From its founding as a revolutionary experiment in democracy to its current position as the sole superpower, America&amp;rsquo;s story is one of remarkable transformation, innovation, and global leadership. Today, we examine this continental nation that spans from the Atlantic to the Pacific, exploring its natural wealth, strategic advantages, and the complex challenges that define its 21st-century reality.&lt;/p&gt;
+&lt;h3 id=&#34;-quick-facts&#34;&gt;📊 Quick Facts&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Population&lt;/strong&gt;: ~331 million (2020 census)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GDP (Nominal)&lt;/strong&gt;: ~$25.5 trillion (2024)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GDP per Capita&lt;/strong&gt;: ~$77,000 (2024)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Surface Area&lt;/strong&gt;: 9,833,517 km² (including Alaska and Hawaii)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capital&lt;/strong&gt;: Washington, D.C.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Major Cities&lt;/strong&gt;: New York, Los Angeles, Chicago, Houston, Phoenix, Philadelphia, San Antonio, San Diego, Dallas, San Jose&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Famous Companies&lt;/strong&gt;: Apple, Microsoft, Amazon, Google (Alphabet), Tesla, Meta, Berkshire Hathaway, Johnson &amp;amp; Johnson, JPMorgan Chase, Walmart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-5-dimension-analysis&#34;&gt;🌍 5-Dimension Analysis&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Dimension&lt;/th&gt;
+&lt;th&gt;Key indicators (latest reliable data)&lt;/th&gt;
+&lt;th&gt;Evidence (sources)&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;Score (0–5)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;1) Natural Resources&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Largest oil &amp;amp; gas producer; vast coal endowment; ~16–17% arable land (~158M ha); large national freshwater endowment with regional stress.&lt;/td&gt;
+&lt;td&gt;U.S. EIA (oil/gas, coal); USDA/World Bank (arable land); USGS; World Bank freshwater series.&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;4.7&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;2) Climate &amp;amp; Livability&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Strong readiness but rising disaster frequency &amp;amp; cost.&lt;/td&gt;
+&lt;td&gt;ND-GAIN (readiness/vulnerability); NOAA NCEI &amp;ldquo;Billion-Dollar Disasters&amp;rdquo;.&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;3.6&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;3) Geo Composite&lt;/strong&gt; &lt;em&gt;(60% Geo_Defense, 40% Geopolitics)&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;Two-ocean buffers, friendly land neighbors, global power projection; dense alliance network; USD reserve role; USMCA/NATO leadership.&lt;/td&gt;
+&lt;td&gt;SIPRI/DoD (spend); IMF/COFER (reserves); NATO; USMCA texts &amp;amp; trade stats.&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;4.8&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;4) Governance &amp;amp; Rule of Law&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Liberal democracy with solid but not top-tier rule-of-law/corruption scores.&lt;/td&gt;
+&lt;td&gt;Freedom House; World Justice Project; Transparency International CPI.&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;4.0&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;5) Economy &amp;amp; Development&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;High-income, highly diversified, innovation-intensive; moderate medium-term growth.&lt;/td&gt;
+&lt;td&gt;World Bank (income, sector share); BEA/BLS; IMF WEO (growth).&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;4.8&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;-overall-assessment&#34;&gt;🎯 Overall Assessment&lt;/h3&gt;
+&lt;p&gt;The United States represents the pinnacle of global power and influence, combining exceptional natural resources, strategic geography, and institutional strength. Its position as the world&amp;rsquo;s sole superpower is built on a foundation of economic might, military dominance, and technological leadership. However, the nation faces significant challenges including political polarization, infrastructure aging, climate change adaptation, and maintaining its competitive edge in an increasingly multipolar world.&lt;/p&gt;
+&lt;h3 id=&#34;-key-insights&#34;&gt;🔍 Key Insights&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Resource Superpower&lt;/strong&gt;: America&amp;rsquo;s natural resource endowment is unmatched, providing energy independence and agricultural abundance that few nations can rival.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Geographic Fortress&lt;/strong&gt;: The continent-spanning geography with ocean buffers provides exceptional strategic depth and defensive advantages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Innovation Engine&lt;/strong&gt;: The US remains the global leader in technology, research, and development, driving economic growth and maintaining competitive advantages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Institutional Resilience&lt;/strong&gt;: Despite political challenges, America&amp;rsquo;s democratic institutions and rule of law provide a strong foundation for continued prosperity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Global Leadership&lt;/strong&gt;: The US maintains unparalleled global influence through military presence, economic power, and cultural reach, though this position faces increasing challenges.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;-further-reading&#34;&gt;📚 Further Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.worldbank.org/en/country/unitedstates&#34;&gt;World Bank United States Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cia.gov/the-world-factbook/countries/united-states/&#34;&gt;CIA World Factbook - United States&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bea.gov/&#34;&gt;Bureau of Economic Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.federalreserve.gov/&#34;&gt;Federal Reserve&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.state.gov/&#34;&gt;Department of State&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-data-sources--references&#34;&gt;🔗 Data Sources &amp;amp; References&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;This analysis is part of my &amp;ldquo;One Country a Day&amp;rdquo; project, using data-driven approaches to understand global geography, economics, and geopolitics. Follow along as I explore the world, one country at a time.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>One Country a Day - Canada</title>
