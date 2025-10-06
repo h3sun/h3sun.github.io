@@ -8,7 +8,7 @@ tags:
   - random-thoughts
 ---
 
-All time in PST.
+All time in PST, as my iphone does not switch time zone during the flight.
 
 - 1:15 - 2:15 吃饭 etc
 - 2:15 - 3:15 阅读，阿特拉斯耸耸肩
