@@ -8,6 +8,8 @@ tags:
   - one-country-a-day
 ---
 
+## 🇺🇸 United States - Day 20/100 of One Country a Day Project
+
 The United States of America stands as the world's most powerful nation, wielding unprecedented economic, military, and cultural influence across the globe. From its founding as a revolutionary experiment in democracy to its current position as the sole superpower, America's story is one of remarkable transformation, innovation, and global leadership. Today, we examine this continental nation that spans from the Atlantic to the Pacific, exploring its natural wealth, strategic advantages, and the complex challenges that define its 21st-century reality.
 
 ### 📊 Quick Facts

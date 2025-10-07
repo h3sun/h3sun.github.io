@@ -8,6 +8,8 @@ tags:
   - one-country-a-day
 ---
 
+## 🇷🇺 Russia - Day 21/100 of One Country a Day Project
+
 The Russian Federation stands as the world's largest country by land area, spanning across eleven time zones from Europe to Asia. As a nuclear-armed superpower with vast natural resources, Russia plays a crucial role in global geopolitics, energy markets, and regional security. From its imperial past to its current position as a major energy exporter and geopolitical player, Russia's story is one of territorial expansion, resource wealth, and strategic positioning between East and West. Today, we examine this Eurasian giant that bridges continents and influences global affairs through its natural resources, military might, and strategic geography.
 
 ### 📊 Key Facts
