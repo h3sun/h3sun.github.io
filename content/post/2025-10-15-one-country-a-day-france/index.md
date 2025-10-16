@@ -8,7 +8,7 @@ tags:
   - one-country-a-day
 ---
 
-## 🇫🇷 France - Day 22/100 of One Country a Day Project
+## 🇫🇷 France - Day 23/100 of One Country a Day Project
 
 France stands as one of Europe's most influential nations, combining rich cultural heritage with significant economic and geopolitical power. As the world's seventh-largest economy and a permanent member of the UN Security Council, France wields considerable influence through its nuclear capabilities, cultural exports, and strategic positioning in Europe and Africa. From its revolutionary history to its current role as a key EU leader and global military power, France's story is one of cultural pride, strategic independence, and continental leadership. Today, we examine this European powerhouse that balances tradition with innovation, maintaining its unique position as both a European integrator and a champion of strategic autonomy.
 
@@ -55,4 +55,4 @@ France stands as one of Europe's most influential nations, combining rich cultur
 | **Weaknesses**                 | Limited natural resource base; net goods importer, especially energy; moderate growth and high public debt burdens; demographic aging and dependency on external supply chains.           |
 | **Trajectory (2020s – 2030s)** | Likely to remain a leading developed European power, but success will depend on managing structural reforms (fiscal, demographic, energy transition) and preserving its global influence. |
 
-Tomorrow, I will study Italy as we continue exploring Europe and Central Asia.
+Tomorrow, I will study Turkey as we continue exploring Europe and Central Asia.
