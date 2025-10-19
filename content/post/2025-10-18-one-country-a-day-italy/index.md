@@ -62,4 +62,4 @@ Italy stands as one of Europe's most culturally influential and economically sig
 [2]: https://www.reuters.com/markets/commodities/italys-power-users-pay-price-high-reliance-natural-gas-2024-03-06/?utm_source=chatgpt.com "Italy's power users pay the price for high reliance on natural gas"
 [3]: https://economy-finance.ec.europa.eu/economic-surveillance-eu-member-states/country-pages/italy/economic-forecast-italy_en?utm_source=chatgpt.com "Economic forecast for Italy - Economy and Finance"
 
-Tomorrow, I will study Poland as we continue exploring Europe and Central Asia.
+Tomorrow, I will study UK as we continue exploring Europe and Central Asia.
