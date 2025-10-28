@@ -58,5 +58,5 @@ Saudi Arabia stands as the economic and spiritual heart of the Islamic world, wi
 [2]: https://freedomhouse.org/country/saudi-arabia/freedom-world/2024 "Saudi Arabia: Freedom in the World 2024 Country Report | Freedom House"
 [3]: https://www.reuters.com/world/middle-east/saudi-arabia-gdp-grew-13-2024-govt-estimate-shows-2025-01-30/?utm_source=chatgpt.com "Saudi Arabia says GDP grew 1.3% in 2024, lifted by non oil sector"
 
-Tomorrow, I will study Iran as we continue exploring the Middle East and Central Asia.
+Tomorrow, I will study Iran as we continue exploring the Middle East. 
 
