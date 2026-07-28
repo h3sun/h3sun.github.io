@@ -1,0 +1,6 @@
+# Hugo 构建产物。部署由 .github/workflows/publish.yaml 现场构建，
+# 不使用仓库里的 public/，提交它只会让内容随构建产物泄露到公开历史里。
+/public/
+
+.hugo_build.lock
+.DS_Store
