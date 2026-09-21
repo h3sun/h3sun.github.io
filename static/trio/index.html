@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Play the card game Trio against AI opponents.">
+<title>Trio Table</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Figtree:wght@400;600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+body{margin:0}
+[hidden]{display:none!important}
+:root{
+  --ground:#E6EBEF; --panel:#F3F6F8; --ink:#182038; --muted:#5A6480; --line:#C9D2DB;
+  --accent:#E2A012; --accent-ink:#2A1E00;
+  --back:#2C3C94; --back-edge:#22307A; --dot:#F1C24B;
+  --face:#FCFBF6; --seven:#182038; --slot:#C3CDD6; --shadow:rgb(24 32 56 / .22);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#10152A; --panel:#191F3A; --ink:#E7EAF5; --muted:#9AA3C0; --line:#2C3557;
+    --accent:#F1B92E; --accent-ink:#241A00;
+    --back:#3D50BE; --back-edge:#2D3D9C; --dot:#F6CD62;
+    --face:#EFECE2; --seven:#0B0F20; --slot:#2F3960; --shadow:rgb(0 0 0 / .5);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#10152A; --panel:#191F3A; --ink:#E7EAF5; --muted:#9AA3C0; --line:#2C3557;
+  --accent:#F1B92E; --accent-ink:#241A00;
+  --back:#3D50BE; --back-edge:#2D3D9C; --dot:#F6CD62;
+  --face:#EFECE2; --seven:#0B0F20; --slot:#2F3960; --shadow:rgb(0 0 0 / .5);
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:'Figtree',system-ui,sans-serif;font-size:15px;line-height:1.45;padding-inline:16px;padding-block:20px 40px}
+.wrap{max-width:860px;margin-inline:auto;display:flex;flex-direction:column;gap:18px}
+
+.top{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between}
+h1{font-family:'Bowlby One','Arial Black',sans-serif;font-weight:400;font-size:34px;line-height:1;margin:0;letter-spacing:.01em}
+h1 i{font-style:normal;color:var(--accent)}
+.goal{margin:6px 0 0;color:var(--muted);font-size:13px}
+.setup{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.setup label{display:flex;flex-direction:column;gap:2px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.setup label.check{flex-direction:row;align-items:center;gap:6px;align-self:end;padding-bottom:7px;text-transform:none;letter-spacing:0;font-size:13px}
+select,.btn{font:inherit;font-size:14px;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 8px}
+.btn{align-self:end;background:var(--ink);color:var(--ground);border-color:var(--ink);font-weight:800;padding:7px 14px;cursor:pointer}
+.btn:hover{filter:brightness(1.15)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+
+h2{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:0}
+
+.opps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
+.seat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px 8px;display:flex;flex-direction:column;gap:8px}
+.who{display:flex;align-items:center;gap:8px;min-height:26px;flex-wrap:wrap}
+.name{font-weight:800;padding:1px 9px;border-radius:99px;border:1px solid transparent}
+.seat.active .name{background:var(--accent);color:var(--accent-ink)}
+.note{color:var(--muted);font-size:12px}
+.trios{display:flex;gap:4px;margin-left:auto}
+.trio{font-family:'Bowlby One','Arial Black',sans-serif;font-size:13px;line-height:1;min-width:26px;text-align:center;padding:5px 5px 4px;border-radius:5px;background:var(--face);color:oklch(.48 .17 var(--h));border:2px solid oklch(.6 .15 var(--h));box-shadow:2px 2px 0 oklch(.6 .15 var(--h)),4px 4px 0 oklch(.72 .1 var(--h))}
+.trio.seven{background:var(--seven);color:var(--dot);border-color:var(--dot);box-shadow:2px 2px 0 var(--dot),4px 4px 0 var(--accent)}
+.strip{display:flex;gap:4px;justify-content:center;padding-top:6px}
+.strip .card{flex:1 1 0;max-width:38px}
+.ends{display:flex;justify-content:space-between;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+.mid{display:flex;flex-direction:column;gap:10px;align-items:center;padding-block:6px}
+.pool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%}
+.pool .card,.pool .slot{flex:0 0 clamp(44px,13vw,66px)}
+.slot{aspect-ratio:5/7;border-radius:8px;border:2px dashed var(--slot)}
+
+.status{background:var(--ink);color:var(--ground);border-radius:10px;padding:12px 16px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;min-height:48px;font-weight:600}
+.status.over{background:var(--accent);color:var(--accent-ink)}
+.status .btn{background:var(--accent-ink);color:var(--accent);border-color:var(--accent-ink);align-self:center}
+
+.me .strip{gap:5px;padding-top:12px}
+.me .strip .card{max-width:72px}
+
+.card{container-type:inline-size;aspect-ratio:5/7;min-width:0;padding:0;margin:0;border:0;border-radius:8px;position:relative;display:grid;place-items:center;font:inherit;color:inherit;transition:transform .15s,box-shadow .15s}
+.strip .card{border-radius:5px}
+.me .strip .card{border-radius:8px}
+.card.back{background:
+  radial-gradient(circle at 50% 31%,var(--dot) 0 8.5%,transparent 9.5%),
+  radial-gradient(circle at 29% 65%,var(--dot) 0 8.5%,transparent 9.5%),
+  radial-gradient(circle at 71% 65%,var(--dot) 0 8.5%,transparent 9.5%),
+  var(--back);box-shadow:inset 0 0 0 2px var(--back-edge)}
+.card.face{background:var(--face);box-shadow:inset 0 0 0 2px oklch(.6 .15 var(--h))}
+.card.face.seven{background:var(--seven);box-shadow:inset 0 0 0 2px var(--dot)}
+.num{font-family:'Bowlby One','Arial Black',sans-serif;font-size:54cqw;line-height:1;color:oklch(.48 .17 var(--h));font-variant-numeric:tabular-nums}
+.seven .num{color:var(--dot)}
+.links{position:absolute;inset-inline:0;bottom:7cqw;text-align:center;font-size:15cqw;font-weight:800;letter-spacing:.04em;color:#5A6480}
+.seven .links{color:#F1C24B}
+@container (max-width:46px){.links{display:none}}
+.memo{font-size:40cqw;font-weight:800;line-height:1;width:64cqw;height:64cqw;display:grid;place-items:center;border-radius:50%;background:var(--back-edge);color:var(--dot)}
+.card.out{transform:translateY(-12%);box-shadow:inset 0 0 0 2px oklch(.6 .15 var(--h)),0 8px 16px var(--shadow)}
+.card.out.seven{box-shadow:inset 0 0 0 2px var(--dot),0 8px 16px var(--shadow)}
+.card.legal{cursor:pointer;outline:2px solid var(--accent);outline-offset:2px}
+.card.legal:hover{transform:translateY(-8%)}
+.card.legal:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.card.just{animation:flip .38s ease-out}
+@keyframes flip{from{transform:translateY(-12%) rotateY(90deg)}to{transform:translateY(-12%) rotateY(0)}}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.card.just{animation:none}}
+
+details{border-top:1px solid var(--line);padding-top:12px;max-width:65ch}
+summary{cursor:pointer;font-weight:800}
+details ul{margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;color:var(--muted)}
+details b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Trio<i>.</i>Table</h1>
+      <p class="goal" id="goal"></p>
+    </div>
+    <div class="setup">
+      <label for="opp">Opponents
+        <select id="opp"><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+      </label>
+      <label for="diff">AI memory
+        <select id="diff"><option value="easy">Forgetful</option><option value="normal">Decent</option><option value="hard">Perfect</option></select>
+      </label>
+      <label for="mode">Mode
+        <select id="mode"><option value="simple">Simple</option><option value="spicy">Spicy</option></select>
+      </label>
+      <label class="check" for="notes"><input type="checkbox" id="notes"> Pencil notes</label>
+      <button type="button" class="btn" id="newgame">Deal new game</button>
+    </div>
+  </header>
+
+  <section class="opps" id="opps" aria-label="Opponents"></section>
+
+  <section class="mid" aria-label="Middle cards">
+    <h2>Middle</h2>
+    <div class="pool" id="pool"></div>
+  </section>
+
+  <div class="status" id="status" role="status" aria-live="polite"></div>
+
+  <section class="seat me" id="me" aria-label="Your hand"></section>
+
+  <details>
+    <summary>How to play</summary>
+    <ul>
+      <li><b>36 cards</b>: three each of 1 to 12. Every hand is sorted low to high, and only its two ends can be reached.</li>
+      <li>On your turn, reveal cards one at a time: <b>flip any middle card</b>, or <b>ask any player for their lowest or highest card</b>. You can ask yourself. Ask the same end again and you get the next card in.</li>
+      <li>Same number as before? Keep going. <b>Different number?</b> Everything flips back and your turn ends. Remember what you saw.</li>
+      <li><b>Three of a kind</b> and you take the trio. The turn passes.</li>
+      <li><b>Simple:</b> first to three trios wins. <b>Spicy:</b> you need two linked trios instead; linked numbers add up to 7 or differ by 7, and are printed small on each card. In both modes, <b>the trio of 7s wins on the spot</b>.</li>
+      <li>Pencil notes mark every face-down card you have already seen. Leave it off for the real memory game.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+(function(){
+  var DEAL={3:[9,9],4:[7,8],5:[6,6],6:[5,6]};
+  var NAMES=['Wren','Otis','Juno','Pax','Lark'];
+  var DIFF={easy:{keep:.5,decay:.12,rand:.3},normal:{keep:.8,decay:.04,rand:.08},hard:{keep:1,decay:0,rand:0}};
+  var $=function(s){return document.querySelector(s);};
+  var S=null,gen=0,busy=false;
+  var prefs={opp:2,diff:'normal',mode:'simple',notes:false};
+  try{var saved=JSON.parse(localStorage.getItem('trio-prefs')||'null');if(saved)for(var k in prefs)if(k in saved)prefs[k]=saved[k];}catch(e){}
+  function savePrefs(){try{localStorage.setItem('trio-prefs',JSON.stringify(prefs));}catch(e){}}
+
+  function val(id){return Math.floor(id/3)+1;}
+  function hue(v){return (v-1)*30+15;}
+  function linked(a,b){return a+b===7||Math.abs(a-b)===7;}
+  function partners(v){var o=[];for(var x=1;x<=12;x++)if(x!==v&&linked(v,x))o.push(x);return o;}
+  function linkText(v){return v===7?'WINS':partners(v).join(' · ');}
+  function later(fn,ms){var g=gen;setTimeout(function(){if(g===gen)fn();},ms);}
+  function isRev(id){return S.revealed.indexOf(id)>=0;}
+  function unrevealed(pl){return pl.hand.filter(function(id){return !isRev(id);});}
+
+  function newGame(){
+    gen++;busy=false;
+    var n=prefs.opp+1,deal=DEAL[n],deck=[];
+    for(var i=0;i<36;i++)deck.push(i);
+    for(i=35;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=deck[i];deck[i]=deck[j];deck[j]=t;}
+    var players=[];
+    for(i=0;i<n;i++)players.push({name:i?NAMES[i-1]:'You',hand:deck.splice(0,deal[0]).sort(function(a,b){return a-b;}),trios:[],know:{}});
+    S={mode:prefs.mode,diff:prefs.diff,players:players,middle:deck,turn:0,revealed:[],gone:{},seen:{},lastId:null,over:null,
+       msg:'Your turn. Flip a middle card, or tap the low or high end of any hand.'};
+    render();
+  }
+
+  /* ---------- legal moves ---------- */
+  function sources(){
+    var out=[];
+    S.middle.forEach(function(id,pos){if(id!=null&&!isRev(id))out.push({id:id,kind:'mid',pos:pos});});
+    S.players.forEach(function(pl,p){
+      var un=unrevealed(pl);if(!un.length)return;
+      if(un.length===1){out.push({id:un[0],kind:'hand',p:p,end:'last'});return;}
+      out.push({id:un[0],kind:'hand',p:p,end:'lowest'});
+      out.push({id:un[un.length-1],kind:'hand',p:p,end:'highest'});
+    });
+    return out;
+  }
+
+  function describe(s){
+    var v=val(s.id),me=S.turn===0,A=S.players[S.turn].name;
+    if(s.kind==='mid')return me?'You flipped a middle card: '+v+'.':A+' flips a middle card: '+v+'.';
+    if(s.p===S.turn)return me?'You showed your '+s.end+' card: '+v+'.':A+' shows their own '+s.end+' card: '+v+'.';
+    if(me)return 'You asked '+S.players[s.p].name+' for the '+s.end+' card: '+v+'.';
+    if(s.p===0)return A+' asks for your '+s.end+' card: '+v+'.';
+    return A+' asks '+S.players[s.p].name+' for the '+s.end+' card: '+v+'.';
+  }
+
+  function doReveal(s){
+    S.revealed.push(s.id);S.lastId=s.id;S.msg=describe(s);
+    var v=val(S.revealed[0]);
+    var miss=S.revealed.some(function(id){return val(id)!==v;});
+    if(miss){busy=true;S.msg+=' No match, the cards go back.';render();later(fail,1800);}
+    else if(S.revealed.length===3){busy=true;S.msg+=' That makes three!';render();later(claim,1300);}
+    else{
+      if(S.turn===0)S.msg+=S.revealed.length===1?' Find two more '+v+'s.':' One more '+v+' to go.';
+      render();
+      if(S.turn!==0)later(aiStep,1050);
+    }
+  }
+
+  function fail(){
+    var keep=DIFF[S.diff].keep;
+    S.revealed.forEach(function(id){
+      S.seen[id]=1;
+      S.players.forEach(function(pl,p){if(p&&Math.random()<keep)pl.know[id]=1;});
+    });
+    S.revealed=[];S.msg='';next();
+  }
+
+  function winReason(pl){
+    var t=pl.trios;
+    if(t.indexOf(7)>=0)return 'the trio of 7s';
+    if(S.mode==='spicy'){
+      for(var i=0;i<t.length;i++)for(var j=i+1;j<t.length;j++)if(linked(t[i],t[j]))return 'linked trios '+t[i]+' and '+t[j];
+      return null;
+    }
+    return t.length>=3?'three trios':null;
+  }
+
+  function claim(){
+    var ids=S.revealed.slice(),v=val(ids[0]),pl=S.players[S.turn];
+    ids.forEach(function(id){
+      S.gone[id]=1;delete S.seen[id];
+      S.players.forEach(function(q){delete q.know[id];var i=q.hand.indexOf(id);if(i>=0)q.hand.splice(i,1);});
+      var m=S.middle.indexOf(id);if(m>=0)S.middle[m]=null;
+    });
+    S.revealed=[];pl.trios.push(v);
+    var why=winReason(pl);
+    if(why){busy=false;S.over={p:S.turn,why:why};render();return;}
+    S.msg=(S.turn===0?'You take':pl.name+' takes')+' the trio of '+v+'s. ';
+    next();
+  }
+
+  function next(){
+    busy=false;S.turn=(S.turn+1)%S.players.length;
+    var pl=S.players[S.turn];
+    if(S.turn===0)S.msg+='Your turn.';
+    else{
+      S.msg+=pl.name+' is up.';
+      var d=DIFF[S.diff].decay;
+      Object.keys(pl.know).forEach(function(id){if(Math.random()<d)delete pl.know[id];});
+      later(aiStep,1200);
+    }
+    render();
+  }
+
+  /* ---------- AI ---------- */
+  function knows(a,id){return !!a.know[id]||a.hand.indexOf(id)>=0||isRev(id);}
+
+  function reachCount(a,x){
+    var c=0;
+    S.middle.forEach(function(id){if(id!=null&&!isRev(id)&&knows(a,id)&&val(id)===x)c++;});
+    S.players.forEach(function(pl){
+      var un=unrevealed(pl),i=0,j=un.length-1;
+      while(i<un.length&&knows(a,un[i])&&val(un[i])===x)i++;
+      while(j>=i&&knows(a,un[j])&&val(un[j])===x)j--;
+      c+=i+(un.length-1-j);
+    });
+    return c;
+  }
+
+  function dist(a,s){
+    var c=[],x,P=[];
+    for(x=0;x<=13;x++){c.push(0);P.push(0);}
+    for(var id=0;id<36;id++)if(!S.gone[id]&&!knows(a,id))c[val(id)]++;
+    var lb=1,ub=12,n=1;
+    if(s.kind==='hand'){
+      var hand=S.players[s.p].hand,idx=hand.indexOf(s.id);n=0;
+      hand.forEach(function(h,i){
+        if(knows(a,h)){if(i<idx)lb=Math.max(lb,val(h));if(i>idx)ub=Math.min(ub,val(h));}
+        else n++;
+      });
+    }
+    var T=0;for(x=lb;x<=ub;x++)T+=c[x];
+    if(!T){for(x=lb;x<=ub;x++)P[x]=1/(ub-lb+1);return P;}
+    if(s.kind==='mid'||s.end==='last'){for(x=lb;x<=ub;x++)P[x]=c[x]/T;return P;}
+    var cum=0,prev=0;
+    if(s.end==='highest'){
+      for(x=lb;x<=ub;x++){cum+=c[x];var h2=Math.pow(cum/T,n);P[x]=h2-prev;prev=h2;}
+    }else{
+      for(x=ub;x>=lb;x--){cum+=c[x];var t2=Math.pow(cum/T,n);P[x]=t2-prev;prev=t2;}
+    }
+    return P;
+  }
+
+  function wouldWin(a,x){
+    if(x===7)return true;
+    if(S.mode==='spicy')return a.trios.some(function(t){return linked(t,x);});
+    return a.trios.length>=2;
+  }
+  function pick(list,score){
+    var best=null,bs=-1;
+    list.forEach(function(it){var sc=score(it)+Math.random()*1e-6;if(sc>bs){bs=sc;best=it;}});
+    return best;
+  }
+
+  function aiChoose(a){
+    var all=sources();
+    var known=all.filter(function(s){return knows(a,s.id);});
+    var unknown=all.filter(function(s){return !knows(a,s.id);});
+    if(S.revealed.length){
+      var v=val(S.revealed[0]);
+      var hit=known.filter(function(s){return val(s.id)===v;});
+      if(hit.length)return pick(hit,function(s){return s.kind==='hand'&&S.players[s.p]===a?0:1;});
+      if(unknown.length)return pick(unknown,function(s){return dist(a,s)[v];});
+      return pick(all,function(){return 0;});
+    }
+    var reach=[];for(var x=1;x<=12;x++)reach[x]=reachCount(a,x);
+    var sure=known.filter(function(s){return reach[val(s.id)]>=3;});
+    if(sure.length)return pick(sure,function(s){
+      var x=val(s.id),sc=wouldWin(a,x)?50:1;
+      if(x===7)sc=100;
+      if(S.mode==='spicy'&&partners(x).length)sc+=5;
+      return sc+(s.kind==='hand'&&S.players[s.p]===a?0:.5);
+    });
+    if(unknown.length){
+      if(Math.random()<DIFF[S.diff].rand)return pick(unknown,function(){return 0;});
+      return pick(unknown,function(s){
+        var P=dist(a,s),u=0;
+        for(var x=1;x<=12;x++)u+=P[x]*(wouldWin(a,x)?1.5:1)*(reach[x]>=2?1:reach[x]===1?.3:.06);
+        return u;
+      });
+    }
+    return pick(all,function(s){return reach[val(s.id)];});
+  }
+
+  function aiStep(){
+    if(S.over||S.turn===0)return;
+    doReveal(aiChoose(S.players[S.turn]));
+  }
+
+  /* ---------- render ---------- */
+  function cardHTML(id,o){
+    var v=val(id),rev=isRev(id),up=o.up||rev||!!S.over;
+    var cls='card '+(up?'face':'back');
+    if(up&&v===7)cls+=' seven';
+    if(rev)cls+=' out';
+    if(id===S.lastId)cls+=' just';
+    if(o.legal)cls+=' legal';
+    var inner=up?'<span class="num">'+v+'</span><span class="links">'+linkText(v)+'</span>'
+      :(prefs.notes&&S.seen[id]?'<span class="memo">'+v+'</span>':'');
+    return '<button type="button" class="'+cls+'" style="--h:'+hue(v)+'" data-id="'+id+'"'+(o.legal?'':' disabled')+
+      ' aria-label="'+o.label+'">'+inner+'</button>';
+  }
+  function triosHTML(pl){
+    return '<span class="trios">'+pl.trios.map(function(v){
+      return '<span class="trio'+(v===7?' seven':'')+'" style="--h:'+hue(v)+'" title="Trio of '+v+'s">'+v+'</span>';
+    }).join('')+'</span>';
+  }
+
+  function render(){
+    var myTurn=S.turn===0&&!busy&&!S.over,legal={};
+    if(myTurn)sources().forEach(function(s){legal[s.id]=s;});
+
+    $('#goal').textContent=S.mode==='spicy'
+      ?'Spicy: two linked trios, or the 7s, win the game.'
+      :'Simple: three trios, or the 7s, win the game.';
+
+    $('#opps').innerHTML=S.players.slice(1).map(function(pl,i){
+      var p=i+1,active=S.turn===p&&!S.over;
+      var cards=pl.hand.map(function(id){
+        var s=legal[id],up=isRev(id)||S.over;
+        return cardHTML(id,{legal:!!s,label:up?String(val(id)):s?pl.name+'’s '+s.end+' card, reveal':'Face-down card'});
+      }).join('');
+      return '<article class="seat'+(active?' active':'')+'"><div class="who"><span class="name">'+pl.name+'</span>'+
+        '<span class="note">'+(active?'playing…':pl.hand.length+' cards')+'</span>'+triosHTML(pl)+'</div>'+
+        '<div class="strip">'+cards+'</div><div class="ends"><span>low</span><span>high</span></div></article>';
+    }).join('');
+
+    $('#pool').innerHTML=S.middle.map(function(id,pos){
+      if(id==null)return '<span class="slot" aria-hidden="true"></span>';
+      var up=isRev(id)||S.over;
+      return cardHTML(id,{legal:!!legal[id],label:up?String(val(id)):'Middle card '+(pos+1)+(legal[id]?', flip':'')});
+    }).join('');
+
+    var me=S.players[0];
+    $('#me').className='seat me'+(S.turn===0&&!S.over?' active':'');
+    $('#me').innerHTML='<div class="who"><span class="name">Your hand</span><span class="note">'+
+      (myTurn?'tap either end to reveal it to everyone':'only you can see these')+'</span>'+triosHTML(me)+'</div>'+
+      '<div class="strip">'+me.hand.map(function(id){
+        var s=legal[id];
+        return cardHTML(id,{up:true,legal:!!s,label:'Your '+val(id)+(s?', reveal':'')});
+      }).join('')+'</div><div class="ends"><span>low</span><span>high</span></div>';
+
+    var st=$('#status');
+    if(S.over){
+      var w=S.players[S.over.p];
+      st.className='status over';
+      st.innerHTML='<span>'+(S.over.p===0?'You win':w.name+' wins')+' with '+S.over.why+'. All hands are face up.</span>'+
+        '<button type="button" class="btn" id="again">Deal again</button>';
+    }else{
+      st.className='status';
+      st.innerHTML='<span></span>';
+      st.firstChild.textContent=S.msg;
+    }
+    S.lastId=null;
+  }
+
+  /* ---------- events ---------- */
+  document.addEventListener('click',function(e){
+    if(e.target.closest('#again')){newGame();return;}
+    var b=e.target.closest('button[data-id]');
+    if(!b||b.disabled||!S||S.turn!==0||busy||S.over)return;
+    var id=+b.dataset.id,s=sources().filter(function(x){return x.id===id;})[0];
+    if(s)doReveal(s);
+  });
+  $('#opp').value=String(prefs.opp);$('#diff').value=prefs.diff;$('#mode').value=prefs.mode;$('#notes').checked=!!prefs.notes;
+  $('#newgame').addEventListener('click',function(){
+    prefs.opp=+$('#opp').value;prefs.diff=$('#diff').value;prefs.mode=$('#mode').value;savePrefs();newGame();
+  });
+  $('#notes').addEventListener('change',function(){prefs.notes=this.checked;savePrefs();if(S)render();});
+
+  function start(data){
+    if(data&&data.S&&data.S.players){
+      gen++;busy=false;S=data.S;S.revealed=[];S.lastId=null;
+      if(!S.over&&S.turn!==0){S.msg=S.players[S.turn].name+' is up.';later(aiStep,1000);}
+      render();
+    }else newGame();
+  }
+  var hot=window.claude&&window.claude.hot;
+  try{if(hot&&hot.snapshot)hot.snapshot(function(){return {S:S};});}catch(e){}
+  if(hot&&hot.ready)hot.ready(start);else start((hot&&hot.data)||{});
+})();
+</script>
+</body>
+</html>
